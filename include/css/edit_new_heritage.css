@@ -1,0 +1,164 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100%;
+}
+
+.heritage_title {
+	width: 100%;
+	max-width: 88%;
+	margin: 0 auto;
+	margin-top: 4%;
+}
+
+.heritage_title_info{
+	width: 100%;
+	margin-top: 4%;
+	overflow: hidden;
+	position: relative;
+}
+
+.heritage_title input {
+	background: url(../img/edit_hertitage_title_bg.png) no-repeat white;
+	font-size: 16px;
+	background-size: 100% 100%;
+	background-position: center center;
+}
+
+.heritage_title input,
+.heritage_num input,
+.heritage_section_title input {
+	width: 100%;
+	text-align: center;
+	/*line-height: 40px;*/
+	height: 40px;
+	outline: none;
+	border: 0;
+	letter-spacing: 0.5px;
+}
+
+
+.heritage_num {
+	width: 25%;
+	float: left;
+}
+
+.heritage_num input {
+	background: url(../img/edit_heritage_num_bg.png) no-repeat white;
+	background-size: 100% 100%;
+	background-position: center center;
+	font-size: 14px;
+}
+
+.heritage_section_title {
+	width: 70%;
+	float: right;
+}
+
+.heritage_section_title input {
+	background: url(../img/edit_heritage_section_title_bg.png) no-repeat white;
+	background-size: 100% 100%;
+	background-position: center center;
+	font-size: 14px;
+}
+
+.heritage_add_btn {
+	width: 18%;
+	margin: 0 auto;
+	margin-top: 50%;
+	margin-bottom: 20%;
+	text-align: center;
+	background: url(../img/heritage_add_btn_bg.png) no-repeat white;
+	background-size: 100% 100%;
+	background-position: center center;
+	font-size: 14px;
+	color: #65282A;
+	padding: 3px 0 6px 0;
+}
+
+.my_btn {
+	position: fixed;
+	bottom: 0;
+	background: #4B2727;
+	color: #FAFAFA;
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 0.5px;
+	border: 0;
+	outline: none;
+	font-size: 14px;
+}
+
+
+
+
+
+#the_list,.im_hti{
+	width: 100%;
+	max-width: 88%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.btns {
+	position: absolute;
+	top: 0;
+	width: 40%;
+	right: -50%;
+	font-size: 20px;
+	text-align: center;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.delete {
+	width: 50%;
+	background: #EB4D3D;
+	float: right;
+	pointer-events:auto;
+}
+
+.edit {
+	width: 50%;
+	background: #C7C7CC;
+	float: left;
+	pointer-events:auto;
+}
+
+.delete,
+.edit {
+	border: 0;
+	color: #FFFFFF;
+	letter-spacing: 0.8px;
+	outline: none;
+	font-size: 14px;
+	height: 40px;
+}
+
+.swipeleft {
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+
+.swiperight {
+	transform: translateX(0%);
+	-webkit-transform: translateX(0%);
+}
+
+.swipeleft,
+.swiperight {
+	width: 100%;
+	position: relative;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	height: 40px;
+	margin-top: 4%;
+}
+
+

@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Upload	.\Upload.php	/^class Upload extends CI_Controller {$/;"	c
+Web_404	.\404.php	/^class Web_404 extends CI_Controller {$/;"	c
+WechatOauthLogin	.\WechatOauthLogin.php	/^class WechatOauthLogin extends CI_Controller {$/;"	c
+Welcome	.\Welcome.php	/^class Welcome extends CI_Controller {$/;"	c
+__construct	.\Upload.php	/^    public function __construct()$/;"	f
+callback	.\WechatOauthLogin.php	/^		$callback='http:\/\/beatsxia.s1.natapp.cc\/svn';$/;"	v
+data	.\Upload.php	/^            $data = array('upload_data' => $this->upload->data());$/;"	v
+do_upload	.\Upload.php	/^    public function do_upload()$/;"	f
+error	.\Upload.php	/^            $error = array('error' => $this->upload->display_errors());$/;"	v
+index	.\404.php	/^	public function index()$/;"	f
+index	.\Upload.php	/^    public function index()$/;"	f
+index	.\WechatOauthLogin.php	/^	 public function index()$/;"	f
+index	.\WechatOauthLogin.php	/^    public function index()$/;"	f
+index	.\Welcome.php	/^	public function index()$/;"	f
+oauth	.\WechatOauthLogin.php	/^		$oauth = & load_wechat('Oauth');$/;"	v
+query	.\WechatOauthLogin.php	/^		$query=$this->db->query('SELECT * FROM  `wechat_config` ');$/;"	v
+result	.\WechatOauthLogin.php	/^		$result = $oauth->getOauthRedirect($callback, $state, $scope);$/;"	v
+scope	.\WechatOauthLogin.php	/^		$scope='snsapi_base';$/;"	v
+state	.\WechatOauthLogin.php	/^		$state='123';$/;"	v

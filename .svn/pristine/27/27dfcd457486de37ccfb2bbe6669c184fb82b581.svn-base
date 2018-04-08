@@ -1,0 +1,62 @@
+<?php
+
+class WechatOauthLogin extends CI_Controller {
+
+	/*
+    public function index()
+    {	
+		$this->load->database();
+		$query=$this->db->query('SELECT * FROM  `wechat_config` ');
+		foreach ($query->result_array() as $row)
+		{
+			 echo $row['appid'];
+		}
+    }
+	
+	 public function index()
+    {	
+		require_once 'E:\www\SVN\c_application\vendor\autoload.php';
+		$callback='http://beatsxia.s1.natapp.cc/svn';
+		$state='123';
+		$scope='snsapi_base';
+		// SDK实例对象
+		$oauth = & load_wechat('Oauth');
+
+		// 执行接口操作
+		$result = $oauth->getOauthRedirect($callback, $state, $scope);
+
+		// 处理返回结果
+		if($result===FALSE){
+			// 接口失败的处理
+			return false;
+		}else{
+			// 接口成功的处理
+			print_r($result);
+			$result = $oauth->getOauthAccessToken();
+
+			// 处理返回结果
+			if($result===FALSE){
+			    // 接口失败的处理
+			    return false;
+			}else{
+			    // 接口成功的处理
+			    echo 111;
+			}
+		}
+    }
+    */
+    
+     public function index()
+    {	
+		$this->load->helper('wechat.class');
+		$this->load->helper('auth');
+		$options = array(
+				'token'=>'hHx1j8H83XlP6Xf2xzJE442mt188fekzJvPvvx424X2', //填写你设定的key
+				'appid'=>'wx247b46662d01b4ab', //填写高级调用功能的app id, 请在微信开发模式后台查询
+				'appsecret'=>'c064a7c5bd16613747af9a81a2ecd38c', //填写高级调用功能的密钥
+		);
+		$auth = new wxauth($options);
+		var_dump($auth->wxuser);
+    }
+}
+?>

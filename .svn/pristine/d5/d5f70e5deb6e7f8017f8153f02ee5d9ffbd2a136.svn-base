@@ -1,0 +1,147 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Init extends CI_Controller {
+    
+     public function index()
+    {	
+    	session_start();
+    	if(empty($_SESSION['uid'])){
+    		redirect('WechatOauthLogin');exit();
+    	}
+    	
+    }
+     public function getUserInfo($value='')
+     {
+     	session_start();
+     	if(empty($_SESSION['uid'])){
+    		redirect('WechatOauthLogin');exit();
+    	}
+    	$uid = $_SESSION['uid'];
+    	
+        //$query = $this->db->query('SELECT * FROM  `ci_cc_picture_space` ');
+        //$list = $query->num_rows();
+
+        //头像 昵称 个性签名
+        $this->db->select('avatar,nickname,personality_note');
+        $this->db->where('id', $uid);
+        $query  = $this->db->get('cc_user');
+        $data = $query ->row_array();
+        $avatar = $data['avatar'];//头像
+        $nickname = $data['nickname'];//昵称
+        $personality_note = $data['personality_note'];//个性签名
+
+        //传记总数量（包括我发布的和我参与的）
+        $this->db->select('id');
+        $this->db->where('user_id', $uid);
+        $query  = $this->db->get('cc_inherit');
+        $inherit_num = $query ->num_rows();//我发布的传记数
+        if($inherit_num == 0){
+            $inherit_id_arr = '';
+        }elseif ($inherit_num == 1) {
+            $inherit_id_arr =  $query ->row_array();
+        }elseif ($inherit_num > 1) {
+            $inherit_id =  $query ->result_array();
+            $inherit_id_arr = array();
+            foreach ($inherit_id as $key => $value) {
+                $inherit_id_arr[] = $value['id']; 
+            }
+        }
+        $this->db->select('inh_id');
+        $this->db->where('inh_user_id != ', $uid);
+        $this->db->where('user_id', $uid);
+        $query  = $this->db->get('cc_inherit_content');
+        $inherit_content_num = $query ->result_array();//求我参与的传记数组
+        $inherit_content_id_arr = array();
+        if(!empty($inherit_content_num)){
+            foreach ($inherit_content_num as $key => $value) {
+                $inherit_content_id_arr[] = $value['inh_id'];
+            }
+            $inherit_content_id_arr = array_unique($inherit_content_id_arr);//我参与的传记ID
+            
+            $inh_content_num = count($inherit_content_id_arr);//我参与的传记数
+        }else{
+            $inh_content_num = 0;//我参与的传记数
+        }
+        $total_inh_num = $inherit_num + $inh_content_num;//传记总数量
+        
+        //用户自己创建的传记的访问人次
+        $this->db->where_in('access_page',$inherit_id_arr);
+        $this->db->where('type','inherit');
+        $query  = $this->db->get('cc_access_log');
+        $access_log_num = $query ->num_rows();//访问次数
+
+        //关注人数
+        $this->db->where('user_id',$uid);
+        $this->db->where('cancel','0');
+        $query  = $this->db->get('cc_fans');
+        $user_follow_num = $query ->num_rows();//关注人数
+
+        //粉丝人数
+        $this->db->where('follower_id',$uid);
+        $this->db->where('cancel','0');
+        $query  = $this->db->get('cc_fans');
+        $user_fans_num = $query ->num_rows();//粉丝人数
+
+        //用户回复数量
+        $this->db->where('cc_user_id',$uid);
+        $this->db->where('is_deleted','0');
+        $this->db->where('is_read','0');
+        $query  = $this->db->get('cc_comment');
+        $comment_num = $query ->num_rows();//回复人数
+
+        $info_data =  array('avatar' => $avatar, 'nickname' => $nickname, 'personality_note' => $personality_note, 'total_inh_num' => $total_inh_num, 'access_log_num' => $access_log_num, 'user_follow_num' => $user_follow_num, 'user_fans_num' => $user_fans_num, 'comment_num' => $comment_num);
+        echo json_encode($info_data);
+     }
+     public function getUserComment()
+     {
+        session_start();
+        if(empty($_SESSION['uid'])){
+            redirect('WechatOauthLogin');exit();
+        }
+        $uid = $_SESSION['uid'];
+
+        //获取前十条回复
+        $this->db->select('cc_comment.user_id,cc_comment.cc_id,cc_comment.user_name,cc_comment.content,cc_user.avatar,cc_inherit.title,cc_inherit.thumbnail');
+        $this->db->from('cc_comment');
+        $this->db->join('cc_user', 'cc_user.id = cc_comment.user_id','left');
+        $this->db->join('cc_inherit', 'cc_inherit.id = cc_comment.cc_id','left');
+        $this->db->where('is_deleted','0');
+        $this->db->where('cc_user_id',$uid);
+        $this->db->order_by('time', 'DESC');
+        $this->db->limit(10);
+        $query = $this->db->get();
+        $comment_data = $query -> result_array();
+        echo json_encode($comment_data);
+     }
+     public function getUserCommentPage()
+     {  
+        session_start();
+        if(empty($_SESSION['uid'])){
+            redirect('WechatOauthLogin');exit();
+        }
+        if($this->input->post('page')){
+            sleep(1);
+            if ( is_int($this->input->post('page')) && $this->input->post('page') > 0) {
+                $page = $this->input->post('page');
+            }else{
+                $page = 1;
+            }
+            $uid = $_SESSION['uid'];
+            $limit = 10;
+            $offset = ($page - 1) * $limit;
+            //获取更多信息
+            $this->db->select('cc_comment.user_id,cc_comment.cc_id,cc_comment.user_name,cc_comment.content,cc_user.avatar,cc_inherit.title,cc_inherit.thumbnail');
+            $this->db->from('cc_comment');
+            $this->db->join('cc_user', 'cc_user.id = cc_comment.user_id','left');
+            $this->db->join('cc_inherit', 'cc_inherit.id = cc_comment.cc_id','left');
+            $this->db->where('is_deleted','0');
+            $this->db->where('cc_user_id',$uid);
+            $this->db->order_by('time', 'DESC');
+            $this->db->limit($limit, $offset);
+            $query = $this->db->get();
+            $comment_data = $query -> result_array();
+            echo json_encode($comment_data);
+        }
+    }
+}
+?>

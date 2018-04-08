@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" href="<?php echo $img_url;?>include/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo $img_url;?>include/css/index.css" />
+	<link rel="stylesheet" href="<?php echo $img_url;?>include/css/index_info.css" />
+	<link rel="stylesheet" href="<?php echo $img_url;?>include/css/mine_info.css" />
+
+	<body>
+
+		<!--footer-->
+		<nav class="navbar navbar-default navbar-fixed-bottom nav-tabs" style="background: #FFFFFF;padding-top: 12px;">
+			<div class="container-fluid">
+				<ul style="list-style: none;overflow: hidden;">
+					<li role="presentation" class="col-xs-3 pic active" id="index_cont_1">
+						<a href="#index" data-toggle="tab">
+							<img src="<?php echo $img_url;?>include/img/index_sign.jpg" style="width: 85px;" />
+							<span>首页</span>
+						</a>
+					</li>
+					<li role="presentation" class="col-xs-3 pic" id="index_cont_2">
+						<a href="#new" data-toggle="tab">
+							<a href="<?php echo $img_url;?>include/upload.html"><img src="<?php echo $img_url;?>include/img/text_sign.png" style="width: 100px;" /></a>
+							<span><a class="common" href="<?php echo $img_url;?>include/2、upload.html">新建</a></span>
+						</a>
+					</li>
+					<li role="presentation" class="col-xs-3 pic" id="index_cont_3">
+						<a href="#family" data-toggle="tab">
+							<img src="<?php echo $img_url;?>include/img/family_sign.jpg" style="width: 85px;" />
+							<span>家族</span>
+						</a>
+					</li>
+					<li role="presentation" class="col-xs-3 pic" id="index_cont_4">
+						<a href="#mine" data-toggle="tab">
+							<img src="<?php echo $img_url;?>include/img/mine_sign.jpg" style="width: 80px;" />
+							<span>我的</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--navbar-fixed-bottom-->
+
+		<div class="tab-content" style="font-size: 40px;">
+			<div class="tab-pane fade in active" id="index">
+				<!--shouye-->
+				<div class="nav">
+					<span>传承</span>
+					<a href="#"><button id="button" class="btn">注册</button></a>
+				</div>
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<img src="<?php echo $img_url;?>include/img/carousel_img_1.jpg" style="width: 100%;">
+						</div>
+						<div class="item">
+							<img src="<?php echo $img_url;?>include/img/carousel_img_1.jpg" style="width: 100%;">
+						</div>
+						<div class="item">
+							<img src="<?php echo $img_url;?>include/img/carousel_img_1.jpg" style="width: 100%;">
+						</div>
+					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="font-size: 30px;">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="font-size: 50px;"></span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size: 50px;"></span>
+					</a>
+				</div>
+
+				<div class="infos">
+					<div class="info_1">
+						<div class="activities">
+							<div class="user_info">
+								<div class="head">
+									<!--<img />-->
+								</div>
+								<span class="username">传承动态</a>
+				</div>
+				<div class="link_more">
+					<a href="#" id="more">更多</a>
+					<span>
+						>
+					</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="infos">
+					<div class="article_info">
+						<h1>人生的意义在于传承,人生的意义在于传承</h1>
+						<img src="<?php echo $img_url;?>include/img/info_img.jpg" />
+						<p>人生的意义在于传承,人生的意义在于传承,人生的意义在于传承,人生的意义在于传承,人生的意义在于传承,人生的意义在于传承</p>
+						<p>2017-05-05</p>
+					</div>
+				</div>
+				<div class="infos">
+					<div class="article_info">
+						<h1>人生的意义在于传承,人生的意义在于传承</h1>
+						<img src="<?php echo $img_url;?>include/img/info_img.jpg" />
+						<p>人生的意义在于传承,人生的意义在于传承,人生的意义在于传承,人生的意义在于传承,人生的意义在于传承,人生的意义在于传承</p>
+						<p>2017-05-05</p>
+					</div>
+				</div>
+				<!--shouye-->
+
+				<div style="width: 100%;height: 162px;"></div>
+
+			</div>
+			<!--id="index"-->
+			<div class="tab-pane fade" id="new">
+				xinjian
+
+			</div>
+			<!--id="new"-->
+			<div class="tab-pane fade" id="family">jiazu</div>
+			<div class="tab-pane fade" id="mine">
+				<!--wode-->
+				<div class="nav">
+					<span>我的</span>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+				            <a href="<?php echo $img_url;?>include/personal_data.html">个人资料</a>
+			            </span>
+						<span class="data_2">
+				            <a href="<?php echo $img_url;?>include/personal_data.html" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+							<a href="<?php echo $img_url;?>include/bind_accout.html">账户绑定与设置</a>
+			            </span>
+						<span class="data_2">
+				            <a href="<?php echo $img_url;?>include/bind_accout.html" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+							<a href="#">帐号安全</a>
+  			            </span>
+						<span class="data_2">
+				            <a href="#" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+							<a href="#">通知</a>
+			            </span>
+						<span class="data_2">
+				            <a href="#" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+							<a href="#">常见问题与反馈</a>
+			            </span>
+						<span class="data_2">
+				            <a href="#" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+							<a href="#">邀请亲友</a>
+			            </span>
+						<span class="data_2">
+				            <a href="#" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;line-height: 170px;overflow: hidden;">
+					<div class="sectional">
+						<span class="msg">
+							<a href="#">关于系统版本</a>
+			            </span>
+						<span class="data_2">
+				            <a href="#" class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;line-height: 170px;overflow: hidden;">
+					<a href="#" class="quit">退出当前账户</a>
+				</div>
+				
+				<div style="width: 100%;height: 162px;"></div>
+				
+			</div>
+
+		</div>
+		<!--tab-content-->
+	</body>
+
+	<script type="text/javascript" src="<?php echo $img_url;?>include/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $img_url;?>include/js/bootstrap.min.js"></script>
+	<!--<script type="text/javascript" src="<?php echo $img_url;?>include/js/index.js"></script>-->
+
+</html>

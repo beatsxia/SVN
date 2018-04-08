@@ -1,0 +1,97 @@
+* {
+	padding: 0px;
+}
+
+.carousel-indicators {
+	font-size: 100px;
+}
+
+.head {
+	border-radius: 60px;
+	max-width: 100%;
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	background: red;
+	float: left;
+	margin-top: 50px;
+	font-size: 100px;
+}
+
+.head img {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.infos {
+	overflow: hidden;
+	border-bottom: 1px #E1E1E1 solid;
+	/*border: 1px black solid;*/
+}
+
+.info_1 {
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.activities {
+	float: left;
+	width: 100%;
+	line-height: 160px;
+}
+
+.user_info {
+	float: left;
+}
+
+.username {
+	display: block;
+	float: left;
+	font-size: 40px;
+	margin-left: 30px;
+}
+
+.link_more {
+	float: right;
+}
+
+#more {
+	margin-right: 50px;
+}
+
+#more,
+.link_more span {
+	font-size: 33px;
+	color: #AFAEAE;
+	float: left;
+}
+
+.article_info {
+	margin: 40px auto;
+	width: 100%;
+	max-width: 92%;
+	overflow: hidden;
+}
+
+.article_info h1 {
+	font-size: 43px;
+}
+
+.article_info img {
+	width: 100%;
+	display: block;
+	margin: 33px 0;
+}
+
+.article_info p {
+	width: 100%;
+	color: #AFAEAE;
+	font-size: 35px;
+	line-height: 1.8;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

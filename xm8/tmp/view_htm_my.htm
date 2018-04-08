@@ -1,0 +1,46 @@
+<?php include _include(APP_PATH.'view/htm/header.inc.htm');?>
+
+
+
+<div class="row">
+	<div class="col-lg-6 offset-lg-3">
+		<div class="card">
+			<div class="card-body text-center">
+				<img class="avatar-lg" src="<?php echo $user['avatar_url']; ?>">
+				<h4><?php echo $user['username']; ?></h4>
+				<div>[<?php echo $user['groupname']; ?>]</div>
+				
+			</div>
+			<div class="card-footer">
+				<div class="row text-center">
+					
+					<div class="col-3">
+						<a href="<?php echo url('my-profile'); ?>"><i class="icon-cog icon-2x"></i></a><br>
+						<a href="<?php echo url('my-profile'); ?>"><?php echo lang('my_profile'); ?></a>
+					</div>
+					
+					<div class="col-3">
+						<a href="<?php echo url('my-password'); ?>"><i class="icon-lock icon-2x"></i></a><br>
+						<a href="<?php echo url('my-password'); ?>"><?php echo lang('modify_password'); ?></a>
+					</div>
+					
+					<div class="col-3">
+						<a href="<?php echo url('my-avatar'); ?>"><i class="icon-user icon-2x"></i></a><br>
+						<a href="<?php echo url('my-avatar'); ?>"><?php echo lang('modify_avatar'); ?></i></a>
+					</div>
+					
+					<div class="col-3">
+						<a href="<?php echo url('my-thread'); ?>"><i class="icon-comment icon-2x"></i></a><br>
+						<a href="<?php echo url('my-thread'); ?>"><?php echo lang('my_post'); ?></a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+<?php include _include(APP_PATH.'view/htm/footer.inc.htm');?>
+

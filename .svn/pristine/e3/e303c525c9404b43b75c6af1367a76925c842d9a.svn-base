@@ -1,0 +1,21 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Personal_data extends CI_Controller {
+    
+     public function index()
+    {	
+    	session_start();
+    	if(empty($_SESSION['uid'])){
+    		redirect('WechatOauthLogin');exit();
+    	}
+    	//获取图片空间url
+        $query=$this->db->query('SELECT * FROM  `ci_cc_picture_space` ');
+        $list=$query->row_array();
+        $inc_url = $list['url'];
+        $data['inc_url']=$inc_url;
+
+		$this->load->view('personal_data',$data);
+    }
+    
+}
+?>

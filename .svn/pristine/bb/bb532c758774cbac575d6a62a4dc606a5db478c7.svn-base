@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.34, minimum-scale=0.34, maximum-scale=0.34">
+	</head>
+
+	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/bind_accout.css" />
+	
+	<body>
+		<div class="nav">
+			<span>绑定手机</span>
+		</div>
+		<form action="#" name="form1" method="post" onsubmit="return check()">
+			<div class="bind_div">
+				<input id="tel_num" type="text" name="user_number" placeholder="请输入手机号码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机号码'" />
+			</div>
+			<div id="showinfo1"></div>
+			<div class="bind_div">
+				<input id="id_code" type="text" name="bind_code" placeholder="请输入短信验证码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入短信验证码'" />
+				<input id="btn" type="button" value="点击获取验证码" onclick="sendCode(this)" />
+			</div>
+			<div id="showinfo2"></div>
+			<div class="bind_btn">
+				<button type="submit">
+				绑定
+				</button>
+			</div>
+		</form>
+	</body>
+
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+var oDiv1 = document.getElementById("showinfo1");
+var oDiv2 = document.getElementById("showinfo2");
+var t = false;
+
+//校验帐号
+function check() {
+	t = true;
+	var ip1 = document.form1.user_number.value;
+	var input1 = document.getElementById("tel_num");
+	var flag1 = true;
+
+	if(!(checkMobile(ip1))) { //校验手机
+		flag1 = false;
+	}
+
+	if(!flag1 || !flag2) {
+		return false;
+	}
+}
+
+//手机号码正则表达
+function checkMobile(ip1) {
+	var re = /^1[34578]\d{9}$/;
+
+	if(!(re.test(ip1))) {
+		oDiv1.innerHTML = "请输入有效的手机号码！";
+		return false;
+	} else {
+		oDiv1.innerHTML = "";
+		return true;
+	}
+}
+
+var clock = '';
+var nums = 60;
+var btn;
+
+//点击获取验证码的时候校验手机号码
+
+//点击了获取验证码
+function sendCode(ip1) {
+	var re = /^1[34578]\d{9}$/;
+
+	if(!(re.test(ip1))) {
+		oDiv1.innerHTML = "请输入有效的手机号码！";
+		return false;
+	} else {
+		oDiv1.innerHTML = "";
+		return true;
+	}
+
+}
+
+function sendCode(thisBtn) {
+	btn = thisBtn;
+	btn.disabled = true; //将按钮置为不可点击
+	btn.value = nums + '秒后可重新获取';
+	clock = setInterval(doLoop, 1000); //一秒执行一次
+}
+
+function doLoop() {
+	nums--;
+	if(nums > 0) {
+		btn.value = nums + '秒后可重新获取';
+	} else {
+		clearInterval(clock); //清除js定时器
+		btn.disabled = false;
+		btn.value = '重新获取验证码';
+		nums = 60; //重置时间
+	}
+}</script>
+</html>

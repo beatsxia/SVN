@@ -1,0 +1,131 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class User_ercode extends CI_Controller {
+    
+     public function index()
+    {	
+    	session_start();
+    	if(empty($_SESSION['uid'])){
+    		redirect('WechatOauthLogin');exit();
+    	}
+        $uid = $_SESSION['uid'];
+    	//获取图片空间url
+        $query=$this->db->query('SELECT * FROM  `ci_cc_picture_space` ');
+        $list = $query->row_array();
+        $inc_url = $list['url'];
+        $data['inc_url']=$inc_url;
+        //引入lib
+        $this->load->library('CI_Wechat');
+        
+        //生成邀请函开始
+
+        //引入模块文件 user_model.php
+        $this->load->model('user_model');
+        $time = time();
+        //查询用户是否有二维码ticket
+        $ercode = $this->user_model->get_user_er_ticket($uid);
+        if (empty($ercode)) {
+            //获取二维码
+            $ercode = $this->ci_wechat->getQRCode($uid,'0','604800');
+            //存储ticket
+            $date = array('member_id' => $this->user_model->get_user_member_id($uid), 'ticket' => $ercode['ticket'], 'url' => $ercode['url'], 'expire_seconds' => isset($ercode['expire_seconds']) ? trim($ercode['expire_seconds']) : '604800', 'end_time' => isset($ercode['expire_seconds']) ? trim($ercode['expire_seconds']+604800) : $time+604800);
+            if(!empty($ercode['ticket'])){
+                $this->user_model->save_user_er_ticket($date);
+            }else{
+                echo '获取二维码失败';
+                die;
+            }
+        }
+        //引入获取图片函数
+        $this->load->helper('getimg');
+        //引入图片圆角处理函数
+        $this->load->helper('avatar.class');
+        //引入图像处理类
+        $this->load->library('image_lib');
+
+        //定义所需变量
+        $bottom_img = 'img/qcode/bottom.png';//底图
+        $head_img = 'img/qcode/head_img/'.$uid.'_'.$time.'.png';//头像
+        $er_code_img = 'img/qcode/er_code_img/'.$uid.'_'.$time.'.png';//二维码
+        $full_img = 'img/qcode/full_img/'.$uid.'_'.$time.'.jpg';//完整邀请码图片
+
+        //获取获取二维码存到本地
+        $url = 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket='.$ercode['ticket'];
+        $save_dir = 'img/qcode/er_code_img/';
+        $filename = $uid.'_'.$time.'.png';
+        $er_code = getImage($url,$save_dir,$filename);//存储二维码
+
+        //对二维码进行调整PX
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $er_code_img;
+        $config['maintain_ratio'] = TRUE;
+        $config['width']     = 270;
+        $config['height']   = 270;
+        $config['new_image'] = $er_code_img;
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();
+
+        //函数重置所有之前用于处理图片的值
+        $this->image_lib->clear();
+
+        //获取用户的微信头像
+        $user_member_info = $this->user_model->get_user_member_info($uid);
+        if(preg_match('/https/', $user_member_info['avatar'])){
+            $url = $user_member_info['avatar'];
+        }else{
+            $url = str_replace('http','https',$user_member_info['avatar']);
+        }
+        $save_dir = 'img/qcode/head_img/';
+        $filename = $uid.'_'.$time.'.png';
+        $avatar = getImage($url,$save_dir,$filename);//存储头像
+
+        //对头像进行调整PX
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $head_img;
+        $config['maintain_ratio'] = TRUE;
+        $config['width']     = 140;
+        $config['height']   = 140;
+        $config['new_image'] = $head_img;
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();
+        $this->image_lib->clear();//重置所有之前用于处理图片的值
+
+        //对头像进行圆边处理
+        $round_head = new avatar($head_img, '#fff', 140);//头像直径为140px
+        $round_head -> show($head_img);
+        
+        //添加水印（二维码）
+        $config['source_image'] = $bottom_img;
+        $config['quality'] = '90%';
+        $config['wm_type'] = 'overlay';
+        $config['wm_vrt_alignment'] = 'top';
+        $config['wm_hor_alignment'] = 'left';
+        $config['wm_hor_offset'] = '185';
+        $config['wm_vrt_offset'] = '300';
+        $config['wm_overlay_path'] = $er_code_img;
+        $config['wm_opacity'] = '95';
+        $config['new_image'] = $full_img;
+        $this->image_lib->initialize($config);
+        $this->image_lib->watermark();
+        $this->image_lib->clear();//重置所有之前用于处理图片的值
+
+        //添加水印（头像）
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $full_img;
+        //$config['wm_opacity'] = 100;
+        $config['wm_type'] = 'overlay';
+        $config['wm_vrt_alignment'] = 'top';
+        $config['wm_hor_alignment'] = 'left';
+        $config['wm_hor_offset'] = '250';
+        $config['wm_vrt_offset'] = '30';
+        $config['wm_overlay_path'] = $head_img;
+        $config['new_image'] = $full_img;
+        $this->image_lib->initialize($config);
+        $this->image_lib->watermark();
+
+        //生成邀请函结束
+        
+		$this->load->view('user_ercode',$data);
+    }
+}
+?>

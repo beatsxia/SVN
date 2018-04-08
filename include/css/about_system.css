@@ -1,0 +1,116 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body{
+	min-height: 100%;
+}
+.logo{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.logo img{
+	display: block;
+	margin: 12px auto;
+	background: white;
+	width: 50px;
+}
+.main{
+	width: 100%;
+	max-width: 90%;
+	margin: 0 auto;
+}
+.sections{
+	margin-top: 25px;
+	overflow-x: auto;
+}
+p{
+	font-size: 14px;
+	color: #8A8A8A;
+	text-indent:2em;
+	line-height: 22px;
+	letter-spacing: 0.5px;
+}
+
+.section_one{
+	
+}
+
+.foot{
+	font-size: 12px;
+	text-align: center;
+	line-height: 18px;
+	letter-spacing: 0.5px;
+	width: 100%;
+	position: fixed;
+	bottom: 10px;
+}
+.foot div{
+	color: #65292B;
+}
+.foot span{
+	color: #8A8A8A;
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sectional{
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+	cursor: pointer;
+	border-bottom: 1px solid #E3E3E3;
+}
+
+.sectional a{
+	font-size: 45px;
+	/*font-weight: bold;*/
+	float: left;
+	font-size: #010101;
+}
+.msg{
+	font-size: 45px;
+	/*font-weight: bold;*/
+	float: left;
+	font-size: #010101;
+}
+.data_2{
+	font-size: 43px;
+	color: #C2C1C1;
+	float: right;
+	margin-top: 50px;
+	width: 100%;
+	max-width: 160px;
+}
+.data_2 a{
+	margin-left: 28px;
+	font-size: 60px;
+	color: #C2C1C1;
+	float: right;
+}
+
+

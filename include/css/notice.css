@@ -1,0 +1,59 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.sectional {
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+	border-bottom: 1px solid #E3E3E3;
+}
+
+.msg {
+	font-size: 16px;
+	float: left;
+	font-size: #010101;
+}
+
+#div1,#div3,#div5,#div7 {
+	width: 60px;
+	height: 30px;
+	border-radius: 15px;
+	position: relative;
+	float: right;
+	top: 25px;
+}
+
+#div2,#div4,#div6,#div8 {
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	position: absolute;
+	top: 0px;
+	background: #65292B;
+	cursor: pointer;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.open1,.open3,.open5,.open7 {
+	background: #B19393;
+}
+
+.open2,.open4,.open6,.open8 {
+	top: 2px;
+	right: 1px;
+}
+
+.close1,.close3,.close5,.close7 {
+	background: rgba(255, 255, 255, 0.4);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-left: transparent;
+}
+
+.close2,.close4,.close6,.close8 {
+	left: 0px;
+	top: 0px;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+}

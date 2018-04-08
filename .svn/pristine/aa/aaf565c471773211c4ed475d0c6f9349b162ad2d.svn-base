@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" href="css/reply_me.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<body>
+		<div class="nav">
+			<span>回复我的</span>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head0" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover0" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head1" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover1" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head2" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover2" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head3" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover3" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head4" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover4" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head5" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover5" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head6" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover6" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head7" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover7" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head8" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover8" />
+				</div>
+			</div>
+		</div>
+		<div style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img id="head9" />
+				</div>
+				<div class="reply_info">
+					<div class="username">小小文</div>
+					<div class="content">不醉不归</div>
+					<div class="replyday">6月21日&nbsp;20:00</div>
+				</div>
+				<div class="handle_cover">
+					<img id="cover9" />
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/reply_me.js"></script>
+
+</html>
+
+
+

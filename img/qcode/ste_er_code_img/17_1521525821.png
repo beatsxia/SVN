@@ -1,0 +1,140 @@
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  readfile(): SSL: �������е�����ֹ��һ���ѽ�������ӡ�
+</p>
+<p>Filename: helpers/getimg_helper.php</p>
+<p>Line Number: 41</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\c_application\helpers\getimg_helper.php<br />
+			Line: 41<br />
+			Function: readfile			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\c_application\controllers\Ste_ercode.php<br />
+			Line: 76<br />
+			Function: getImage			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  readfile(): Failed to enable crypto</p>
+<p>Filename: helpers/getimg_helper.php</p>
+<p>Line Number: 41</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\c_application\helpers\getimg_helper.php<br />
+			Line: 41<br />
+			Function: readfile			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\c_application\controllers\Ste_ercode.php<br />
+			Line: 76<br />
+			Function: getImage			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  readfile(https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQFl8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTkNHczB3SUZldTAxR0dVVU5xMWwAAgQqfq9aAwSAOgkA): failed to open stream: operation failed</p>
+<p>Filename: helpers/getimg_helper.php</p>
+<p>Line Number: 41</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\c_application\helpers\getimg_helper.php<br />
+			Line: 41<br />
+			Function: readfile			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\c_application\controllers\Ste_ercode.php<br />
+			Line: 76<br />
+			Function: getImage			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: E:\www\SVN\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>

@@ -1,0 +1,67 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.nav{
+	background: #65292B;
+	color: #FFFFFF;
+    line-height: 120px;
+    font-size: 50px;
+}
+.nav span{
+	display: block;
+	text-align: center;
+}
+.bind_div{
+	width: 100%;
+	max-width: 96%;
+	margin: 0 auto;
+	font-size: 43px;
+	border-bottom: 2px #E3E3E3 solid;
+}
+#tel_num{
+	width: 100%;
+	border: none;
+	outline: none;
+	height: 14rem;
+	margin-left: 15px;
+s}
+#showinfo1,#showinfo2{
+	color: red;
+	font-size: 40px;
+	width: 100%;
+	max-width: 96%;
+	margin: 15px auto;
+	padding-left: 15px;
+}
+#id_code{
+	border: none;
+	outline: none;
+	margin-left: 15px;
+	height: 14rem;
+}
+#btn{
+	float: right;
+	margin-right: 15px;
+	background: none;
+	height: 14rem;
+}
+.bind_btn{
+	width: 100%;
+	text-align: center;
+	line-height: 8rem;
+	margin-top: 50px;
+}
+.bind_btn button{
+	letter-spacing: 5px;
+	background: #65292B;
+	color: white;
+	font-weight: bold;
+	font-size: 43px;
+	padding: 0 40px;
+	border-radius: 14px;
+}
+#btn,.bind_btn button{
+	border: none;
+	outline: none;
+}

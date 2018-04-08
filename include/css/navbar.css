@@ -1,0 +1,31 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.navbar-default{
+	border: none !important;
+	padding-top: 13px;
+	background: -webkit-linear-gradient(#835F61, #4D2929); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#835F61,#4D2929); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#835F61,#4D2929); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#835F61, #4D2929); /* 标准的语法（必须放在最后） */
+}
+li{
+	text-align: center;
+}
+li:not(:first-child){
+	border-left: 1px #DFD9D9 solid;
+}
+a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #DFD9D9;
+}
+a:hover{
+	text-decoration: none;
+	color: #DFD9D9;
+}
+.container-fluid{
+	padding-left: 0;
+	padding-right: 0;
+}

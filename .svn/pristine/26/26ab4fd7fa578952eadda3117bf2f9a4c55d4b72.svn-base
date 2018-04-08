@@ -1,0 +1,32 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Mine_info extends CI_Controller {
+    
+     public function index()
+    {	
+    	session_start();
+    	if(empty($_SESSION['uid'])){
+    		redirect('WechatOauthLogin');exit();
+    	}
+    	//引入模块文件 user_model.php
+        $this->load->model('user_model');
+
+        //获取图片空间url
+        $inc_url = $this->user_model->get_picture_space_info('url');
+        
+
+        $uid = $_SESSION['uid'];
+        //用户回复数量
+        $this->db->where('cc_user_id',$uid);
+        $this->db->where('is_deleted','0');
+        $this->db->where('is_read','0');
+        $query  = $this->db->get('cc_comment');
+        $comment_num = $query ->num_rows();//回复人数
+
+        $data = array('comment_num' => $comment_num,'inc_url' => $inc_url );
+        
+		$this->load->view('mine_info',$data);
+    }
+    
+}
+?>

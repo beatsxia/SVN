@@ -1,0 +1,163 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background: url(../img/monument_bg.jpg) no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}
+.add_msg{
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	margin-top: 53%;
+	overflow: hidden;
+}
+.msg_lf{
+	width: 100%;
+	max-width: 17.3%;
+	overflow: hidden;
+	float: left;
+	padding-left: 0.7%;
+}
+.add_msg img{
+	background: black;
+	color: white;
+	padding: 15px;
+	width: 20px;
+	height: 20px;
+	border-radius: 6px;
+}
+.msg_rg{
+	width: 100%;
+	max-width: 82%;
+	float: right;
+	line-height: 26px;
+	letter-spacing: 0.5px;
+}
+.username{
+	font-size: 14px;
+	border: 0;
+	outline: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.username span,.heritage_info span{
+	background: #4D99A0;
+	padding: 5px 6px;
+	color: #D2E8EA;
+}
+.heritage_info{
+	font-size: 12px;
+	letter-spacing: 1.05px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+::-webkit-input-placeholder {
+  color: #D2E8EA;
+}
+:-moz-placeholder {
+  color: #D2E8EA;
+}
+::-moz-placeholder {
+  color: #D2E8EA;
+}
+:-ms-input-placeholder {
+  color: #D2E8EA;
+}
+::placeholder {
+  color: #D2E8EA;
+}
+
+
+
+
+#the_list{
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.user_info{
+	overflow: hidden;
+	width: 100%;
+	margin: 3% 0;
+	position: relative;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.user_msg{
+	float: right;
+	width: 82%;
+	letter-spacing: 0.5px;
+	overflow: hidden;
+}
+.btns {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	right: -50%;
+	font-size: 20px;
+	text-align: center;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.delete {
+	width: 50%;
+	background: #EB4D3D;
+	float: right;
+	pointer-events:auto;
+}
+
+.edit {
+	width: 50%;
+	background: #C7C7CC;
+	float: left;
+	pointer-events:auto;
+}
+
+.delete,
+.edit {
+	border: 0;
+	color: #FFFFFF;
+	letter-spacing: 0.8px;
+	outline: none;
+	font-size: 14px;
+}
+
+.swipeleft {
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+
+.swiperight {
+	transform: translateX(0%);
+	-webkit-transform: translateX(0%);
+}
+
+.swipeleft,
+.swiperight {
+	width: 100%;
+	margin: 3% 0;
+	position: relative;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+
+
+
+
+
+
+
+
+
+

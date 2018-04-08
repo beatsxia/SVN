@@ -1,0 +1,14 @@
+$(function(){
+	$("#index_cont_1").click(function(){
+		window.location="homepage"
+	});
+	$("#index_cont_2").click(function(){
+		window.location="#"
+	});
+	$("#index_cont_3").click(function(){
+		window.location="heritage_monument"
+	});
+	$("#index_cont_4").click(function(){
+		window.location="mine_info"
+	});
+});

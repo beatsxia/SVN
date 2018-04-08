@@ -1,0 +1,108 @@
+<?php 
+class User_model extends CI_Model {
+
+    public function __construct()
+    {
+        parent::__construct();
+        // Your own constructor code
+    }
+
+
+
+	//获取用户带参数二维码ticket
+	 public function get_user_er_ticket($uid)
+    {   
+        $this->db->select('wechat_ticket.ticket');
+        $this->db->from('wechat_ticket');
+        $this->db->join('cc_user', 'cc_user.mid = wechat_ticket.member_id','left');
+        $this->db->where('cc_user.id',$uid);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+
+
+	//获取用户的member_id
+    public function get_user_member_id($uid)
+    {   
+        $this->db->select('mid');
+        $this->db->where('id',$uid);
+        $this->db->limit(1);
+        $query = $this->db->get('cc_user');
+        $member_id = $query->row();
+        return $member_id->mid;
+    }
+
+
+
+    //存储用户二维码ticket    
+    /*
+        $date为array()
+    */
+    public function save_user_er_ticket($data)
+    {
+        $query = $this->db->insert('wechat_ticket', $data);
+        return $query;
+    }
+
+    //获取用户的member_id
+    public function get_user_member_info($uid)
+    {   
+        $this->db->select('wechat_member.*');
+        $this->db->from('wechat_member');
+        $this->db->join('cc_user', 'cc_user.mid = wechat_member.id','left');
+        $this->db->where('cc_user.id',$uid);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    //图片空间地址
+    public function get_picture_space_info($select_name='')
+    {   
+        if(!empty($select_name)){
+            $this->db->select($select_name);
+        }
+        $this->db->from('cc_picture_space');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        if(!empty($select_name)){
+           $item = $query->row();
+           return $item->$select_name;
+        }else{
+            return $query->row_array();
+        }
+    }
+
+    //存储
+    public function update_info($table, $data, $where)
+    {
+
+        $query = $this->db->update($table, $data, $where);
+        return $query;
+    }
+
+    //查询
+    public function select_info($table, $select_name, $where)
+    {
+        if(!empty($select_name)){
+            $this->db->select($select_name);
+        }
+        $this->db->from($table);
+        if(!empty($where)){  
+            foreach ($where as $key => $value) {
+                $this->db->where($key,$value);
+            }
+        }
+        $query = $this->db->get();
+        if(!preg_match('/,/s', $select_name)){
+            $item = $query->row();
+            return $item->$select_name;
+        }else{
+            return $query->row_array();
+        }
+    }
+
+}
+?>

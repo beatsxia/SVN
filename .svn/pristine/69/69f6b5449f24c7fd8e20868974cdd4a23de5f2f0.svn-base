@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/personal_data.css" />
+
+	<body>
+		<div class="nav">
+			<span>个人资料</span>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      头像
+			    </span>
+				<span class="data_1">
+				      <img />
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      昵称
+			    </span>
+				<span class="data_2">
+				     哈哈<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      我的传记
+			    </span>
+				<span class="data_2">
+				     15<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      个性签名
+			    </span>
+				<span class="data_2">
+				    人生的意义在于传承<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      访问人数
+			    </span>
+				<span class="data_2">
+				    1000<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      关注人数
+			    </span>
+				<span class="data_2">
+				    1000<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      粉丝人数
+			    </span>
+				<span class="data_2">
+				    1000<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+			<div class="sectional">
+				<span class="msg">
+				      用户评价
+			    </span>
+				<span class="data_2">
+				    2<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</html>

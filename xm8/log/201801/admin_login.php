@@ -1,0 +1,10 @@
+<?php exit;?>	2018-01-15 17:53:24	127.0.0.1	/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-16 15:47:25	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-16 17:15:22	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-17 14:08:34	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-17 16:35:34	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-17 17:46:06	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-22 09:56:58	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-25 15:37:13	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-25 17:18:52	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1
+<?php exit;?>	2018-01-26 10:42:53	127.0.0.1	/svn/xm8/admin/?index-login.htm	1	login successed. uid:1

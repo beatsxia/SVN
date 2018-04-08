@@ -1,0 +1,173 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: url(../img/memery_bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+}
+
+.present_flowers {
+	position: absolute;
+	bottom: 11.2%;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+.present_flowers img {
+	width: 22.2%;
+}
+
+.flowers {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 19.2%;
+	z-index: -1;
+}
+
+.flowers img {
+	width: 22%;
+	margin-left: 8.5%;
+}
+
+@-webkit-keyframes myfirst {
+	0% {
+		margin-left: 8.5%;
+	}
+	100% {
+		margin-bottom: 47%;
+		margin-left: 47%;
+	}
+}
+
+@-moz-keyframes myfirst {
+	0% {
+		margin-left: 8.5%;
+	}
+	100% {
+		margin-bottom: 47%;
+		margin-left: 47%;
+	}
+}
+
+@-o-keyframes myfirst {
+	0% {
+		margin-left: 8.5%;
+	}
+	100% {
+		margin-bottom: 47%;
+		margin-left: 47%;
+	}
+}
+
+@keyframes myfirst {
+	0% {
+		margin-left: 8.5%;
+	}
+	100% {
+		margin-bottom: 47%;
+		margin-left: 47%;
+	}
+}
+
+.write_intro {
+	position: absolute;
+	bottom: 9.8%;
+	width: 100%;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	line-height: 30px;
+	text-align: center;
+	display: none;
+}
+
+.write_intro p {
+	color: #F5F3F3;
+}
+
+.write_intro button {
+	background: #65292B;
+	border: 0;
+	outline: none;
+	font-size: 17px;
+	padding: 5px 15px 8px 15px;
+	color: #F5F3F3;
+	letter-spacing: 0.5px;
+	border-radius: 8px;
+	margin-top: 9.8%;
+}
+
+.mask_tips {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(9, 9, 9, 0.62);
+	display: none;
+}
+
+.mask_tips img {
+	position: absolute;
+	right: 0;
+	animation: mysecond 2.5s infinite;
+	-webkit-animation: mysecond 2.5s infinite;
+	-moz-animation: mysecond 2.5s infinite;
+	-o-animation: mysecond 2.5s infinite;
+	animation-fill-mode: forwards;
+}
+
+.mask_tips p {
+	color: #F5F3F3;
+	text-align: center;
+	margin-top: 46%;
+	font-size: 20px;
+}
+
+@-webkit-keyframes mysecond {
+	0% {
+		right: 41%;
+		top: 20%;
+	}
+	100% {
+		right: 3%;
+		top: 1%;
+	}
+}
+
+@-moz-keyframes mysecond {
+	0% {
+		right: 41%;
+		top: 20%;
+	}
+	100% {
+		right: 3%;
+		top: 1%;
+	}
+}
+@-o-keyframes mysecond {
+	0% {
+		right: 41%;
+		top: 20%;
+	}
+	100% {
+		right: 3%;
+		top: 1%;
+	}
+}
+
+
+@keyframes mysecond {
+	0% {
+		right: 41%;
+		top: 20%;
+	}
+	100% {
+		right: 3%;
+		top: 1%;
+	}
+}

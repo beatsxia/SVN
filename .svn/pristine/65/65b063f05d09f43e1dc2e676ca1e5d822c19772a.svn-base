@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/change_psw.css" />
+	</head>
+
+	<body>
+		<div class="nav">
+			<span>修改密码</span>
+		</div>
+		<form action="#" name="form1" method="get" onsubmit="return check()">
+			<div class="input_div">
+				<input type="text" name="input1" id="input1" placeholder="请输入手机号码" />
+				<span class="show_num">(188******79)</span>
+			</div>
+			<p id="p1">请输入正确使用的手机号码!</p>
+			<div class="input_div">
+				<input type="text" name="input2" id="input2" placeholder="请输入短信验证码" />
+			</div>
+			<p id="p2">请输入正确的短信验证码!</p>
+			<div class="input_div">
+				<input type="password" name="input3" id="input3" placeholder="请输入新密码" />
+			</div>
+			<p id="p3"></p>
+			<div class="input_div">
+				<input type="password" name="input4" id="input4" placeholder="请再次输入新密码" />
+			</div>
+			<p id="p4"></p>
+			<input type="submit" id="submit" value="提交" />
+		</form>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/change_psw.js"></script>
+
+</html>

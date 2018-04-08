@@ -1,0 +1,77 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.nav{
+	background: #65292B;
+	color: #FFFFFF;
+    line-height: 120px;
+    font-size: 50px;
+}
+
+.nav span{
+	display: block;
+	text-align: center;
+}
+.sectional{
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+	cursor: pointer;
+	border-bottom: 1px solid #C2C1C1;
+	font-size: 43px;
+	/*border-bottom: 1px solid #E3E3E3;*/
+}
+
+.sectional a{
+	font-size: 43px;
+	/*font-weight: bold;*/
+	float: left;
+	font-size: #010101;
+}
+.msg{
+	float: left;
+}
+
+.msg_num{
+	background: red;
+	width: 55px;
+	height: 55px;
+	/*color: white;*/
+	border-radius: 55px;
+	float: left;
+	margin-top: 58px;
+	margin-left: 20px;
+	font-size: 30px;
+}
+.msg_num span{
+	margin-top: -59px;
+	text-align: center;
+	display: block;
+	color: white;
+}
+.data_2{
+	font-size: 43px;
+	color: #C2C1C1;
+	float: right;
+	margin-top: 50px;
+	width: 100%;
+	max-width: 80px;
+}
+.data_2 a{
+	margin-left: 28px;
+	font-size: 60px;
+	color: #C2C1C1;
+	float: right;
+}
+.quit{
+	color: #65282A;
+	font-size: 43px;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+}
+.quit:hover{
+	color: #65282A;
+}

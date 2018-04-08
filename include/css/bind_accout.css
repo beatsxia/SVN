@@ -1,0 +1,53 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.bind_div{
+	width: 100%;
+	max-width: 96%;
+	margin: 0 auto;
+	font-size: 16px;
+	line-height: 70px;
+	border-bottom: 1px #E3E3E3 solid;
+}
+#tel_num{
+	width: 100%;
+	border: none;
+	outline: none;
+	padding-left: 15px;
+}
+#showinfo1,#showinfo2{
+	color: red;
+	font-size: 14px;
+	width: 100%;
+	max-width: 96%;
+	margin: 5px auto;
+	padding-left: 15px;
+}
+#id_code{
+	border: none;
+	outline: none;
+	padding-left: 15px;
+}
+#btn{
+	float: right;
+	padding-right: 15px;
+	background: none;
+}
+.bind_btn{
+	text-align: center;
+	margin-top: 50px;
+}
+.bind_btn button{
+	letter-spacing: 4px;
+	background: #65292B;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 8px 30px;
+	border-radius: 7px;
+}
+#btn,.bind_btn button{
+	border: none;
+	outline: none;
+}

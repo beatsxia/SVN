@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/mine_info.css" />
+	
+	<body>
+		<?php $this->load->view('navbar');?>
+		<div class="nav">
+					<span>我的</span>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_0">
+						<span class="msg">
+							回复我的
+			            </span>
+			            <?php if (!$comment_num === '0'): ?>
+			            	<div class="msg_num"><span class="num_span"><?=$comment_num ?></span></div>
+			        	<?php endif; ?>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_1">
+						<span class="msg">
+							个人资料
+			            </span>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_2">
+						<span class="msg">
+							账户绑定与设置
+			            </span>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_3">
+						<span class="msg">
+							通知
+			            </span>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_4">
+						<span class="msg">
+							常见问题与反馈
+			            </span>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;     line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_5">
+						<span class="msg">
+							邀请亲友
+			            </span>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;line-height: 170px;overflow: hidden;">
+					<div class="sectional sectional_6">
+						<span class="msg">
+							关于系统版本
+			            </span>
+						<span class="data_2">
+				            <a class="glyphicon glyphicon-menu-right"></a>
+			            </span>
+					</div>
+				</div>
+				<div style="width: 100%;line-height: 170px;overflow: hidden;">
+					<a class="quit">退出当前账户</a>
+				</div>
+
+				<div style="width: 100%;height: 162px;"></div>
+
+	</body>
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/mine_info.js"></script>
+	<script type="text/javascript">
+	    var $num = <?=$comment_num ?>;
+        $(".sectional_0").click(function() {
+	        if($num == 0) {
+		        window.location = "reply_me_1";
+	        } else {
+		        window.location = "reply_me";
+	        }
+        });
+    </script>
+</html>

@@ -1,0 +1,73 @@
+.cbp_tmtimeline {
+	margin-top: 4.819%;
+	list-style: none;
+	position: relative;
+}
+
+.cbp_tmtimeline li:before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	background: #cccccc;
+	left: 9.5%;
+	bottom: -18px;
+	top:64px;
+}
+.cbp_tmtimeline li:last-child:before{
+	bottom: 4px;
+}
+
+.cbp_tmtimeline>li {
+	position: relative;
+}
+
+
+.cbp_tmtime span {
+	width: 9.038%;
+	border-radius: 100px;
+	background: #92776e;
+	color: #fffefb;
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 0.5px;
+}
+.cbp_tmtimeline li:first-child .cbp_tmtime span{
+	background: #ef4136;
+	color: #f9dee5;
+}
+
+
+
+.cbp_tmlabel {
+	margin: 0 0 15px 25%;
+	background: #f6f2f1;
+	color: #68302f;
+	position: relative;
+	border-radius: 5px;
+	padding: 4% 6%;
+	line-height: 22px;
+	letter-spacing: 0.8px;
+	font-size: 13px;
+	right: 6%;
+}
+.cbp_tmlabel p:first-child{
+	color: #b9b8b6;
+	font-size: 12px;
+}
+
+
+.cbp_tmlabel:after {
+	right: 99%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #f6f2f1;
+	border-width: 10px;
+	top: 37.1%;
+}
+
+
+

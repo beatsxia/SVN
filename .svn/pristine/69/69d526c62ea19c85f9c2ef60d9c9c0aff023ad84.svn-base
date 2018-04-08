@@ -1,0 +1,74 @@
+<?php
+
+class WechatOauthLogin extends CI_Controller {
+    
+     public function index()
+    {	
+    	$query=$this->db->query('SELECT * FROM  `ci_wechat_config` where id=1');
+		$list=$query->row_array();
+		$appid = $list['appid'];
+		$redirect_uri = $list['redirect_uri'];
+		$state = '123abc';
+        header('location:https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$appid.'&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state='.$state.'&connect_redirect=1#wechat_redirect');
+    }
+	public function user_info()
+	{	
+		session_start();
+		$this->load->helper('wechat.class');
+		$this->load->helper('auth');
+		$this->load->helper('password');
+		$uniacid='1';
+		$query = $this->db->query("SELECT * FROM  `ci_wechat_config` where id=$uniacid");
+		$list = $query->row_array();
+		$appid = $list['appid'];
+		$token = $list['token'];
+		$appsecret = $list['appsecret'];
+		$options = array(
+				'token'=>$token, //你设定的key
+				'appid'=>$appid, //高级调用功能的app id, 请在微信开发模式后台查询
+				'appsecret'=>$appsecret, //高级调用功能的密钥
+		);
+		$auth = new wxauth($options);
+		$wxuser_data = $auth->wxuser;
+		$nowtime = time();
+		$data = array(
+			'uniacid' => $uniacid,
+		    'open_id' => $wxuser_data['open_id'],
+		    'nickname' => $wxuser_data['nickname'],
+		    'gender' => $wxuser_data['sex'],
+		    'createtime' => $nowtime,
+		    'province' => $wxuser_data['province'],
+		    'city' => $wxuser_data['city'],
+		    'country' => $wxuser_data['country'],
+		    'avatar' => $wxuser_data['avatar']
+		);
+		$this->db->insert('wechat_member', $data);
+		$mid = $this->db->insert_id();
+		$data = array(
+			'uniacid' => $uniacid,
+			'mid' => $mid,
+		    'open_id' => $wxuser_data['open_id'],
+		    'nickname' => $wxuser_data['nickname'],
+		    'gender' => $wxuser_data['sex'],
+		    'createtime' => $nowtime,
+		    'location' => $wxuser_data['location'],
+		    'province' => $wxuser_data['province'],
+		    'city' => $wxuser_data['city'],
+		    'country' => $wxuser_data['country'],
+		    'avatar' => $wxuser_data['avatar']
+		);
+		$this->db->insert('cc_user', $data);
+		$uid = $this->db->insert_id();
+		$data = array(
+		    'uniacid' => $uniacid,
+		    'uid' => $uid,
+		    'user_token' => $_SESSION['user_token'],
+		    'token_time' => $_SESSION['token_time']
+		);
+		$this->db->insert('wechat_token_time', $data);
+
+		$this->load->view('index');
+	}
+	
+}
+?>

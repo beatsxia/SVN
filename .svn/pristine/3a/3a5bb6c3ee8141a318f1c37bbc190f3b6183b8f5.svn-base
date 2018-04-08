@@ -1,0 +1,25 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Homepage extends CI_Controller {
+    
+     public function index()
+    {	
+    	session_start();
+    	if(empty($_SESSION['uid'])){
+    		redirect('WechatOauthLogin');exit();
+    	}
+    	//获取图片空间url
+    	$query=$this->db->query('SELECT * FROM  `ci_cc_picture_space` ');
+		$list=$query->row_array();
+		$img_url = $list['url'];
+		$data['img_url']=$img_url;
+		//获取首页轮播图信息
+		$query=$this->db->query('SELECT * FROM  `ci_cc_rolling_ads` WHERE  `is_delete` =0 ORDER BY  `sort` ASC LIMIT 0 , 3');
+		$list=$query->result_array();
+		$data['advertisement']=$list;
+
+		$this->load->view('index',$data);
+    }
+    
+}
+?>

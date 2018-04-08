@@ -1,0 +1,66 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100%;
+}
+
+.page_view{
+	background: #ECECEC;
+	line-height: 40px;
+	padding-left: 5%;
+	color: #939393;
+}
+.which_day{
+	line-height: 55px;
+	padding-left: 5%;
+	font-size: 20px;
+	border-bottom: 1px #E4E4E4 solid;
+}
+.visitor_info{
+	overflow: hidden;
+	width: 100%;
+}
+.visitor_head{
+	width: 100%;
+	max-width: 20%;
+	float: left;
+	height: 70px;
+	text-align: center;
+}
+.visitor_info img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: none;
+	margin-top: 10px;
+}
+.visitor{
+	border-bottom: 1px #E8E8E8 solid;
+	float: left;
+	width: 100%;
+	max-width: 80%;
+}
+
+.visitor_name{
+	font-size: 1.2rem;
+	margin-top: 10px;
+	margin-bottom: 8px;
+}
+.visited_time{
+	font-size: 12px;
+	color: #AFAFAF;
+	margin-bottom: 9px;
+}
+
+
+.tips{
+	margin-top: 50%;
+}
+.tips p{
+	font-size: 12px;
+	text-align: center;
+	color: #D5D5D5;
+}

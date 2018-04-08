@@ -1,0 +1,58 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+.nav{
+	background: #65292B;
+	color: #FFFFFF;
+    line-height: 120px;
+    font-size: 50px;
+}
+
+.nav span{
+	display: block;
+	text-align: center;
+}
+.btn{
+	position: absolute;
+	top: 33px;
+	right: 50px;
+    background: #65292B;
+}
+#button:hover{
+	color: #FFFFFF;
+}
+#button{
+	font-size: 30px;
+	border-radius: 20px;
+	padding: 5px 20px;
+	border: 2px #FFFFFF solid;
+    color: #FFFFFF;
+}
+
+
+.pic img{
+	height: 81px;
+}
+.pic span,.common{
+	display: block;
+	font-size: 42px;
+	color: #4F4F4F;
+}
+.pic span,.pic img,.pic{
+	text-align: center;
+}
+
+.common:hover{
+	color: #4F4F4F;
+}
+.navbar-default{
+	border-top: 1px #DDDDDD solid;
+}
+

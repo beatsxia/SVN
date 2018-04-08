@@ -1,0 +1,41 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	min-height: 100%;
+}
+.personal_header{
+	width: 100%;
+}
+.personal_header img{
+	width: 100%;
+	display: block;
+}
+.main_photos{
+	width: 100%;
+	max-width: 95%;
+	margin: 1.5% auto;
+	overflow: hidden;
+}
+
+.photo_cover:nth-child(odd){
+	float: left;
+}
+.photo_cover:nth-child(even){
+	float: right;
+}
+.photo_cover {
+	width: 48%;
+	margin-bottom: 2%;
+	border: 2px #E5E5E5 solid;
+	border-radius: 5px;
+	
+	height: 0;
+	padding-bottom: 48%;
+	overflow: hidden;
+}
+.photo_cover_new_add img{
+	width: 100%;
+}
+

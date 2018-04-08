@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<link rel="stylesheet" href="<?php echo $inc_url;?>css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo $inc_url;?>css/about_system.css" />
+	
+	<body>
+		<div class="nav">
+			<span>关于系统</span>
+		</div>
+		<div class="logo">
+			<img src="<?php echo $inc_url;?>img/logo.png" />
+		</div>
+		<span class="intro">传承&nbsp;&nbsp;Inheritance&nbsp;1.0</span>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional sectional1">
+				<span class="msg">
+				    功能介绍
+			    </span>
+			    <span class="data_2">
+				<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+			<div class="sectional sectional2">
+				<span class="msg">
+				    意见反馈
+			    </span>
+			    <span class="data_2">
+				<a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div class="foot">
+			<div>广州传承网络科技有限公司</div>
+			<span>传承公司&nbsp;版权所有</span>
+			<span>Copyright &copy;2011-2017Inheritance All Rights Reserved</span>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="<?php echo $inc_url;?>js/jquery-2.1.1.min.js" ></script>
+	<script type="text/javascript" src="<?php echo $inc_url;?>js/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="<?php echo $inc_url;?>js/about_system.js" ></script>
+</html>

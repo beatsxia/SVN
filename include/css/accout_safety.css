@@ -1,0 +1,35 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body{
+	min-height: 100%;
+}
+.sectional{
+	width: 100%;
+	max-width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+	cursor: pointer;
+	border-bottom: 1px solid #E3E3E3;
+}
+.msg{
+	font-size: 16px;
+	float: left;
+}
+.data_2{
+	color: #C2C1C1;
+	float: right;
+}
+.data_2 a{
+	margin-left: 5px;
+	font-size: 16px;
+	color: #C2C1C1;
+	float: right;
+}
+.data_2 a:hover{
+	color: #C2C1C1;
+}
+.glyphicon-menu-right{
+	margin-top: 26px;
+}

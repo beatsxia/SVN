@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" href="<?php echo $inc_url;?>css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo $inc_url;?>css/personal_data.css" />
+
+	<body>
+		<div class="nav">
+			<span>个人资料</span>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div1">
+				<span class="msg">
+				      头像
+			    </span>
+				<span class="data_1">
+				      <img src="<?=$avatar?>" />
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div2">
+				<span class="msg">
+				      昵称
+			    </span>
+				<span class="data_2">
+				    <span class="myname"><?=$nickname?></span><a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div3">
+				<span class="msg">
+				      我的传记
+			    </span>
+				<span class="data_2 data_3">
+				    <span class="mynote_num"><?=$total_inh_num?></span><a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div4">
+				<span class="msg">
+				      个性签名
+			    </span>
+				<span class="data_2 data_4">
+				    <span class="mysign"><?=$personality_note?></span><a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div5">
+				<span class="msg">
+				      访问人数
+			    </span>
+				<span class="data_2 data_5">
+				    <span class="visited_num"><?=$access_log_num?></span><a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div6">
+				<span class="msg">
+				      关注人数
+			    </span>
+				<span class="data_2 data_6">
+				    <span class="attention_num"><?=$user_follow_num?></span><a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		<div style="width: 100%;line-height: 170px;overflow: hidden;">
+			<div class="sectional div7">
+				<span class="msg">
+				      粉丝人数
+			    </span>
+				<span class="data_2 data_7">
+				    <span class="fans_num"><?=$user_fans_num?></span><a class="glyphicon glyphicon-menu-right"></a>
+			    </span>
+			</div>
+		</div>
+		
+	</body>
+
+	<script type="text/javascript" src="<?php echo $inc_url;?>js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url;?>js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url;?>js/personal_data.js" ></script>
+
+</html>
+
+
+

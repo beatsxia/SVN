@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.34, user-scalable=0, minimum-scale=0.34, maximum-scale=0.34">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/reply_me.css" />
+	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/bootstrap.min.css" />
+
+	<body>
+		<div class="nav" id="reply_nav">
+			<span>回复我的</span>
+		</div>
+		
+		<?php foreach ($comment_data as $item): ?>
+		<div class="item_info" style="border-bottom: 1px #D3D3D3 solid;width: 100%;margin: 0 auto;cursor: pointer;">
+			<div class="main">
+				<div class="user_head">
+					<img class="head_img" src="<?=$item['avatar'] ?>" />
+				</div>
+				<div class="reply_info">
+					<div class="username"><?=$item['user_name'] ?></div>
+					<div class="content"><?=$item['content'] ?></div>
+					<div class="replyday"><?=date("m月d日 H:i", $item['time']) ?></div>
+				</div>
+				<div class="handle_cover">
+					<?php if(!empty($item['thumbnail'])){?>
+						<img class="cover_img" src="<?=$item['thumbnail']?>" />
+					<?php }else{?>
+						<span class="cover_title"><?=$item['title']?></span>
+					<?php }?>
+				</div>
+			</div>
+		</div>
+				
+			
+		<?php endforeach; ?>
+		<div class="check_more">
+			<span class="more">上拉查看更多更早信息</span>
+		</div>	
+			
+			
+			
+		
+			
+	</body>
+
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $inc_url; ?>js/reply_me.js"></script>
+
+</html>
+
+
+

@@ -1,0 +1,165 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	min-height: 100%;
+}
+.personal_header{
+	width: 100%;
+}
+.personal_header img{
+	width: 100%;
+	display: block;
+}
+.user_header{
+	position: absolute;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+	padding-left: 0;
+	margin-left: -40px;
+	top: 8%;
+	background-position: center center;
+}
+.user_header img{
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+}
+.user_info{
+	text-align: center;
+	margin-top: 6px;
+}
+.user_name{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 15px;
+}
+.sex_ima{
+	display: inline-block;
+	vertical-align: middle;
+}
+.mine_sign {
+	text-align: center;
+}
+
+.mine_sign img {
+	width: 14px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.mine_sign span {
+	color: #636363;
+	font-size: 12px;
+	text-align: center;
+	width: 100%;
+	max-width: 115px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.intro_yourself,.inh_ste {
+	width: 100%;
+	max-width: 88%;
+	margin:  20px auto;
+	font-size: 16px;
+}
+
+.intro_yourself span,.inh_ste span {
+	width: 6px;
+	height: 6px;
+	border-radius: 6px;
+	background: #65292B;
+	float: left;
+	margin-top: 7px;
+	margin-right: 7px;
+}
+.intro_yourself strong{
+	float: right;
+	color: #65292B;
+}
+.intro_content{
+	width: 100%;
+	max-width: 88%;
+	margin: 0 auto;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	color: #B8B8B8;
+	margin-bottom: 4%;
+	word-wrap: break-word;
+	text-indent: 2em;
+	font-size: 13px;
+}
+::-webkit-input-placeholder {
+  color: #B8B8B8;
+}
+:-moz-placeholder {
+  color: #B8B8B8;
+}
+::-moz-placeholder {
+  color: #B8B8B8;
+}
+:-ms-input-placeholder {
+  color: #B8B8B8;
+}
+::placeholder {
+  color: #B8B8B8;
+}
+
+
+
+
+
+.biography_info{
+	width: 100%;
+	max-width:88%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.info_section{
+	width: 100%;
+	height: 118px;
+	margin-bottom: 15px;
+	z-index:999; 
+}
+.info_cover{
+	width: 100%;
+	height: 100%;
+	max-width: 42%;
+	float: left;
+}
+
+.info_cover img {
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+}
+
+.info_words {
+	width: 100%;
+	max-width: 53%;
+	height: 100%;
+	float: right;
+	letter-spacing: 0.8px;
+}
+
+.info_words h4 {
+	color: #B4B4B4;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 60px;
+}
+
+.info_words p {
+	font-size: 12px;
+	line-height: 20px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	text-align: left;
+	margin-top: 10px;
+}

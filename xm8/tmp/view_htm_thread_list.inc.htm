@@ -1,0 +1,105 @@
+					
+
+					<?php 
+					if($threadlist) { 
+						$have_allowtop = 0;
+						foreach($threadlist as &$_thread) {
+							$_thread['allowtop'] = forum_access_mod($_thread['fid'], $gid, 'allowtop');
+							if($_thread['allowtop']) $have_allowtop = 1;
+						}
+					}
+					?>
+
+					<?php if($threadlist) { foreach($threadlist as &$_thread) { ?>
+					<tr class="thread tap <?php echo $_thread['top_class'];?>" href="<?php echo url("thread-$_thread[tid]");?>" tid="<?php echo $_thread['tid'];?>">
+						<?php if($have_allowtop) { ?>
+							<?php if($_thread['allowtop']) { ?>
+							<td class="td-checkbox">
+								<label style="width: 100%; height: 100%;">
+									<input type="checkbox" name="modtid" class="m-t-sm" value="<?php echo $_thread['tid']; ?>" />
+								</label>
+							</td>
+
+							<?php } else {?>
+						
+							<td>&nbsp;</td>
+
+							<?php } ?>
+						
+						<?php } ?>
+
+
+						<td class="td-avatar">
+							<a href="<?php echo url("user-$_thread[uid]");?>" tabindex="-1">
+								<img class="avatar" src="<?php echo $_thread['user_avatar_url'];?>">
+							</a>
+							
+						</td>
+						<td class="td-subject p-l-0">
+							<div class="subject">
+							
+								
+							
+								<?php if($_thread['top'] > 0) { ?>
+									<i class="icon-top-<?php echo $_thread['top']; ?>"></i>
+								<?php } ?>
+								
+								
+								
+								
+								
+								<a href="<?php echo url("thread-$_thread[tid]");?>"><?php echo $_thread['subject'];?></a>
+								
+								
+								
+								<?php if($_thread['files'] > 0) { ?><i class="icon small filetype other"></i><?php } ?>
+								
+								
+<?php if($_thread['digest'] > 0) { ?>
+	<?php if($_thread['digest'] == 1) { ?>
+		<i class="icon-digest-1 icon-1x" aria-hidden="true" title="<?php echo lang('digest_1');?>"></i>
+	<?php } elseif($_thread['digest'] == 2) { ?>
+		<i class="icon-digest-2 icon-1x" aria-hidden="true" title="<?php echo lang('digest_2');?>"></i>
+	<?php } elseif($_thread['digest'] == 3) { ?>
+		<i class="icon-digest-3 icon-1x" aria-hidden="true" title="<?php echo lang('digest_3');?>"></i>
+	<?php } ?>
+<?php } ?>
+
+								
+								<?php if($_thread['closed'] > 0) { ?><i class="icon-lock"></i><?php } ?>
+								
+							</div>
+							<div class="row small justify-content-between m-0">
+								<div>
+									<a href="<?php echo url("user-$_thread[uid]");?>" class="username text-grey mr-xs"><?php echo $_thread['username'];?></a>
+									<span class="date text-grey"><?php echo $_thread['create_date_fmt'];?></span>
+									
+									
+									
+									<?php if($_thread['lastuid']) { ?>
+									<span>
+										<span class="text-grey mx-1">←</span>
+										<a href="<?php echo url("user-$_thread[lastuid]");?>" class="username text-grey mr-1"><?php echo $_thread['lastusername'];?></a>
+										<span class="text-grey"><?php echo $_thread['last_date_fmt'];?></span>
+									</span>
+									<?php } ?>
+									
+									
+									 
+								</div>
+								<div class="text-right text-grey">
+									
+									<span class="ml-2"><i class="icon-eye"></i> <?php echo $_thread['views'];?></span>
+									<span class="ml-2"><i class="icon-comment"></i> <?php echo $_thread['posts'];?></span>
+									
+								</div>
+							</div>
+						</td>
+						
+					</tr>
+					<?php }} else { ?>
+					<tr>
+						<td colspan="3"><?php echo lang('none');?></td>
+					</tr>
+					<?php } ?>
+					
