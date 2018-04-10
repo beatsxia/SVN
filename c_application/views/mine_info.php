@@ -250,7 +250,7 @@ $(function() {
     	                            var $this = $(this);
     	                            var href = $(this).attr("href");
 		                            $this.click(function(){
-			                            window.location = ""+href ;
+			                            window.location = "root_new_set?inh_id="+href ;
 		                            });
                                 });
                                 $(".info_words").each(function(){
