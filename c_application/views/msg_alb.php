@@ -399,7 +399,7 @@
 				var img = document.getElementById("preview");
 				//图片路径设置为读取的图片
 				img.src = e.target.result;
-				$("#pic_data").val(e.target.result)
+//				$("#pic_data").val(e.target.result)
 			};
 			reader.readAsDataURL(file);
 			$(".msg_pic").css("background","white");

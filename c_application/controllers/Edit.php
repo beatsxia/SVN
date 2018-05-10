@@ -81,7 +81,7 @@ class Edit extends CI_Controller {
                 }
                 if($this->user_model->update_info('cc_inherit_content',$content_date,"id = $inherit_content_id")){
                     //修改成功。跳转
-                    redirect('show_article?inh_id='.$inherit_id);
+                    redirect('show_content?cid='.$inherit_content_id);
                 }
             }
         }

@@ -10,8 +10,20 @@ class Weixin extends CI_Controller {
         $this->load->model('user_model');
         
         $this->ci_wechat->valid();
-        $sceneid = $this->ci_wechat->getRev()->getRevSceneId();
-        $this->ci_wechat->sendCustomMessage($data);
+        $getRev= $this->ci_wechat->getRev();
+        $sceneid = $getRev->getRevSceneId();
+        $Event = $getRev->getRevEvent();
+        if(!empty($Event)){
+            if($Event['event'] == 'subscribe'){
+                $open_id = $getRev->getRevFrom();
+                //$msg = array('touser' => $open_id, 'msgtype' => 'mpnews', 'mpnews' => array('media_id' => '4wVmBlgZnnbH9CQSOav6Sad0ZVAlwAGujpAe_f6lh1M'));
+//                 $msg = array('touser' => $open_id, 'msgtype' => 'text', 'text' => array('content' => '您好，欢迎来到传承碑！现代物理学中，平行世界或许真的存在，人的灵魂亦存在于此。我们对过往人和事的深切思念与追忆的状态就像量子纠缠，随之亦存在路径，传递与表达着我们的信仰。通过无处不在的网络，实现与平行世界的灵魂共振，这便是永恒，这便是传承碑。
+
+// 请打开传承碑，写下传记，开启您和您家族历史的传承之旅吧！'));
+                $msg = array('touser' => $open_id, 'msgtype' => 'image', 'image' => array('media_id' => '4wVmBlgZnnbH9CQSOav6SSn7JWB9w1YpPdMKnVNubGw'));
+                $this->ci_wechat->sendCustomMessage($msg);//发信息给用户
+            }
+        }
         if(!empty($sceneid)){//如果检测到sceneid
             $ms_type = substr($sceneid,0,2);
             $sceneid_num = substr($sceneid,2);
@@ -59,7 +71,7 @@ class Weixin extends CI_Controller {
                     if(empty($inherit_power_id)){//如果权限表不存在记录
                         //将user_id 和 传记ID 插入 传记权限表
                         $note = '扫描二维码加入';
-                        $stele_connect_date = array('user_id' => $user_id, 'stele_id' => $sceneid_num, 'time' => $add_time, 'free_gift_time' => $add_time, 'note' => $note);
+                        $stele_connect_date = array('user_id' => $user_id, 'stele_id' => $sceneid_num, 'time' => $add_time, 'free_gift_time' => $add_time-8*3600, 'note' => $note);
                         if($this->user_model->insert_stele_connect($stele_connect_date)){//如果插入成功
                             $content = "用户：".$this->user_model->select_info('cc_user', 'nickname', array('open_id' => $open_id))." 通过扫描二维码加入您的《".$this->user_model->select_info('cc_stele', 'title', array('id' => $sceneid_num))."》传承碑。";
                             $data = array('touser' => $get_user_open_id['open_id'], 'msgtype' => 'text', 'text' => array('content' => $content));

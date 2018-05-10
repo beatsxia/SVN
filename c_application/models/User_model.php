@@ -650,7 +650,7 @@ class User_model extends CI_Model {
     //获取传承碑内容
     public function get_stele($stele_id)
     {
-        $this->db->select('id,title,my_words,synopsis,inh_id,picture');
+        $this->db->select('id,title,sex,my_words,synopsis,birthday_time,death_time,inh_id,picture');
         $this->db->from('cc_stele');
         $this->db->where('id',$stele_id);
         $this->db->where('is_del','0');
@@ -1024,5 +1024,6 @@ class User_model extends CI_Model {
         }
         return FALSE;
     }
+    
 }
 ?>

@@ -40,7 +40,7 @@
 		.stele_header {
 			background-color: #FFE8BC;
 			position: absolute;
-			top: 0;
+			bottom: 0;
 			width: 100%;
 			overflow: hidden;
 			padding: 3px 0;
@@ -66,19 +66,23 @@
 		
 		.user_info {
 			position: absolute;
-			top: 8.26667%;
-			left: 6.63507%;
-			width: 23.22275%;
+			/*top: 8.26667%;*/
+			top: 17.5%;
+			/*left: 6.63507%;*/
+			/*width: 23.22275%;*/
+			width: 11%;
+			right: 5.6872%;
 			background: #FFE8BB;
-			overflow: hidden;
+			/*overflow: hidden;*/
 		}
 		
 		.userhead {
-			width: 51.02041%;
+			/*width: 51.02041%;*/
+			width: 96%;
 			background: #FFFFFF;
 			text-align: center;
 			border: 1px black solid;
-			float: left;
+			/*float: left;*/
 		}
 		
 		.userhead img {
@@ -87,9 +91,11 @@
 		}
 		
 		.user_level {
-			width: 21.42857%;
-			margin-left: 11.77551%;
-			float: left;
+			/*width: 21.42857%;
+			margin-left: 11.77551%;*/
+			width: 42%;
+			margin-left: 29%;
+			/*float: left;*/
 		}
 		
 		.user_level img {
@@ -103,12 +109,14 @@
 		.stele_navbar_left {
 			overflow: hidden;
 			position: absolute;
-			top: 8.26667%;
+			/*top: 8.26667%;*/
+			/*top: 33.6%;*/
+			top: 18%;
 			right: 5.6872%;
 			width: 10.9005%;
 		}
 		
-		.stele_navbar_left img {
+		.navbar4,.navbar5{
 			width: 100%;
 			float: left;
 			margin-bottom: 31.95252%;
@@ -131,25 +139,44 @@
 		.inheritor_info {
 			position: absolute;
 			width: 100%;
-			top: 26.66667%;
+			/*top: 26.66667%;*/
+			top: 20%;
 			text-align: center;
+			z-index: -1;
 		}
 		
 		.inheritor_head {
-			width: 14.45498%;
-			margin-left: 42.77251%;
+			/*width: 14.45498%;*/
+			width: 28%;
+			margin-left: 36%;
+			/*margin-left: 42.77251%;*/
 			height: 0;
-			padding-bottom: 16.11374%;
+			padding-bottom: 28%;
+			/*padding-bottom: 16.11374%;*/
 			overflow: hidden;
-			box-shadow: 2px 2px 5px #888888;
+			box-shadow: 1px 1px 5px #888888;
+			/*box-shadow: 2px 2px 5px #888888;*/
 			text-align: center;
+			border-radius: 50%;
 		}
+		
+		/*.inheritor_head img{
+			width: 100%;
+		}*/
 		
 		.inheritor_name {
 			text-align: center;
-			font-size: 14px;
+			font-size: 16px;
 			letter-spacing: 0.8px;
 			margin-top: 6px;
+		}
+		.inheritor_name strong,.inheritor_name img{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.inheritor_name img{
+			width: 4%;
+			margin-left: 1%;
 		}
 		/*.inheritor_info end*/
 		
@@ -260,7 +287,7 @@
 		
 		.stele_navbar_footer {
 			position: absolute;
-			bottom: 2.93333%;
+			bottom: 4.6%;
 			width: 100%;
 			z-index: 2;
 		}
@@ -278,7 +305,7 @@
 		.pillar_right {
 			position: absolute;
 			width: 4.5%;
-			bottom: 8.45%;
+			bottom: 9.45%;
 			right: 30%;
 			z-index: 1;
 		}
@@ -291,7 +318,7 @@
 		.pillar_left {
 			position: absolute;
 			width: 4.5%;
-			bottom: 9.3%;
+			bottom: 10.3%;
 			left: 27.725%;
 			z-index: 1;
 		}
@@ -756,26 +783,30 @@ li {
 			<span>动态：</span>
 			<marquee loop="-1" scrolldelay="100" direction="left"><?php foreach ($give_list_3 as $item): echo $item['nickname'].$item['gift_action'].$item['gift_count'].$item['gift_unit'].$item['name'].'&nbsp;&nbsp;'; endforeach;?></marquee>
 		</div>
-		<div class="user_info">
+		
+		<div class="stele_navbar_left">
+			<img src="<?=$inc_url?>img/navbar4.png" class="navbar4" />
+			<img src="<?=$inc_url?>img/navbar5.png" class="navbar5" />
+			
+		</div>
+		<!--<div class="user_info">
 			<div class="userhead">
 				<img href="identify?s=<?=$stele_id?>" src="<?=$stele_info['picture']?>" />
 			</div>
 			<div class="user_level">
 				<img href="identify?s=<?=$stele_id?>" src="<?=$inc_url?>img/noLevel.png" />
 			</div>
-		</div>
-		<div class="stele_navbar_left">
-			<img src="<?=$inc_url?>img/navbar4.png" class="navbar4" />
-			<img src="<?=$inc_url?>img/navbar5.png" class="navbar5" />
-		</div>
+		</div>-->
+		
 		<div class="paopao">
 			<img src="<?=$inc_url?>img/paopao.png" />
 		</div>
 		<div class="inheritor_info">
 			<div class="inheritor_head">
 				<img src="<?=$stele_info['picture']?>" />
+				<!--<img src="<?=$inc_url?>img/123.jpg" />-->
 			</div>
-			<p class="inheritor_name"><strong><?=$stele_info['title']?></strong></p>
+			<p class="inheritor_name"><strong><?=$stele_info['title']?></strong><img href="identify?s=<?=$stele_id?>" src="<?=$inc_url?>img/noLevel.png" /></p>
 		</div>
 		<div class="insence_burner">
 			<img src="<?=$inc_url?>img/incense_burner.png" />
@@ -956,6 +987,12 @@ window.onload = function() {
 	}
 }
      
+     
+            if($(".inheritor_head img").width()>$(".inheritor_head img").height()){
+            	$(".inheritor_head img").height($(".inheritor_head").width());
+            }else{
+            	$(".inheritor_head img").css("width","100%");
+            }
             
             
             
@@ -1039,7 +1076,7 @@ $(".delete").click(function(){
 		
 		
 		
-		$(".userhead img").click(function(){
+		$(".inheritor_head img").click(function(){
 			window.location = "identify?s=<?=$stele_id?>";
 		});
 		
@@ -1066,8 +1103,8 @@ $(".delete").click(function(){
 		$(".userhead img").height(uhw - 6);
 		$(".userhead img").width(uhw - 6);
 
-		var ihthpb = $(".inheritor_head").css("padding-bottom");
-		$(".inheritor_head img").css("height", ihthpb)
+//		var ihthpb = $(".inheritor_head").css("padding-bottom");
+//		$(".inheritor_head img").css("height", ihthpb)
 
 		var ltiw = $(".list_logo img").height();
 		var bot = ltiw + 10;

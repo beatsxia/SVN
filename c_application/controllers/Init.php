@@ -148,7 +148,6 @@ class Init extends CI_Controller {
             redirect('WechatOauthLogin');exit();
         }
         $comment_data = array();
-        sleep(1);
         if($this->input->post()){
             $page = intval($this->input->post('page'));
             $uid = $_SESSION['uid'];
@@ -569,6 +568,193 @@ class Init extends CI_Controller {
         }
         
     }
+
+    //七牛token
+    public function qiniu_token()
+    {
+        //if($_SESSION['uid']){
+            //引入模块文件 user_model.php
+            $this->load->model('user_model');
+            //获取图片空间url
+            $img_url = $this->user_model->get_picture_space_info('img_url');
+            $accessKey = $this->user_model->get_picture_space_info('accessKey');
+            $secretKey = $this->user_model->get_picture_space_info('secretKey');
+            $img_name = $this->user_model->get_picture_space_info('img_name');
+
+            //引入上传类库
+            require_once('include/qiniu/autoload.php');
+            $this->load->helper('qiniu_token');
+            $policy = array(
+                'callbackUrl' => 'http://owobcs29b.bkt.clouddn.com/',
+                'callbackBody' => json_encode(array("state"=>"SUCCESS","url"=>"$(key)")),
+                'callbackBodyType' => 'application/json'
+            );
+            $token = qiniu_token($accessKey,$secretKey,$img_name,$policy);
+            echo json_encode(array('token' => $token));
+        //}
+    }
+
+    //identify页面 修改已有关联传记
+    public function identify_update_inh_id($stele='0',$inh_id='0')
+    {
+        if($_SESSION['uid']){
+            //引入模块文件 user_model.php
+            $this->load->model('user_model');
+            $stele_id = $this->input->post('stele_id',true);
+            $inh_id = $this->input->post('inh_id',true);
+            if(isset($stele_id)&&is_numeric($stele_id)&&!strpos($stele_id, '.')&&$stele_id!='0') {
+                if(isset($inh_id)&&is_numeric($inh_id)&&!strpos($inh_id, '.')&&$inh_id!='0') {
+                    $this->load->library('CI_Decide');
+                    $power = $this->ci_decide->decide_stele($_SESSION['uid'],$stele_id);
+                    if($power=='1'){
+                        $this->db->trans_start();
+                        $this->user_model->update_info('cc_inherit', array('stele_id' => '0'), array('stele_id' => $stele_id));//修改传记对应的关联传承碑为0
+                        $this->user_model->update_info('cc_stele', array('inh_id' => $inh_id), array('id' => $stele_id));
+                        $this->user_model->update_info('cc_inherit', array('stele_id' => $stele_id), array('id' => $inh_id));
+                        $this->db->trans_complete();
+                        if ($this->db->trans_status() === FALSE){
+                            echo json_encode(array('code' => '0','hint' => '修改失败'));exit();
+                        }else{
+                            echo json_encode(array('code' => '1','hint' => '修改成功'));
+                        }
+                    }else{
+                        echo json_encode(array('code' => '0','hint' => '修改失败'));
+                    }
+                }
+            }else{
+                echo json_encode(array('code' => '0','hint' => '修改失败'));
+            }
+        }
+    }
+
+    public function update()
+    {
+        if(!empty($_SESSION['uid'])){
+            $type = trim($this->input->post('type',true));
+            $value = trim($this->input->post('value',true));
+            $content = trim($this->input->post('content',true));
+            if(!preg_match("/[\'.,:;*?~`!@#$%^&+=)(<>{}]|\]|\[|\/|\\\|\"|\|/",$content)&&!empty($content)){
+                if (isset($value)&&is_numeric($value)&&!strpos($value, '.')&&$value!='0') {
+                    $value = intval($value);
+                    switch ($type) {
+                        //identify页面修改姓名
+                        case 'identify_name':
+                            $this->load->library('CI_Decide');
+                            $power = $this->ci_decide->decide_stele($_SESSION['uid'],$value);    
+                            if($power=='1'){
+                                if($this->db->update('cc_stele', array('title' => $content) ,array('id' => $value))){
+                                    echo json_encode(array('code' => '1','hint' => '修改成功','content' => $content));
+                                }else{
+                                    echo json_encode(array('code' => '0','hint' => '修改失败','content' => ''));
+                                }
+                            }else{
+                                echo json_encode(array('code' => '0','hint' => '只有创建人能修改','content' => ''));
+                            }
+                            break;
+                        //identify页面修改性别
+                        case 'identify_sex':
+                            $this->load->library('CI_Decide');
+                            $power = $this->ci_decide->decide_stele($_SESSION['uid'],$value);    
+                            if($power=='1'){
+                                if($this->db->update('cc_stele', array('sex' => $content) ,array('id' => $value))){
+                                    echo json_encode(array('code' => '1','hint' => '修改成功','content' => $content));
+                                }else{
+                                    echo json_encode(array('code' => '0','hint' => '修改失败','content' => ''));
+                                }
+                            }else{
+                                echo json_encode(array('code' => '0','hint' => '只有创建人能修改','content' => ''));
+                            }
+                            break;
+                        
+                        //identify页面修改头像
+                        case 'identify_head':
+                            $this->load->library('CI_Decide');
+                            $power = $this->ci_decide->decide_stele($_SESSION['uid'],$value);    
+                            if($power=='1'){
+                                
+                                if($this->db->update('cc_stele', array('picture' => $content) ,array('id' => $value))){
+                                    echo json_encode(array('code' => '1','hint' => '修改成功','content' => $content));
+                                }else{
+                                    echo json_encode(array('code' => '0','hint' => '修改失败','content' => ''));
+                                }
+                            }else{
+                                echo json_encode(array('code' => '0','hint' => '只有创建人能修改','content' => ''));
+                            }
+                            break;
+
+                        //identify页面修改出生时间
+                        case 'identify_birthday':
+                            $this->load->library('CI_Decide');
+                            $power = $this->ci_decide->decide_stele($_SESSION['uid'],$value);    
+                            if($power=='1'){
+                                if($this->db->update('cc_stele', array('birthday_time' => $content) ,array('id' => $value))){
+                                    echo json_encode(array('code' => '1','hint' => '修改成功','content' => $content));
+                                }else{
+                                    echo json_encode(array('code' => '0','hint' => '修改失败','content' => ''));
+                                }
+                            }else{
+                                echo json_encode(array('code' => '0','hint' => '只有创建人能修改','content' => ''));
+                            }
+                            break;
+
+                        //identify页面修改死亡时间
+                        case 'identify_death':
+                            $this->load->library('CI_Decide');
+                            $power = $this->ci_decide->decide_stele($_SESSION['uid'],$value);    
+                            if($power=='1'){
+                                if($this->db->update('cc_stele', array('death_time' => $content) ,array('id' => $value))){
+                                    echo json_encode(array('code' => '1','hint' => '修改成功','content' => $content));
+                                }else{
+                                    echo json_encode(array('code' => '0','hint' => '修改失败','content' => ''));
+                                }
+                            }else{
+                                echo json_encode(array('code' => '0','hint' => '只有创建人能修改','content' => ''));
+                            }
+                            break;
+
+                        default:
+                            echo json_encode(array('code' => '0','hint' => '修改失败','content' => ''));
+                            break;
+                    }
+                }
+            }else{
+                echo json_encode(array('code' => '0','hint' => '不能包含点号等特殊字符','content' => ''));
+            }
+            
+        }
+    }
+
+    //获取更多传承碑
+    public function getMoreStele()
+    {  
+        if(empty($_SESSION['uid'])){
+            redirect('WechatOauthLogin');exit();
+        }
+        $data = array();
+        $result_data =array();
+        if($this->input->post()){
+            $page = intval($this->input->post('page'));
+            $user_id = $_SESSION['uid'];
+            if(is_int($page) && $page > 0){
+                $limit = 10;//数据的条数
+                $offset = ($page - 1) * 10;
+                $this->db->select("id,title,synopsis,picture,case when user_id = '$user_id' then '1' else '2' end as code");//判断是否为创建人，是则code为1，否则code为2
+                $this->db->from('cc_stele');
+                $this->db->where('is_del','0');
+                $where = "(is_ste_open = 1 OR id in (select stele_id from ci_cc_stele_connect where user_id = '$user_id'))";
+                $this->db->where($where);
+                $this->db->order_by('is_hot', 'DESC');
+                $this->db->order_by('add_time', 'DESC');
+                $this->db->limit($limit, $offset);
+                $query = $this->db->get();
+                $data = $query -> result_array();
+                $result_data = array('page' => $page, 'content' => $data);
+            }
+        }
+        header('Content-Type:application/json; charset=utf-8');
+        echo json_encode($result_data,JSON_UNESCAPED_UNICODE);
+    }
+    
 
 }
 ?>

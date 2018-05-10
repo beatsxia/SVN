@@ -36,10 +36,15 @@
 			<!--tab-content-->
 		</div>
 		
+		<div class="new_send">
+			新建传记
+		</div>
+		
 		<div class="dynamics">
 			<span class="root_dynamics">传承碑动态</span>
 			<span class="all_dynamics">查看全部动态</span>
 		</div>
+		
 		
 		<div class="biography_info">
 			<?php foreach ($rolling_content_arr as $item): ?>
@@ -57,12 +62,9 @@
 			</div>
 			<?php endforeach; ?>
 		</div>
-		<div class="new_send navbar navbar-fixed-bottom">
-			新建传记
-		</div>
 		
 		
-		<div style="width: 100%;height: 100px;"></div>
+		<div class="bottom" style="width: 100%;height: 50px;"></div>
 	</body>
 
 	<script type="text/javascript" src="<?php echo $inc_url; ?>js/jquery-2.1.1.min.js"></script>

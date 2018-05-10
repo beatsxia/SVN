@@ -75,7 +75,7 @@ class New_heritage extends CI_Controller {
           
                 //我们给每个用户动态的创建一个文件夹  
                 //$user_path = $_SERVER['DOCUMENT_ROOT']."/studyphp/file/up/".$username;  
-                $user_path = 'img/heritage/'.$username.'/';
+                $user_path = 'img/stele/picture/'.$username.'/';
                 //判断该用户文件夹是否已经有这个文件夹  
                 if(!file_exists($user_path)) {  
                     mkdir($user_path);  

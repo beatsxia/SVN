@@ -44,8 +44,8 @@
 	<script type="text/javascript" src="<?=$inc_url?>js/jquery-2.2.3.min.js"></script>
 	<script>
 	    $(function(){
-	    	$(".edit span").click(function(){
-	    		var href = $(".edit").attr("href");
+	    	$(".edit").click(function(){
+	    		var href = $(this).attr("href");
 	    		window.location="edit?id="+href;
 	    	});
 	    	

@@ -8,33 +8,36 @@
 	<link rel="stylesheet" href="<?=$inc_url?>css/new_heritage.css" />
 	
 	<body>
-		<?php echo form_open_multipart('new_heritage/new_heritage',array('name' => 'myForm', 'onsubmit' => 'return check()'));?>
+		<?php echo form_open_multipart('identify/edit',array('name' => 'myForm', 'onsubmit' => 'return check()'));?>
+			<input type="hidden" name="stele_id" value="<?=$stele['id']?>" />
 			<div class="top_bg"></div>
 			<div class="nickname">
-				<span>被纪念人姓名</span>
-				<div style="float: right;width: 60%;"><input type="text" name="nickname" value="" max="16" /></div>
+				<span>姓名</span>
+				<div style="float: right;width: 82%;"><input type="text" name="nickname" value="<?=$stele['title']?>" max="16" /></div>
 			</div>
 			<div class="intro_yourself">
-				<span>个人介绍（年谱）</span>
-				<div style="float: right;width: 60%;">
-					<input type="text" name="intro_yourself" value="" />
+				<span>个人年谱</span>
+				<div style="float: right;width: 80%;">
+					<input type="text" name="intro_yourself" value="<?=$stele['synopsis']?>" />
 				</div>
 			</div>
 			<div class="cover_pic">
 				<span>头像</span>
-				<div id="photo_cover_bg"></div>
+				<div id="photo_cover_bg">
+					<img src="<?=$stele['picture']?>" class="imgs" width="40" height="40" />
+				</div>
 				<div id="inputFile">
 					<input type="file" id="myFile0" name="userhead" style="display: none;" />
 				</div>
 			</div>
 			<div class="write_date">
-				<span>生平</span>
+				<span>出生日</span>
 				<div>
-					<input type="text" name="birthday" placeholder="出生日" value="" />
+					<input type="text" name="birthday" value="<?=$stele['birthday_time']?>" />
 				</div>
-				<span>—</span>
+				<span>逝世日</span>
 				<div>
-					<input type="text" name="day_of_death" placeholder="逝世日" value="" />
+					<input type="text" name="day_of_death" value="<?=$stele['death_time']?>" />
 				</div>
 				<span style="color: #D7D7D7;">(可不填)</span>
 			</div>
@@ -42,7 +45,11 @@
 				<span>关联传记</span>
 				<div style="float: right;width: 50%;">
 				    <select dir="rtl" class="inh_select" name="link_inh_id">
-					    <option value="">请选择</option>
+				    	<?php if($stele['inh_id']!='0'){?>
+							<option value="<?=$stele_link_inh['id']?>"><?=$stele_link_inh['title']?></option>
+				    	<?php }else{?>
+					    	<option value="">请选择</option>
+					    <?php }?>
 				    </select>
 				</div>
 			</div>
@@ -81,7 +88,7 @@
 					    <div class="recom_pho canclic">
 						    <img src="<?=$inc_url?>img/inh_mmt_bg.jpg" />
 					    	<input type="hidden" class="bg_val" value="kongzi" />
-						    <span><input type="radio" value="kongzi" name="myTemplate" style="display: none;"  /></span>
+						    <span><input type="radio" value="kongzi" name="myTemplate"  style="display: none;"  /></span>
 						    <img src="<?=$inc_url?>img/no.png"  />
 					    </div>
 					    <p>碑<img src="<?=$inc_url?>img/free_logo.png" /></p>
@@ -159,11 +166,11 @@
 				alert("请上传头像！");
 				return false;
 			}
-//			if(myForm.birthday.value==''){
-//				alert("请输入出生日！");
-//				myForm.birthday.focus();
-//				return false;
-//			}
+			if(myForm.birthday.value==''){
+				alert("请输入出生日！");
+				myForm.birthday.focus();
+				return false;
+			}
 //			if($(".xianghuo").children("span").html()==''&&$(".send_flower").children("span").html()==''){
 //				alert("请选择上香/送花");
 //				return false;
@@ -206,7 +213,7 @@
 		});
 		var tn = new Date();
 		$.ajax({
-　　        url:"init/inh_select",
+　　        url:"<?=base_url()?>index.php/init/inh_select",
 　　           type:"post",
 　　           data: {
 						now_time : tn

@@ -94,6 +94,17 @@ class Ste_ercode extends CI_Controller {
         $filename = $stele_id.'_'.$current_time.strrchr($stele_picture, '.');
         $avatar = getImage($stele_picture,$save_dir,$filename);//存储头像
         
+        //对头像进行调整PX
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $save_dir.$filename;
+        $config['maintain_ratio'] = TRUE;
+        $config['width']     = 200;
+        $config['height']   = 200;
+        $config['new_image'] = $save_dir.$filename;
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();
+        $this->image_lib->clear();//重置所有之前用于处理图片的值
+
         //对传承碑头像进行圆边处理
         //header("content-type:image/png");
         $round_head = yuan_img($save_dir.$filename);
