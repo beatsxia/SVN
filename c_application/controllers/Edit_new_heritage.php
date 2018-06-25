@@ -249,7 +249,7 @@ class Edit_new_heritage extends CI_Controller {
                                 if($power=='1'){
                                     $this->user_model->update_info('cc_inherit', array('stele_id' => '0'), array('stele_id' => $stele_id));//修改传记对应的关联传承碑为0
                                     $this->user_model->update_info('cc_stele', array('inh_id' => $inherit_id), array('id' => $stele_id));
-                                    $this->user_model->update_info('cc_inherit', array('stele_id' => $stele_id), array('id' => $inh_id));
+                                    $this->user_model->update_info('cc_inherit', array('stele_id' => $stele_id), array('id' => $inherit_id));
                                 }
                             }
                             //修改关联传承碑结束

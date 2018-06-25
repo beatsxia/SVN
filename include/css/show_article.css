@@ -46,9 +46,12 @@ a{
 .edit {
 	color: #939193;
 	font-size: 12px;
-	width: 100%;
+	width: 94%;
+	margin-left: 3%;
 	text-align: right;
 	cursor: pointer;
+	position: absolute;
+    top: 3%;
 }
 
 .edit img {

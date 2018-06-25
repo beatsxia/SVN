@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>評論</title>
+		<title>评论</title>
 	</head>
 	
 	<link rel="stylesheet" href="<?php echo $inc_url;?>css/comment.css" />

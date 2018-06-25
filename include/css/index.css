@@ -38,7 +38,9 @@ a:hover{
 	max-width: 90%;
 	margin: 0 auto;
 	overflow: hidden;
-	line-height: 46px;
+	/*line-height: 46px;*/
+	margin-top: 8px;
+	margin-bottom: 15px;
 }
 .root_dynamics{
 	float: left;
@@ -123,8 +125,9 @@ a:hover{
 	font-size: 15px;
 	color: #65282A;
 	cursor: pointer;
-	bottom: 50px !important;
-	border: none !important;
+	/*bottom: 50px !important;
+	border: none !important;*/
 	min-height: 39px !important;
 	line-height: 35px;
+	margin-top: 10px;
 }

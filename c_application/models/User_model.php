@@ -727,7 +727,7 @@ class User_model extends CI_Model {
         return FALSE;
     }
 
-    //获取传承碑列表
+    //获取传承碑列表（heritage_monument页面）
     public function get_stele_list($page,$user_id)
     {   
        if ( is_int($page) && $page > 0) {
@@ -748,6 +748,28 @@ class User_model extends CI_Model {
         $query = $this->db->get();
         return $query -> result_array();
     }
+
+    //获取自己的传承碑（个人中心页面）
+    public function get_my_stele_list($page,$user_id,$limit)
+    {
+        if ( is_int($page) && $page > 0) {
+            $page = $page;
+        }else{
+            $page = 1;
+        }
+        $offset = ($page - 1) * 10;
+        $limit = isset($limit) ? intval($limit) : 10;//每次select 行数
+        $this->db->select("id,title,synopsis,picture,case when user_id = '$user_id' then '1' else '2' end as code");//判断是否为创建人，是则code为1，否则code为2
+        $this->db->from('cc_stele');
+        $where = "id in (select stele_id from ci_cc_stele_connect where user_id = '$user_id')";
+        $this->db->where($where);
+        $this->db->where('is_del','0');
+        $this->db->order_by('add_time', 'DESC');
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get();
+        return $query -> result_array();
+    }
+
 
     //获取个人留言
     public function get_stele_note($stele_id,$user_id)
@@ -1023,6 +1045,21 @@ class User_model extends CI_Model {
             return $this->db->insert_id();
         }
         return FALSE;
+    }
+
+    //通过激活码查询该激活卡的信息
+    public function select_stele_card($card='',$is_used,$is_real,$time)
+    {
+        $this->db->select('cc_stele_card.id,cc_stele_card.no,cc_stele_card.card_type,cc_stele_card.title,cc_stele_card.start_time,cc_stele_card.end_time,cc_stele_card_type.point,cc_stele_card_type.diamond,cc_stele_card_type.power');
+        $this->db->from('cc_stele_card');
+        $this->db->join('cc_stele_card_type', 'cc_stele_card_type.card_type = cc_stele_card.card_type','left');
+        $this->db->where('cc_stele_card.card',$card);
+        $this->db->where('cc_stele_card.is_used',$is_used);
+        $this->db->where('cc_stele_card.is_real',$is_real);
+        $this->db->where('cc_stele_card.start_time <=',$time);
+        $this->db->where('cc_stele_card.end_time >=',$time);
+        $query = $this->db->get();
+        return $query -> row_array();
     }
     
 }

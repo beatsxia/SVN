@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>綁定手機</title>
+		<title>绑定手机</title>
 	</head>
 
 	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/bootstrap.min.css" />

@@ -93,6 +93,8 @@ class Init extends CI_Controller {
         $info_data =  array('avatar' => $avatar, 'nickname' => $nickname, 'personality_note' => $personality_note, 'total_inh_num' => $total_inh_num, 'access_log_num' => $access_log_num, 'user_follow_num' => $user_follow_num, 'user_fans_num' => $user_fans_num, 'comment_num' => $comment_num);
         echo json_encode($info_data);
      }
+
+
      public function getUserComment()
      {
         if(empty($_SESSION['uid'])){
@@ -288,7 +290,6 @@ class Init extends CI_Controller {
             redirect('WechatOauthLogin');exit();
         }
         if($this->input->post('page')){
-            sleep(1);
             $uid = $_SESSION['uid'];
             $page = intval($this->input->post('page'));
             if ( is_int($page) && $page > 0) {
@@ -301,7 +302,6 @@ class Init extends CI_Controller {
             $this->db->select('id,thumbnail,picture,title,synopsis,add_time');
             $this->db->from('cc_inherit');
             $this->db->where('user_id',$uid);
-            $this->db->where_in('is_open','(0,1)');
             $this->db->order_by('add_time', 'DESC');
             $this->db->limit($limit, $offset);
             $query = $this->db->get();
@@ -317,14 +317,18 @@ class Init extends CI_Controller {
                     }else{
                         $pic1 = '';
                     }
-                    $pattern = "/<img\s([\s\S]*?)>([\s\S]*?)/i";
-                    $inh_stage = preg_replace($pattern, '\\2', $inh_content);
+                    $inh_content = htmlspecialchars_decode($inh_content);//把一些预定义的 HTML 实体转换为字符
+                    $inh_content = str_replace("&nbsp;","",$inh_content);//将空格替换成空
+                    $inh_content = strip_tags($inh_content);//函数剥去字符串中的 HTML、XML 以及 PHP 的标签,获取纯文本内容
+                    $inh_stage = mb_substr($inh_content, 0, 60,"utf-8");//返回字符串中的前100字符串长度的字符
 
                 }else{
                     if(empty($value['synopsis'])){
                         $inh_content = $this->user_model->get_inherit_contents_str($value['id']);
-                        $pattern = "/<img\s([\s\S]*?)>([\s\S]*?)/i";
-                        $inh_stage = preg_replace($pattern, '\\2', $inh_content);
+                        $inh_content = htmlspecialchars_decode($inh_content);//把一些预定义的 HTML 实体转换为字符
+                        $inh_content = str_replace("&nbsp;","",$inh_content);//将空格替换成空
+                        $inh_content = strip_tags($inh_content);//函数剥去字符串中的 HTML、XML 以及 PHP 的标签,获取纯文本内容
+                        $inh_stage = mb_substr($inh_content, 0, 60,"utf-8");//返回字符串中的前100字符串长度的字符
                     }
                     $pic1 = !empty($value['thumbnail']) ? $value['thumbnail'] : $value['picture'];
                 }
@@ -333,9 +337,33 @@ class Init extends CI_Controller {
                 $value['inh_stage'] = $inh_stage;
                 $inherit_arr[] = $value;
             }
-            echo json_encode($inherit_arr);
+            header('Content-Type:application/json; charset=utf-8');
+            echo json_encode($inherit_arr,JSON_UNESCAPED_UNICODE);
+
         }
 
+    }
+
+    //下拉获取用户传承碑  my_inher_monument页面
+    public function getMyMonument()
+    {
+        $this->load->model('user_model');
+        if(empty($_SESSION['uid'])){
+            redirect('WechatOauthLogin');exit();
+        }
+        if($this->input->post('page')){
+            $uid = $_SESSION['uid'];
+            $page = intval($this->input->post('page'));
+            if(is_int($page)){
+                $result_data = $this->user_model->get_my_stele_list($page,$uid,10);
+            }else{
+                $result_data = array();
+            }
+            
+            header('Content-Type:application/json; charset=utf-8');
+            echo json_encode($result_data,JSON_UNESCAPED_UNICODE);
+
+        }   
     }
 
     public function quit()
@@ -755,6 +783,25 @@ class Init extends CI_Controller {
         echo json_encode($result_data,JSON_UNESCAPED_UNICODE);
     }
     
+
+    // //生成传承碑激活码
+    // public function card()
+    // {
+    //     $this->load->helper('password');
+    //     $a = array();
+    //     $code = new Code();
+    //     for ($i=10001; $i < 11001; $i++) { 
+    //         $card_no = $code->encodeID($i,3);
+    //         $m = md5($i.$card_no);
+    //         $card_vc = substr($m,0,3); 
+    //         $card_vc = strtoupper($card_vc);
+    //         $card_vd = substr($m,-2);
+    //         $card_vd = strtoupper($card_vd);
+    //         $time = time();
+    //         $a[] = array('no' => $i, 'card_type' => 'stele', 'title' => 'VIP激活卡', 'sub_title' => '', 'description' => '所有字母必须大写', 'card' => $card_vc.$card_no.$card_vd, 'time' => $time, 'used_time' => '', 'start_time' => '1527609652', 'end_time' => '1543507252', 'is_used' => '0', 'is_real' => '1', 'user_id' => '');
+    //     }
+    //     $this->db->insert_batch('cc_stele_card',$a);
+    // }
 
 }
 ?>

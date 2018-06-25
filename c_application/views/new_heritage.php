@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>新建傳承碑</title>
+		<title>新建传承碑</title>
 	</head>
 	
 	<link rel="stylesheet" href="<?=$inc_url?>css/new_heritage.css" />
@@ -11,12 +11,25 @@
 		<?php echo form_open_multipart('new_heritage/new_heritage',array('name' => 'myForm', 'onsubmit' => 'return check()'));?>
 			<div class="top_bg"></div>
 			<div class="nickname">
+				<span style="color: #B70000;">*</span>
 				<span>被纪念人姓名</span>
 				<div style="float: right;width: 60%;"><input type="text" name="nickname" value="" max="16" /></div>
 			</div>
+			<div class="sex">
+				<span style="color: #B70000;">*</span>
+				<span>性别</span>
+				<div style="float: right;width: 60%;text-align: right;">
+				    <select name="sex" style="border: 0;outline: none;text-align-last:right;-webkit-appearance:none;appearance:none;">
+					    <option value="">请选择</option>
+					    <option value="1">男</option>
+					    <option value="2">女</option>
+				    </select>
+				</div>
+			</div>
 			<div class="intro_yourself">
+				<span style="color: #B70000;">*</span>
 				<span>个人介绍（年谱）</span>
-				<div style="float: right;width: 60%;">
+				<div style="float: right;width: 58%;">
 					<input type="text" name="intro_yourself" value="" />
 				</div>
 			</div>
@@ -46,6 +59,15 @@
 				    </select>
 				</div>
 			</div>
+			<div class="vip_code">
+				<span>VIP激活码兑换<span style="color: #D7D7D7;">（没有请忽略）</span></span>
+				<div style="float: right;width: 35%;height:50px;display: flex;align-items: center;justify-content: flex-end;">
+				<!--<div style="float: right;width: 20%;height:50px;display: flex;align-items: center;justify-content: flex-end;">-->
+					<input style="width:100%;text-align:right;border: none;outline: none;" type="text" name="activation_code" id="activation_code" value="" />
+<!--//				    <img style="width: 40%;" src="<?=$inc_url?>img/goRight.png" />-->
+				</div>
+			</div>
+			<p style="color: #B70000;font-size: 12px;width: 94%;margin: 0 auto;line-height: 22px;">* 为必填</p>
 			
 			<!--<div class="anima_espe">
 				<div class="xianghuo fl_lf">
@@ -96,6 +118,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="service_agreement">
+				<input id="cbx" type="checkbox" name="checkbox" value="1" />我已阅读并同意 <a href="">《传承碑用户服务协议》</a>
+			</div>
 			<p class="subm_btn">
 				<button type="submit" class="btn">确定</button>
 			</p>
@@ -144,10 +169,15 @@
 			});
 		};
 		
+		var oCbox = document.getElementById("cbx");
 		function check(){
 			if(myForm.nickname.value==''){
 				alert("请输入姓名！");
 				myForm.nickname.focus();
+				return false;
+			}
+			if($(".sex select option:selected").val()==""){
+				alert("请输入性别！");
 				return false;
 			}
 			if(myForm.intro_yourself.value==''){
@@ -155,10 +185,37 @@
 				myForm.intro_yourself.focus();
 				return false;
 			}
-			if($("#photo_cover_bg").html()==''){
-				alert("请上传头像！");
+			if($("#activation_code").val()!=""){
+			    var activation_code = $("#activation_code").val();
+	    		$.ajax({
+	    			type:"post",
+	    			url:"activation_converbility/prove_card",
+	    			async:true,
+	    			data:{
+	    				stele_id:<?=empty($stele_id)?'0':$stele_id;?>,
+	    				activation_code:activation_code
+	    			},
+	    			success:function(data){
+	    				console.log(data);
+	    				if(data.hint=="激活码错误"){
+	    					alert(data.hint);
+	    					return false;
+	    				}
+	    				if(data.hint=="激活码正确"){
+	    					return true;
+	    				}
+	    			}
+	    		});
+			}
+			
+			if(!oCbox.checked){
+				alert("请先阅读并同意用户服务协议！")
 				return false;
 			}
+//			if($("#photo_cover_bg").html()==''){
+//				alert("请上传头像！");
+//				return false;
+//			}
 //			if(myForm.birthday.value==''){
 //				alert("请输入出生日！");
 //				myForm.birthday.focus();
@@ -193,6 +250,10 @@
 			$(".recom_pho").css({
 			    "line-height": "" + rpwth + "px"
 			});
+			
+//			$(".vip_code").click(function(){
+//				window.location="activation_converbility"
+//			});
 			
 			
 			$(".canclic").click(function(){

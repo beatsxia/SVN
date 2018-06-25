@@ -17,15 +17,205 @@
 			border: 0;
 			outline: none;
 		}
+		
+		
+		
+		
+.wrapper {
+	/*width: 350px;*/
+	width: 240px;
+	/*margin-left: 15%;*/
+	position: absolute;
+	bottom: 9%;
+}
+
+.wrapper .load-bar {
+	width: 100%;
+	height: 6px;
+	border-radius: 30px;
+	background-color: #fff;
+	position: relative;
+}
+
+.wrapper .load-bar-inner {
+	height: 99%;
+	width: 0%;
+	border-radius: inherit;
+	position: relative;
+	background-color: #E2B266;
+	/*background-color: #0096F5;*/
+	animation: loader 1s linear 1 forwards;
+	-moz-animation: loader 1s linear 1 forwards;
+	-webkit-animation: loader 1s linear 1 forwards;
+	-o-animation: loader 1s linear 1 forwards;
+}
+
+.wrapper #counter {
+	position: absolute;
+	min-width: 84px;
+	padding: 2px;
+	border-radius: 0.4em;
+	left: -25px;
+	top: -30px;
+	font-size: 12px;
+	font-weight: bold;
+	animation: counter 1s linear 1 forwards;
+	-moz-animation: counter 1s linear 1 forwards;
+	-webkit-animation: counter 1s linear 1 forwards;
+	-o-animation: counter 1s linear 1 forwards;
+	text-align: center;
+	background: #F2BD35;
+}
+
+.wrapper #counter:after {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	left: 50%;
+	margin-left: -4px;
+	bottom: -4px;
+	/*border-radius: 0 0 3px 0;*/
+	
+	background: #F2BD35;
+}
+
+@keyframes loader {
+	from {
+		width: 0%;
+	}
+	to {
+		width:8.333%;
+	}
+}
+
+@-moz-keyframes loader {
+	from {
+		width: 0%;
+	}
+	to {
+		width:8.333%;
+	}
+}
+
+@-webkit-keyframes loader {
+	from {
+		width: 0%;
+	}
+	to {
+		width:8.333%;
+	}
+}
+
+@-o-keyframes loader {
+	from {
+		width: 0%;
+	}
+	to {
+		width:8.333%;
+	}
+}
+
+@keyframes counter {
+	from {
+		left: -42px;
+	}
+	to {
+		left: -22px;
+	}
+}
+
+@-moz-keyframes counter {
+	from {
+		left: -42px;
+	}
+	to {
+		left: -22px;
+	}
+}
+
+@-webkit-keyframes counter {
+	from {
+		left: -42px;
+	}
+	to {
+		left: -22px;
+	}
+}
+
+@-o-keyframes counter {
+	from {
+		left: -42px;
+	}
+	to {
+		left: -22px;
+	}
+}
+
+.left{
+	left: 0;
+	text-align: right;
+}
+.right{
+	right: 0;
+	text-align: left;
+}
+.left,.right{
+	position: absolute;
+	bottom: 6%;
+	/*text-align: center;*/
+	font-size: 14px;
+	color: #fff;
+}
+.spirit_stone{
+	position: absolute;
+	bottom: 32%;
+	width: 100%;
+	display: flex;align-items: center;justify-content: center;
+}
+.spirit_stone img{
+	width: 25%;
+	height: auto;
+	/*background: #F2BE36;*/
+}
+.spirit_stone span{
+	font-size: 12px;
+	background: #F2BE36;
+	display: flex;align-items: center;justify-content: center;
+	border-radius: 4px;
+}
+
+
 	</style>
 
 	<body>
 		<div class="personal_header">
-			<img src="<?=$inc_url ?>img/personal_header_bg.jpg" />
+			<img style="width: 100%;display: block;" src="<?=$inc_url ?>img/personal_header_bg.jpg" />
+			<div class="spirit_stone">
+				<!--<div style="background: #F2BE36;border-radius: 4px;display: flex;align-items: center;justify-content: center;">-->
+				    <span>
+				       <img src="<?=$inc_url ?>img/spirit_stone.png" />
+				    	灵石0
+				    </span>
+				<!--</div>-->
+			</div>
+			<span class="left">0</span>
+			<div class="wrapper">
+			    <div class="load-bar">
+				    <div class="load-bar-inner" data-loading="0"> <span id="counter"></span> </div> 
+			    </div>
+		    </div>
+		    <span class="right">999</span>
 		</div>
 		<div class="user_header">
-			<img class="user_header" src="<?=$stele['picture']?>" />
+			<img class="head" src="<?=$stele['picture']?>" />
+			<img class="level" src="<?=$inc_url ?>img/oneLevel.png" />
 		</div>
+		
 		<div class="user_info">
 			<!--<div class="user_name">
 				<?=$stele['title']?>
@@ -38,7 +228,8 @@
 		</div>
 		<div class="mine_sign">
 			<img src="<?=$inc_url ?>img/revise.png" />
-			<span><?=$stele['my_words']?></span>
+			<span>编辑</span>
+			<!--<span><?=$stele['my_words']?></span>-->
 		</div>
 		<div class="usrnam">
 			<div class="fl_lf">
@@ -102,12 +293,32 @@
 				<div class="new_heri">新建传记</div>
 			</div>
 		<?php }?>
+			
+	    
+	    <div class="vip_code">
+	    	<span></span>VIP激活码兑换<strong>></strong>
+	    </div>
 	</body>
+	
 
 <!--//	<script type="text/javascript" src="<?php echo $inc_url; ?>js/calendar.js"></script>-->
 	<script type="text/javascript" src="<?php echo $inc_url; ?>js/jquery-2.1.1.min.js"></script>
 	<script>
+		var current = 0;
+		
 		$(function(){
+			$('#counter').html("灵值"+current); 
+			$(".left").css("width",(($(window).width()-240)/2)-5);
+			$(".right").css("width",(($(window).width()-240)/2)-5);
+			$(".wrapper").css("margin-left",($(window).width()-240)/2);
+			
+			$(".vip_code").click(function(){
+				window.location="activation_converbility?s=<?=$stele['id']?>"
+			});
+			
+			
+			
+			
 			$(".alr_chio").height($(".alr_chio").width()/3);
 			$(".new_bio").height($(".new_bio").width()/3);
 			$(".alr_chio").css("line-height",$(".alr_chio").height()-2+"px");
@@ -120,8 +331,8 @@
 					window.location= "root_new_set?inh_id=<?=$stele_link_inh['id']?>"
 				});
 			<?php }?>
-			$(".mine_sign img").click(function(){
-				window.location = "identify/edit_heritage/<?=$stele['id']?>"
+			$(".mine_sign").click(function(){
+				window.location = "edit_heritage?s=<?=$stele['id']?>"
 			});
 			$(".no_biogra div").height($(".choose_heri").width()*0.344);
 			$(".no_biogra div").css("line-height",$(".no_biogra div").height()-2+"px");
@@ -136,7 +347,7 @@
 				$.ajax({
 	　　        	        url:"init/inh_select",
 	　　                           type:"post",
-	　　                          data: {
+	　　          data: {
 						now_time : tn
 					},
 				    dataType: "json",

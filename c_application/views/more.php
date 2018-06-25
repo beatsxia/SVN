@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>傳承動態</title>
+		<title>传承动态</title>
 	</head>
 
 	<link rel="stylesheet" href="<?=$inc_url; ?>css/more.css" />

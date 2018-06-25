@@ -30,6 +30,7 @@
 			text-align: center;
 			color: #F1B422;
 			margin-bottom: 4%;
+			
 		}
 		
 		.not_yet {
@@ -85,9 +86,20 @@
 		.tips{
 			font-size: 12px;
 			margin-top: 1%;
+			margin-bottom: 8%;
 			text-align: center;
 			color: #a1a1a1;
 			letter-spacing: 0.8px;
+		}
+		
+		.cash_area img{
+			height: 100%;
+		}
+		.imag_{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 23%;
 		}
 	</style>
 
@@ -97,8 +109,16 @@
 			<ul class="recharge_cash">
 				<?php foreach ($recharge_goods as $key => $item): ?>
 					<li class="cash_area <?=$key%2=='0'?'fl_lf':'fl_rg';?> <?=$key=='0'?'clicked':'not_yet';?> " href = "<?=$item['id']?>">
-						<a><?=$item['shop_price']?></a><span>元</span>
-						<span class="inp_aed"><?php if($key=='0'){echo '<input type="radio" value="'.$item['id'].'" name="good_id" checked="checked" style="display: none;" />';}?></span>
+						<div class="cash">
+							<a><?=$item['shop_price']?></a><span>元</span>
+							<span class="inp_aed"><?php if($key=='0'){echo '<input type="radio" value="'.$item['id'].'" name="good_id" checked="checked" style="display:none;" />';}?></span>
+						</div>
+						<p class="imag_">
+							<img src="<?=$inc_url?>img/48.png" />
+							<!--<img src="<?=$inc_url?>img/200.png" />-->
+							<!--<img src="<?=$inc_url?>img/680.png" />-->
+							<!--<img src="<?=$inc_url?>img/1880.png" />-->
+						</p>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -114,16 +134,20 @@
 	<script>
         var checked;
 		$(function() {
-			var areWth = $(".cash_area").width() * 0.4194;
+//			var areWth = $(".cash_area").width() * 0.4194;
+			var areWth = $(".cash_area").width() * 0.5851;
 			$(".cash_area").height(areWth);
-			$(".cash_area").css({
-				"line-height": "" + areWth + "px"
+			$(".cash").css({
+				"margin-top": "" + areWth/6.5 + "px"
 			});
+//			$(".cash_area").css({
+//				"line-height": "" + areWth + "px"
+//			});
 
 			$(".cash_area").click(function() {
 				var $this = $(this);
 				var $thA = $(this).attr("href");
-				checked = $this.children(".inp_aed").empty().append(
+				checked = $this.children(".cash").children(".inp_aed").empty().append(
 					"<input type='radio' value=" + $thA + " name='good_id' checked='checked' style='display:none;' />"
 				);
 				$(this).removeClass("not_yet").addClass("clicked");
@@ -135,7 +159,7 @@
 
 			$(".recharge_record span").click(function() {
 				window.location = "recharge_record";
-			})
+			});
 
 		})
 		

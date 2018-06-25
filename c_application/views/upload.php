@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
-		<title>新建傳記</title>
+		<title>新建传记</title>
 	</head>
 
 	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/send_biography.css" />

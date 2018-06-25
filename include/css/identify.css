@@ -7,10 +7,11 @@ body {
 }
 .personal_header{
 	width: 100%;
+	position: relative;
 }
 .personal_header img{
-	width: 100%;
-	display: block;
+	/*width: 100%;
+	display: block;*/
 }
 .user_header{
 	position: absolute;
@@ -19,13 +20,20 @@ body {
 	height: 80px;
 	padding-left: 0;
 	margin-left: -40px;
-	top: 8%;
+	top: 2.5%;
+	/*top: 8%;*/
 	background-position: center center;
 }
-.user_header img{
+.head{
 	width: 80px;
 	height: 80px;
 	border-radius: 80px;
+}
+.level{
+	position: absolute;
+	right: 10%;
+	bottom: -2%;
+	width: 22%;
 }
 .user_info{
 	text-align: center;
@@ -60,14 +68,86 @@ body {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.intro_yourself,.inh_ste {
+.usrnam{
+	overflow: hidden;
+}
+.fl_lf{
+	float: left;
+}
+.fl_rg{
+	float: right;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	color: #B8B8B8;
+	margin-top: 1px;
+}
+.intro_yourself,.inh_ste,.no_biogra,.usrnam,.vip_code {
+/*.intro_yourself,.inh_ste,.no_biogra,.usrnam,.sex {*/
 	width: 100%;
 	max-width: 88%;
 	margin:  20px auto;
 	font-size: 16px;
 }
+.sex{
+	width: 100%;
+	max-width: 88%;
+	font-size: 16px;
+	margin: 0 auto;
+	/*padding: 10px 0;*/
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.float_left{
+	float: left;
+	width: 50%;
+}
+.float_left select{
+	border: 0;
+	outline: none;
+	font-size: 14px;
+	color: #B8B8B8;
+	margin-left: 5px;
+	
+	-webkit-appearance: none;   /*去除chrome浏览器的默认下拉图片*/
+	appearance: none;
+　　   -moz-appearance: none;  /*去除Firefox浏览器的默认下拉图片*/
+}
+.float_right{
+	float: right;
+	width: 50%;
+}
+.head_second{
+	float: left;
+	margin-top: 10px;
+}
+.head_second_cover{
+	width: 40px;
+	height: 40px;
+	background: #BABABA;
+	float: left;
+	border-radius: 40px;
+	margin-left: 5px;
+	position: relative;
+	overflow: hidden;
+}
+#preview{
+	width: 100%;
+	height: 100%;
+	border-radius: 40px;
+}
+#myFile{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
 
-.intro_yourself span,.inh_ste span {
+.intro_yourself span,.inh_ste span,.usrnam span,.sex span,.vip_code span{
 	width: 6px;
 	height: 6px;
 	border-radius: 6px;
@@ -76,7 +156,7 @@ body {
 	margin-top: 7px;
 	margin-right: 7px;
 }
-.intro_yourself strong{
+.intro_yourself strong,.vip_code strong{
 	float: right;
 	color: #65292B;
 }
@@ -162,4 +242,42 @@ body {
 	overflow: hidden;
 	text-align: left;
 	margin-top: 10px;
+}
+
+.no_biogra{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.choose_heri,.new_heri{
+	width: 46%;
+	text-align: center;
+	/*height: 50px;*/
+	/*line-height: 48px;*/
+}
+.choose_heri{
+	float: left;
+	background: #65292B;
+	color: white;
+}
+
+.inh_select{
+	width: 100%;
+	/*height: 100%;*/
+	border: 0;
+	outline: none;
+	background: #65292B;
+	color: white;
+	font-size: 16px;
+	/*padding: 0 0 0 16px;*/
+	-webkit-appearance: none;   /*去除chrome浏览器的默认下拉图片*/
+	appearance: none;
+　　   -moz-appearance: none;  /*去除Firefox浏览器的默认下拉图片*/
+}
+.inh_select option{
+	text-align: center;
+}
+.new_heri{
+	float: right;
+	background: url(../img/heritage_num_bg.png) no-repeat;
+	background-size: 100% 100%;
 }

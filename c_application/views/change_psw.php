@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>修改密碼</title>
+		<title>修改密码</title>
 	</head>
 	
 	<link rel="stylesheet" href="<?php echo $inc_url;?>css/change_psw.css" />

@@ -42,34 +42,6 @@ class Identify extends CI_Controller {
     }
 
 
-    public function edit_heritage($stele_id='')
-    {   
-        //获取图片空间url
-        $inc_url = $this->user_model->get_picture_space_info('url');
-        if(isset($stele_id)&&is_numeric($stele_id)&&!strpos($stele_id, '.')&&$stele_id!='0'){
-            //获取传承被内容
-            $stele = $this->user_model->get_stele($stele_id);
-
-            if(empty($stele)){
-                echo '传承碑不存在';exit();
-            }
-            if(empty($stele)){
-                echo '传承碑不存在';exit();
-            }
-            if($stele['inh_id']!='0'){
-                $stele_link_inh = $this->user_model->get_inherit_identify($stele['inh_id']);
-            }else{
-                $stele_link_inh = '';
-            }
-            $this->load->library('CI_Decide');
-            $power = $this->ci_decide->decide_stele($_SESSION['uid'],$stele_id);
-            $data = array('inc_url' => $inc_url, 'stele' => $stele, 'stele_link_inh' => $stele_link_inh, 'power' => $power);
-            $this->load->view('edit_heritage',$data);
-        }else{
-            echo '访问错误';
-        }
-    }
-
     public function edit()
     {
         $this->load->library('CI_Decide');

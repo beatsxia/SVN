@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>傳承碑</title>
+		<title>传承碑</title>
 	</head>
 
 	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/bootstrap.min.css" />

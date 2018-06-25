@@ -13,7 +13,7 @@
 				<ul style="list-style: none;overflow: hidden;">
 					<li role="presentation" class="col-xs-4 pic active" id="index_cont_1">
 						<a class="common">
-							首頁
+							首页
 						</a>
 					</li>
 					<!--<li role="presentation" class="col-xs-3 pic" id="index_cont_2">
@@ -23,7 +23,7 @@
 					</li>-->
 					<li role="presentation" class="col-xs-4 pic" id="index_cont_3">
 						<a class="common">
-							傳承碑
+							传承碑
 						</a>
 					</li>
 					<li role="presentation" class="col-xs-4 pic" id="index_cont_4">

@@ -8,7 +8,7 @@ $(function(){
 	$(".fans").click(function(){
 		window.location = "fans_num";
 	});
-	$(".my_balance").click(function(){
+	$(".recharge").click(function(){
 		window.location = "my_balance";
 	});
 	

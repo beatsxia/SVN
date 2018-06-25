@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>帳戶綁定與設置</title>
+		<title>账户绑定与设置</title>
 
 		<link rel="stylesheet" href="<?php echo $inc_url;?>css/accout_safety.css" />
 		<link rel="stylesheet" href="<?php echo $inc_url;?>css/bootstrap.min.css" />

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>傳承新建</title>
+		<title>编辑传记</title>
 	</head>
 
 	<link rel="stylesheet" href="<?=$inc_url?>css/root_new_set.css" />
@@ -12,6 +12,9 @@
 		<img class="root_new_set_bg" src="<?=$inc_url?>img/root_new_set_bg.jpg" />
 		<p class="organizer"><span><?=$inherit['title']?></span></p>
 		<div class="invite_background">邀请</div>
+		<div class="collection">
+			<img src="<?=$inc_url?>img/not_collect.png" />
+		</div>
 		<?php foreach ($inherit_contents_arr as $item): ?>
 			<?php if($item['is_show']=='1'||$item['is_power']=='1'){?>
 				<div class="new_set_main">
@@ -44,6 +47,9 @@
 	<script type="text/javascript" src="<?=$inc_url?>js/jquery-2.2.3.min.js"></script>
 	<script>
 	    $(function(){
+	    	
+	    	
+	    	
 	    	$(".edit").click(function(){
 	    		var href = $(this).attr("href");
 	    		window.location="edit?id="+href;

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>新建傳承碑</title>
+		<title>新建传承碑</title>
 	</head>
 	
 	<link rel="stylesheet" href="<?=$inc_url?>css/new_heritage.css" />
@@ -12,12 +12,25 @@
 			<input type="hidden" name="stele_id" value="<?=$stele['id']?>" />
 			<div class="top_bg"></div>
 			<div class="nickname">
-				<span>姓名</span>
-				<div style="float: right;width: 82%;"><input type="text" name="nickname" value="<?=$stele['title']?>" max="16" /></div>
+				<span style="color: #B70000;">*</span>
+				<span>被纪念人姓名</span>
+				<div style="float: right;width: 60%;"><input type="text" name="nickname" value="<?=$stele['title']?>" max="16" /></div>
+			</div>
+			<div class="sex">
+				<span style="color: #B70000;">*</span>
+				<span>性别</span>
+				<div style="float: right;width: 60%;text-align: right;">
+				    <select name="sex" style="border: 0;outline: none;text-align-last:right;-webkit-appearance:none;appearance:none;">
+					    <option value="0" <?php if($stele['sex']=='0'){echo 'selected="selected"';}?>>请选择</option>
+					    <option value="1" <?php if($stele['sex']=='1'){echo 'selected="selected"';}?>>男</option>
+					    <option value="2" <?php if($stele['sex']=='2'){echo 'selected="selected"';}?>>女</option>
+				    </select>
+				</div>
 			</div>
 			<div class="intro_yourself">
-				<span>个人年谱</span>
-				<div style="float: right;width: 80%;">
+				<span style="color: #B70000;">*</span>
+				<span>个人介绍（年谱）</span>
+				<div style="float: right;width: 58%;">
 					<input type="text" name="intro_yourself" value="<?=$stele['synopsis']?>" />
 				</div>
 			</div>
@@ -53,6 +66,14 @@
 				    </select>
 				</div>
 			</div>
+			<div class="vip_code">
+				<span>VIP激活码兑换<span style="color: #D7D7D7;">（没有请忽略）</span></span>
+				<div style="float: right;width: 20%;height:50px;display: flex;align-items: center;justify-content: flex-end;">
+				    <img style="width: 40%;" src="<?=$inc_url?>img/goRight.png" />
+				</div>
+			</div>
+			<p style="color: #B70000;font-size: 12px;width: 94%;margin: 0 auto;line-height: 22px;">* 为必填</p>
+			
 			
 			<!--<div class="anima_espe">
 				<div class="xianghuo fl_lf">
@@ -157,18 +178,17 @@
 				myForm.nickname.focus();
 				return false;
 			}
+			if($(".sex select option:selected").val()==""){
+				alert("请输入性别！");
+				return false;
+			}
 			if(myForm.intro_yourself.value==''){
 				alert("请输入个人年谱！");
 				myForm.intro_yourself.focus();
 				return false;
 			}
-			if($("#photo_cover_bg").html()==''){
-				alert("请上传头像！");
-				return false;
-			}
-			if(myForm.birthday.value==''){
-				alert("请输入出生日！");
-				myForm.birthday.focus();
+			if(!oCbox.checked){
+				alert("请先阅读并同意用户服务协议！")
 				return false;
 			}
 //			if($(".xianghuo").children("span").html()==''&&$(".send_flower").children("span").html()==''){
@@ -199,6 +219,10 @@
 			var rpwth = $(".recom_pho").width();
 			$(".recom_pho").css({
 			    "line-height": "" + rpwth + "px"
+			});
+			
+			$(".vip_code").click(function(){
+				window.location="activation_converbility?s=<?=$stele['id']?>"
 			});
 			
 			

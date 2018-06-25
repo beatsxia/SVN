@@ -34,6 +34,16 @@ body {
 	background-position: center center;
 }
 
+.collection{
+	position: absolute;
+	top: 24%;
+	right: 6%;
+	width: 18%;
+}
+.collection img{
+	width: 100%;
+}
+
 .heritage_title_info {
 	width: 100%;
 	max-width: 88%;

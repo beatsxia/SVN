@@ -3,7 +3,7 @@
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>傳記</title>
+		<title>传记</title>
 	</head>
 
 	<link rel="stylesheet" href="<?php echo $inc_url;?>css/show_article.css" />
@@ -34,18 +34,19 @@
 				<div class="date"><?php echo date('Y-m-d H:i',$inh_content['creation_time']);?></div>
 			</div>
 		</div>
+		<!--编辑从这里开始-->
+				<?php if($inh_content['is_power']=='1'){?>
+					<div class="edit">
+			            <img src="<?php echo $inc_url;?>img/edit.png" /><span><a href="edit?id=<?=$inh_content['id']?>">编辑</a></span>
+			        </div>
+		        <?php }?>
 		<h2 class="title"><?=$inh_content['con_num']?> - <?=$inh_content['con_title']?></h1>
     	<?php if($inh_content['is_show']=='1'||$inh_content['is_power']=='1'){?>
 			<div class="content"><?=$inh_content['content'];?>
 				<?php if($stele_id!='0'){?>
 					<button type="button" class="link_to_inh_ste">进入传承碑</button>
 				<?php }?>
-				<!--编辑从这里开始-->
-				<?php if($inh_content['is_power']=='1'){?>
-					<div class="edit">
-			            <img src="<?php echo $inc_url;?>img/edit.png" /><span><a href="edit?id=<?=$inh_content['id']?>">编辑</a></span>
-			        </div>
-		        <?php }?>
+				
 			</div>
 		<?php }?>
 	    

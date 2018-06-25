@@ -3,7 +3,7 @@
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<title>編輯傳記</title>
+		<title>编辑传记</title>
 	</head>
 
 	<link rel="stylesheet" href="<?=$inc_url?>css/edit_new_heritage.css" />
@@ -53,7 +53,7 @@
 						    <input type="text" name="heritage_num" id="num1" value="" placeholder="序号" />
 					    </div>
 					    <div class="heritage_section_title">
-						    <input type="text" name="heritage_section_title" maxlength="13" id="section_title1" value="" placeholder="章节标题" />
+						    <input type="text" name="heritage_section_title" maxlength="30" id="section_title1" value="" placeholder="章节标题" />
 					    </div>
 					    <div class="btns">
 					        <button type="button" class="delete delete_append">删除</button>
@@ -118,7 +118,7 @@
 					    "<input type='text' name='heritage_num"+ i +"' id='num"+ i +"' value='' placeholder='序号' />"+
 				    "</div>"+
 				    "<div class='heritage_section_title'>"+
-					    "<input type='text' name='heritage_section_title"+ i +"' id='section_title"+ i +"' value='' placeholder='章节标题' />"+
+					    "<input type='text' name='heritage_section_title"+ i +"'  maxlength='30' id='section_title"+ i +"' value='' placeholder='章节标题' />"+
 				    "</div>"+
 				    "<div class='btns'>"+
 					    "<button type='button' class='delete delete_append'>删除</button>"+
