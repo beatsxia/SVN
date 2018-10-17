@@ -1,174 +1,220 @@
 *{
-	padding: 0;
-	margin: 0;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
-
 body{
-	background: url(../img/monument_bg.jpg) no-repeat;
-	background-position: center center;
-	background-size: 100% 100%;
+	overflow: auto;
 }
-.add_msg{
+.page-top{
+	height: 0.6rem;
+	display: flex;
+}
+.page-top>a{
+	display: block;
 	width: 100%;
-	max-width: 92%;
+	height: 100%;
+	text-align: center;
+	line-height: 0.6rem;
+	color: #6c0107;
+	font-size: 0.45rem;
+}
+.page-top>a:not(:first-child){
+	border-left: 2px solid #6c0107;
+}
+.page-top>a.on{
+	color: #c40203;
+	font-weight: bold;
+}
+.my-stele,.collect-stele{
+	height: auto;
+	width: 9rem;
 	margin: 0 auto;
-	margin-top: 9%;
-	/*margin-top: 53%;*/
-	overflow: hidden;
 }
-.msg_lf{
+.add-stele{
+	display: block;
+	width:calc(100% - 1rem);
+	height: 1.72rem;
+	background-image: url('../img/heritage/add.png');
+	line-height: 1.72rem;
+	color: #333;
+	padding: 0 0.5rem;
+	margin-top: 0.24rem;
+	font-size: 0.4rem;
+}
+.stele-list{
 	width: 100%;
-	max-width: 17.3%;
-	overflow: hidden;
-	float: left;
-	padding-left: 0.7%;
-}
-.add_msg img{
-	background: black;
-	color: white;
-	padding: 15px;
-	width: 20px;
-	height: 20px;
-	border-radius: 6px;
-}
-.msg_rg{
-	width: 100%;
-	max-width: 82%;
-	float: right;
-	line-height: 26px;
-	letter-spacing: 0.5px;
-}
-.username{
-	font-size: 14px;
-	border: 0;
-	outline: none;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-.username span,.heritage_info span{
-	background: #4D99A0;
-	padding: 5px 6px;
-	color: #D2E8EA;
-}
-.heritage_info{
-	font-size: 12px;
-	letter-spacing: 1.05px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-::-webkit-input-placeholder {
-  color: #D2E8EA;
-}
-:-moz-placeholder {
-  color: #D2E8EA;
-}
-::-moz-placeholder {
-  color: #D2E8EA;
-}
-:-ms-input-placeholder {
-  color: #D2E8EA;
-}
-::placeholder {
-  color: #D2E8EA;
-}
+	height: auto;
 
-
-
-
-.wrapper{
-	width: 100%;
-	max-width: 92%;
-	margin: 0 auto;
-	overflow: scroll;
-	/*overflow: hidden;*/
 }
-.user_info{
-	overflow: hidden;
-	width: 100%;
-	margin: 3% 0;
+.stele-item{
+	width: calc(100% - 1.4rem);
+	height: 4.1rem;
+	background-image: url('../img/heritage/bg.png');
+	padding: 0.7rem;
+	margin-top: 0.24rem;
 	position: relative;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
 }
-.user_msg{
-	float: right;
-	width: 82%;
-	letter-spacing: 0.5px;
+.stele-title{
+	width: 100%;
+	font-size: 0.44rem;
+	font-weight: 300;
+	padding-bottom:0.1rem;
+}
+.collection-item{
+	width:calc(100% - 1rem);
+	padding:0 0.5rem;
+	background-image: url('../img/heritage/add.png');
+	margin-top: 0.24rem;
+	height: 1.72rem;
+	line-height: 1.72rem;
+	color: #333;
+	font-size: 0.4rem;
+	position: relative;
 	overflow: hidden;
 }
-.btns {
+.collection-item>img{
+	display: block;
+	height: 1.2rem;
+	width: 1.2rem;
+	position: absolute;
+	right: 0.5rem;
+	top: 0;
+	bottom: 0;
+	margin:auto 0;
+	border-radius: 50%;
+}
+.cancel-collect{
+	display: block;
+	height: 96%;
+	line-height: 1.72rem;
+	width: 2.2rem;
+	text-align: center;
+	background-color: #a80000;
+	color: #fffcff;
+	font-size: 0.34rem;
 	position: absolute;
 	top: 0;
-	width: 50%;
-	right: -50%;
-	font-size: 20px;
-	text-align: center;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-	pointer-events: none;
-	overflow: hidden;
+	bottom: 0;
+	right: -2.2rem;
+	margin:auto 0;
+	z-index: 2;
+	border-radius: 22px;
 }
-
-.delete {
-	width: 50%;
-	background: #EB4D3D;
-	float: right;
-	pointer-events:auto;
+.text-info{
+	width: 60%;
 }
-
-.edit {
-	width: 50%;
-	background: #C7C7CC;
-	float: left;
-	pointer-events:auto;
-}
-
-.delete,
-.edit {
-	border: 0;
-	color: #FFFFFF;
-	letter-spacing: 0.8px;
-	outline: none;
-	font-size: 14px;
-}
-
-.swipeleft {
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-}
-
-.swiperight {
-	transform: translateX(0%);
-	-webkit-transform: translateX(0%);
-}
-
-.swipeleft,
-.swiperight {
+.text-info>p{
 	width: 100%;
-	margin: 3% 0;
+	margin-top: 0.38rem;
+	font-size: 0.38rem;
+}
+.img-info{
+	width: 40%;
+}
+.img-info>a{
+	width: 2.95rem;
+	height: 2.95rem;
+	display: block;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+	background-color: white;
 	position: relative;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
 }
-
-
-
-
-.load_more{
-	line-height: 40px;
+.img-info>a>img{
+	display: block;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.remove-stele{
+	display: block;
+	position: absolute;
+	width: 0.6rem;
+	height: 0.6rem;
+	background-image: url('../img/heritag/close.png');
+	right: 0.3rem;
+	top: 0.3rem;
+}
+#mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 999;
+	display: none;
+}
+#mask>.mask-con{
+	width: 4rem;
+	height: auto;
+	background-color: rgba(255, 255, 255, 0.9);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 4rem;
+	margin:0 auto;
+	border-radius: 27px;
+	padding:0.5rem;
+}
+#mask>.mask-con>p{
+	font-size: 0.7rem;
 	text-align: center;
-	font-size: 12px;
-	color: #979595;
+	height: 0.85rem;
+	line-height: 0.85rem;
+	margin-bottom: 0.32rem;
 }
-
-
-
-
-
-
-
-
-
-
+#mask>.mask-con>a{
+	display: inline-block;
+	padding:6px 10px;
+	color: #333333;
+	border-radius: 15px;
+	border:1px solid #333333;
+	margin:0 0.2rem;
+}
+.moreTips{
+	width: 100%;
+	height: 4rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0.4rem;
+	color: #f6e6bb;
+}
+.loading{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0.6rem;
+	margin:0 auto;
+	z-index: 3;
+	width: 0.8rem;
+	height: 0.8rem;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px #666666;
+}
+.loading>span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/loading.png');
+	background-size: 70%;
+	animation-name: none;
+	animation-duration:1s;
+	animation-iteration-count: infinite;
+}
+@keyframes loading{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(359deg);
+	}
+}

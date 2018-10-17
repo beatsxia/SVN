@@ -1,0 +1,283 @@
+html,body
+{
+	background-color: #ededed;
+}
+.back
+{
+	width: 100%;
+	height: auto;
+	position: relative;
+	background-color: #ededed;
+}
+nav
+{
+	height: 1rem;
+	display: flex;
+	border-bottom: 2px solid #d1d1d1;
+}
+.nav-item
+{
+	display: block;
+	width: 100%;
+	height: calc(100% - 1px);
+	line-height: 1rem;
+	text-align: center;
+	color: #b9b9b9;
+	font-size: 0.32rem;
+	overflow: hidden;
+}
+.nav-on
+{
+	color: #4e2a2a;
+	border-bottom: 3px solid #4e2a2a;
+}
+.content
+{
+	padding:15px 0;
+}
+.tribute-item
+{
+	width: calc(4.7rem - 22px);
+	height: auto;
+	background-color: #ffffff;
+	position: relative;
+	float: left;
+	margin: 5px 0;
+	margin-left: 0.2rem;
+	border: 1px solid #fbfbfb;
+	border-radius: 9px;
+	padding: 10px;
+}
+.pic-bor
+{
+	width: 100%;
+	height: 3.6rem;
+	border-radius: 9px;
+	border: 1px solid #e5e5e5;
+	overflow: hidden;
+}
+.tribute-pic
+{
+	display: block;
+	height: 80%;
+	max-width: 100%;
+	margin: 10% auto;
+}
+.tribute-time
+{
+	position: absolute;
+	color: #6d6d6d;
+	right: 15px;
+	top: 15px;
+	font-size: 0.28rem;
+}
+
+.tribute-name
+{
+	color: #090506;
+	font-size: 0.36rem;
+	height: 0.625rem;
+	line-height: 0.625rem;
+	font-weight: 100;
+	padding: 0 8px;
+}
+
+.tribute-info
+{
+	padding: 0 8px;
+	height: 0.625rem;
+}
+.tribute-info>span
+{
+	float: left;
+}
+.stone-icon
+{
+	display: block;
+	height: 0.625rem;
+	width: 0.72rem;
+	background-image: url("../img/family/tribute/stone_s.png");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.stone-num
+{
+	font-size: 0.34rem;
+	color: #522a2b;
+	line-height: 0.625rem;
+	text-indent: 3px;
+}
+.exchange
+{
+	display: block;
+	height: 0.625rem;
+	width: 1.25rem;
+	text-align: center;
+	line-height: 0.625rem;
+	background-color: #624547;
+	color: #fffffb;
+	border-radius: 16px;
+	float: right;
+	font-size: 0.34rem;
+}
+.group-stone
+{
+	width: 8rem;
+	height: 3.2rem;
+	float: none;
+	margin: 10px auto;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border: 1px solid #cecece;
+	box-shadow: 0 0 0 0.25rem white;
+	overflow: hidden;
+}
+.big-stone
+{
+	width: 3.2rem;
+	height: 2.1rem;
+	text-align: center;
+	float: left;
+	margin-top: 0.55rem;
+	border-right: 2px dashed #c8c8c8;
+}
+.big-stone>img
+{
+	display: block;
+	width: 1.4rem;
+	margin: 0 auto;
+}
+.big-stone>span
+{
+	color: #000000;
+	font-size: 0.37rem;
+	font-weight: bold;
+	line-height: 1.1rem;
+	font-family: "宋体";
+}
+.num-edit
+{
+	width: 4.6rem;
+	height: 100%;
+}
+
+.num-edit>span
+{
+	display: block;
+	text-align: center;
+	height: 0.56rem;
+	font-size: 0.35rem;
+	color: #9e9e9e;
+	padding: 0.15rem 0;
+}
+.num-btn
+{
+	display: block;
+	width: 1.3rem;
+	height: 1rem;
+	float: left;
+	text-align: center;
+	line-height: 1rem;
+	color: #000000;
+	font-size: 0.9rem;
+}
+.void-btn
+{
+	color: #bbb;
+}
+#stoneNum
+{
+	display: block;
+	width: 1.9rem;
+	height: 1rem;
+	color: #555;
+	font-size: 0.6rem;
+	text-align: center;
+	line-height: 1rem;
+	border: 1px solid #b5b5b5;
+	float: left;
+}
+#giveStone
+{
+	margin-top: 0.4rem;
+	margin-right: 1.675rem;
+}
+
+.group-1
+{
+	width: 100%;
+	height: auto;
+	background-color: #ededed;
+	position: relative;
+	padding: 0.2rem 0;
+	margin: 0;
+	text-align: center;
+	display: none;
+	border: none;
+	font-size: 1rem;
+	color: #dddee0;
+}
+#judge
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left:0;
+	z-index: 999;
+	display: none;
+}
+#judge>#shadow
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+#judge>.con
+{
+	position: absolute;
+	width: 7rem;
+	height: 3.5rem;
+	border: 10px solid #624547;
+	border-radius: 20pt;
+	background-color: #ebb246;
+	top: 3rem;
+	left: calc(50% - 3.5rem);
+}
+#judge>.con>p
+{
+	width: 100%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: 0.6rem;
+	text-align: center;
+}
+.isok
+{
+	height: 0.625rem;
+	padding: 0 1.8rem;
+}
+.isok>span
+{
+	float: left;
+}
+#remind
+{
+	display: none;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	bottom: 1.3rem;
+	z-index: 999;
+	text-align: center;
+}
+#remindMsg
+{
+	background-color: black;
+	padding: 0.15rem 0.2rem;
+	font-size: 0.3rem;
+	color: white;
+	border-radius: 6px;
+	opacity: 0;
+	transition: 1s;
+}

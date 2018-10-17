@@ -192,8 +192,7 @@ class Init extends CI_Controller {
                 $query = $this->db->get();
                 $row_array = $query -> row_array();
                 if(empty($row_array)){
-                    $return = $this->db->insert('cc_fans', $data);
-                    if($return){
+                    if($this->db->insert('cc_fans', $data)){
                         echo '1';//关注成功
                     }else{
                         echo '0';//关注失败

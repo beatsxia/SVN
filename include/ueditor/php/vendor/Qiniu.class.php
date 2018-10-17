@@ -163,7 +163,6 @@ class Qiniu extends Base{
 		// Ueditor 配置文件
 		$ue_config  = $this->getUeConfig();
 		$field_name = $ue_config['catcherFieldName'];
-
 		/* 抓取远程图片 */
 		$list = array();
 		if (isset($_POST[$field_name])) {

@@ -1,61 +1,68 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
+<?php $this -> load -> view('header'); ?>
 		<title>充值记录</title>
 	</head>
 	<style>
-		*{
-			padding: 0;
-			margin: 0;
-		}
-		.this_bg {
-			width: 100%;
-			margin-bottom: 2.327%;
+		.tips{
+			color: #000;
+			font-size: 0.43rem;
+			width: 90%;
+			margin: 0 auto;
+			border-bottom: 1px solid #ededed;
+			font-weight: 100;
+			padding-bottom: 0.3rem;
 		}
 		.record_cont{
-			width: 100%;
-			max-width: 96%;
+			width: 90%;
 			margin: 0 auto;
 			overflow: hidden;
 			margin-bottom: 2%;
+			border-bottom: 1px solid #ededed;
+			padding: 0.3rem 0;
 		}
-		.record_cont strong{
-			font-size: 16px;
-			letter-spacing: 0.8px;
+		.record_cont>div{
+			height: 0.5rem;
+			margin: 0.1rem 0;
 		}
-		.fl_lf{
+		.fl_top>span{
+			display: block;
+			font-size: 0.43rem;
+			height: 100%;
+			color: #000;
+		}
+		.fl_bom>span{
+			display: block;
+			font-size: 0.43rem;
+			height: 100%;
+			color: #ff0000;
+		}
+		.fl_le{
 			float: left;
-			line-height: 30px;
+			text-align: left;
 		}
-		.recharge_time{
-			color: #CECECE;
-			font-size: 12px;
-		}
-		.fl_rg{
+		.fl_ri{
 			float: right;
-		}
-		.fl_rg span{
-			display: inline-block;
-			vertical-align: middle;
+			text-align: right;
 		}
 	</style>
 	<body>
-		<img class="this_bg" src="<?=$inc_url?>img/recharge_bg2.png" />
+		<h2 class="page-title"><a href="javascript:history.back(-1)"><span></span></a>充值记录</h2>
+		<img class="title-pic" src="<?php echo $inc_url; ?>img/edit_top.jpg"/>
+		<h3 class="tips">你在过去7天的消费记录如下:</h3>
 		<?php if(!empty($select_recharge_record)){ ?>
 			<?php foreach ($select_recharge_record as $item): ?>
 				<div class="record_cont">
-					<div class="fl_lf">
-						<strong><?=$item['note']?></strong>
-						<div class="recharge_time"><?=date('Y/m/d H:i:s',$item['time'])?></div>
+					<div class="fl_top">
+						<span class="fl_le"><?=$item['note']?></span>
+						<span class="fl_ri"><?=date('Y/m/d H:i:s',$item['time'])?></span>
 					</div>
-					<div class="fl_rg">
-						<span>+ <?=$item['point']?></span>
+					<div class="fl_bom">
+						<span class="fl_le">￥<?=$item['point']?></span>
+						<span class="fl_ri">支付成功</span>
 					</div>
 				</div>
 			<?php endforeach; ?>
 		<?php }else{ ?>
-			<p style="text-align: center">暂无记录</p>
+			<p style="text-align: left;font-size: 0.43rem;width: 90%;margin: 0.5rem auto;">暂无记录</p>
 		<?php }?>
 		
 	</body>

@@ -1,0 +1,210 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+	color: #333333;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+*::-webkit-input-placeholder{
+	color: #cdcdcd;
+}
+a{
+	text-decoration: none;
+}
+a:hover
+{
+	text-decoration: none;
+}
+input:focus
+{
+	outline: none;
+}
+.left
+{
+	float: left;
+}
+.right
+{
+	float: right;
+}
+.clearfloat::after
+{
+	display: block;
+	content: '';
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+html,body
+{
+	height: 100%;
+}
+body{
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url("../img/index/bg.png");
+	background-position: bottom;
+	background-attachment: fixed;
+	background-color: white;
+}
+.page-title{
+	width: 100%;
+	height: 1rem;
+	background-color: #700001;
+	text-align: center;
+	line-height: 1rem;
+	color: #f3fffc;
+	font-weight: 100;
+	font-size: 0.45rem;
+	position: relative;
+}
+.page-title>a{
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.page-title>a>span{
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+	transform: rotate(45deg);
+	border-left: 2px solid #f3fffc;
+	border-bottom: 2px solid #f3fffc;
+	position: absolute;
+	top: 0.35rem;
+	left: 0.45rem;
+}
+.title-pic{
+	display: block;
+	width: 100%;
+	
+}
+/*----------------------------------------------底部及右侧按钮----------------------------------------------*/
+.left-btn
+{
+	position: fixed;
+	widows: 1.15rem;
+	height: auto;
+	top: 7.2rem;
+	right: 0.37rem;
+	z-index: 10;
+}
+.left-btn>a
+{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-bottom:0.3rem;
+	background-size: 100% 100%;
+	border-radius: 50%;
+}
+.dynamic-icon
+{
+	background-image: url("../img/family/icon/dy.png");
+}
+.invite-icon
+{
+	background-image: url("../img/family/icon/invite.png");
+}
+.collection-icon
+{
+	background-image: url('../img/family/icon/collect.png');
+}
+
+.bottom-btn
+{
+	position: fixed;
+	height: 2.42rem;
+	width: 100%;
+	background-color: #005210;
+	left: 0;
+	bottom: 0;
+	z-index: 11;
+}
+.bottom-btn>a
+{
+	display: block;
+	width: 1.38rem;
+	height: 1.38rem;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	float: left;
+	margin:0.12rem 0.22rem;
+	border-radius: 50%;
+}
+.roll-area
+{
+	height: 0.78rem;
+	width: 100%;
+	position: absolute;
+	background-color: #014011;
+	left: 0;
+	bottom: 0;
+}
+.roll-text
+{
+	width: 100%;
+	height: 100%;
+	color: #fbfffe;
+	line-height: 0.78rem;
+	font-size: 0.35rem;
+}
+.roll-text>span
+{
+	color: #fbfffe;
+}
+.stone
+{
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #014011;
+	line-height: 0.78rem;
+	padding: 0 0.2rem;
+}
+.stone-icon
+{
+	display: block;
+	height: 100%;
+	width: 0.65rem;
+	background-image: url("../img/family/tribute/stone_s.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+}
+.stone-val
+{
+	color: #faf805;
+	font-size: 0.28rem;
+}
+.list-icon
+{
+	background-image:url("../img/family/icon/list.png");
+}
+.genealogy-icon
+{
+	background-image:url("../img/family/icon/genealogy.png");
+}
+.hill-icon
+{
+	background-image:url("../img/family/icon/hill.png");
+}
+.tribute-icon
+{
+	background-image:url("../img/family/icon/tribute.png");
+}
+.at-icon
+{
+	background-image: url('../img/family/icon/at.png');
+}
+/*----------------------------------------------底部及右侧按钮----------------------------------------------*/

@@ -13,8 +13,15 @@ class My_collection extends CI_Controller {
         //获取图片空间url
         $inc_url = $this->user_model->get_picture_space_info('url');
 
-		
-        $data = array('inc_url' => $inc_url);
+        //
+        $this->load->library('CI_User');
+
+        $user_id = $_SESSION['uid'];
+        $page = 1;
+        $limit = 12;
+        $user_collection = $this->ci_user->user_collection($user_id,$page,$limit);
+
+        $data = array('inc_url' => $inc_url, 'user_collection' => $user_collection);
 		$this->load->view('my_collection',$data);
     }
 

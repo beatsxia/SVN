@@ -15,7 +15,13 @@ class Heritage_monument extends CI_Controller {
 
         //获取传承碑信息
         $stele = $this->user_model->get_stele_list(1,$_SESSION['uid']);
-        $data = array('inc_url' => $inc_url, 'stele' => $stele);
+        //获取收藏的传承碑
+        $user_id = $_SESSION['uid'];
+        $page = 1;
+        $limit = 10;//数量
+        $stele_collection = $this->user_model->select_stele_collection($user_id,$page,$limit);
+        $data = array('inc_url' => $inc_url, 'stele' => $stele, 'stele_collection' => $stele_collection);
+        //print_r($data);exit;
 		$this->load->view('heritage_monument',$data);
     }
 

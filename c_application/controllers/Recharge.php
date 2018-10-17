@@ -29,11 +29,13 @@ class Recharge extends CI_Controller {
         
         $good_id = intval($this->input->post('good_id'));
         if(empty($good_id)){
-            echo '充值错误';exit();
+            $this->load->view('error_view',array("msg" => "充值错误"));//echo '充值错误';
+			exit();
         }
         $recharge_goods = $this->user_model->get_goods_by_id($good_id);
         if(empty($recharge_goods)){
-            echo '充值错误';exit();
+            $this->load->view('error_view',array("msg" => "充值错误"));//echo '充值错误';
+			exit();
         }
         unset($_SESSION['rec_order_id']);
         //订单编号

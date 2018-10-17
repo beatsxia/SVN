@@ -12,7 +12,7 @@ class QiniuDriver{
 	private  $qiniu_rsf_host = 'http://rsf.qbox.me';
 	private  $qiniu_rs_host  = 'http://rs.qbox.me';
 	private  $qiniu_up_host  = 'http://up.qiniu.com';
-	private  $qiniu_io_host  = 'http://iovip.qbox.me';
+	private  $qiniu_io_host  = 'http://iovip-z2.qbox.me';
 	private  $status_code 	= '';
 
 

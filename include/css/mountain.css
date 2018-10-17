@@ -1,0 +1,234 @@
+html,body
+{
+	overflow: hidden;
+}
+.bgimg
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.hill-view
+{
+	width: 100%;
+	height: calc(100% - 2.42rem);
+	overflow: hidden;
+}
+#viewBtn
+{
+	position: absolute;
+	width: 1.72rem;
+	height: 2.03rem;
+	top: 0.1rem;
+	right: 0.3rem;
+	z-index: 2;
+	writing-mode: tb-lr;
+	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-lr;
+	font-weight: bold;
+	font-size: 0.31rem;
+	text-align: center;
+	background-image: url("../img/family/mountain/viewBtn.png");
+	background-size: 1.4rem;
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+#slideHill
+{
+	width: 100%;
+	height: 110%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: relative;
+}
+#slideBg
+{
+	display: block;
+	height:calc(100% / 1.1);
+}
+
+#fixedHill
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/family/mountain/smallBg1.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: none;
+	overflow: hidden;
+}
+.cloud
+{
+	display: block;
+	height:calc(100% / 1.1 + 14.55%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	opacity: 1;
+	transition: 3s;
+}
+.cloud2
+{
+	width: 100%;
+	height:116%;
+}
+.hill-item
+{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	z-index: 1;
+}
+.lock
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("../img/family/mountain/lock2.png");
+}
+.hill-1
+{
+	left: 4.35rem;
+	top: 24.4%;
+}
+.hill-2
+{
+	left: 1.2rem;
+	top: 3.5%;
+}
+.hill-3
+{
+	left: 3.95rem;
+	top: 32.7%;
+}
+.hill-4
+{
+	left: 2.86rem;
+	top: 8.6%;
+}
+.hill-5
+{
+	left: 0.8rem;
+	top: 37.2%;
+}
+.hill-6
+{
+	left: 8.08rem;
+	top: 30.2%;
+}
+.hill-7
+{
+	left: 2.9rem;
+	top: 39.4%;
+}
+.hill-8
+{
+	left: 6.1rem;
+	top: 39.4%;
+}
+.hill-9
+{
+	left: 4.35rem;
+	top: 54.7%;
+}
+.hill-10
+{
+	left: 2.1rem;
+	top: 47%;
+}
+.hill-11
+{
+	left: 3.36rem;
+	top: 72%;
+}
+.hill-12
+{
+	left: 6.2rem;
+	top: 63.7%;
+}
+.hill-13
+{
+	left: 0;
+	top: 64.8%;
+}
+.hill-14
+{
+	left: 7.7rem;
+	top: 85%;
+}
+.hill-15
+{
+	left: 6.02rem;
+	top: 90%;
+}
+.hill-16
+{
+	left: 4.35rem;
+	top: 91%;
+}
+
+#mask
+{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	display: none;
+}
+#mask>.shadow
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+}
+#mask>.mask-con
+{
+	position: absolute;
+	width: 6rem;
+	height: 6rem;
+	left: calc(50% - 3rem);
+	top: 2.5rem;
+	background-image: url("../img/family/mountain/maskBg.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#mask>.mask-con>span
+{
+	display: block;
+	color: white;
+	text-align: center;
+}
+#levelText
+{
+	padding-top: 1.7rem;
+	font-size: 0.4rem;
+}
+#hillName
+{
+	font-size: 0.8rem;
+	padding: 0.4rem 0;
+}
+#mask>.mask-con>a
+{
+	display: block;
+	width: 2.4rem;
+	height: 0.9rem;
+	margin: 0 auto;
+	color: #ff0707;
+	font-size: 0.35rem;
+	background-image: url("../img/family/mountain/exchange.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	line-height: 0.9rem;
+	text-indent: 1rem;
+}

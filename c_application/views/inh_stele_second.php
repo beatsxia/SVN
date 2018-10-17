@@ -19,7 +19,11 @@
 			    <span>动态：</span>
 			    <marquee loop="-1" scrolldelay="100" direction="left"><?php foreach ($give_list_3 as $item): echo $item['nickname'].$item['gift_action'].$item['gift_count'].$item['gift_unit'].$item['name'].'&nbsp;&nbsp;'; endforeach;?></marquee>
 		    </div>
-		
+			<div class="stele_navbar_left">
+				<img src="<?=$inc_url?>img/navbar4.png" class="navbar4" />
+				<img src="<?=$inc_url?>img/navbar5.png" class="navbar5" />
+				
+			</div>
 		    <div class="paopao">
 			    <img src="<?=$inc_url?>img/paopao.png" />
 		    </div>

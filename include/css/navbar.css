@@ -4,28 +4,57 @@
 }
 .navbar-default{
 	border: none !important;
-	padding-top: 13px;
-	background: -webkit-linear-gradient(#835F61, #4D2929); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(#835F61,#4D2929); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(#835F61,#4D2929); /* Firefox 3.6 - 15 */
-    background: linear-gradient(#835F61, #4D2929); /* 标准的语法（必须放在最后） */
-}
-li{
-	text-align: center;
-}
-li:not(:first-child){
-	border-left: 1px #DFD9D9 solid;
+	padding: 0.15rem 0;
+	background: -webkit-linear-gradient(#ad0908, #7a0000); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#ad0908, #7a0000); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#ad0908, #7a0000); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#ad0908, #7a0000); /* 标准的语法（必须放在最后） */
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   display: block;
+   width: 100%;
+   min-height: 0.8rem;
+   z-index: 999;
 }
 a{
 	text-decoration: none;
-	font-size: 14px;
-	color: #DFD9D9;
+	font-size: 0.35rem;
+	font-family: "微软雅黑";
+	color: #ffffff;
+	letter-spacing: 0.05rem;
 }
 a:hover{
 	text-decoration: none;
 	color: #DFD9D9;
 }
+.middle{
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	line-height: 1.25rem;
+	font-size: 0.46rem;
+}
 .container-fluid{
 	padding-left: 0;
 	padding-right: 0;
+	height: 1.25rem;
+}
+.container-fluid>ul{
+	height: 100%;
+	display: flex;
+}
+.container-fluid>ul>li{
+	text-align: center;
+	height: 100%;
+	width: 100%;
+}
+.nav-icon{
+	height: 0.8rem;
+	width: 0.8rem;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
 }

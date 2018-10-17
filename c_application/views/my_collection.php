@@ -42,33 +42,16 @@
 	</style>
 	<body>
 		<div id="contents">
+			<?php foreach ($user_collection['content'] as $item): ?>
 			<div class="content">
-				<div class="con_item">
-					<img src="<?=$inc_url ?>img/seaside.png" />
+				<div class="con_item" inhId="<?=$item['page_id']?>" >
+					<img src="<?=!empty($item['picture'])?$item['picture']:$inc_url.'img/seaside.png'?>" />
 				</div>
-				<p class="name">小小明</p>
+				<p class="name"><?=$item['title']?></p>
 			</div>
+			<?php endforeach; ?>
+
 			
-			<div class="content">
-				<div class="con_item">
-					<img src="<?=$inc_url ?>img/seaside.png" />
-				</div>
-				<p class="name">小小明</p>
-			</div>
-			
-			<div class="content">
-				<div class="con_item">
-					<img src="<?=$inc_url ?>img/seaside.png" />
-				</div>
-				<p class="name">小小明</p>
-			</div>
-			
-			<div class="content">
-				<div class="con_item">
-					<img src="<?=$inc_url ?>img/seaside.png" />
-				</div>
-				<p class="name">小小明</p>
-			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="<?php echo $inc_url; ?>js/jquery-2.1.1.min.js"></script>
@@ -78,5 +61,12 @@
 //		$(".content").height($(".content").width());
 		$(".content").css("padding-left",($("#contents").width()-$(".content").width()*3)/6-0.5+"px");
 		$(".content").css("padding-right",($("#contents").width()-$(".content").width()*3)/6-0.5+"px");
+
+		$(function() {
+            $(".con_item").click(function(){
+	            var href = $(this).attr("inhId");
+	            window.location = "root_new_set?inh_id="+href;
+            });
+		});
 	</script>
 </html>

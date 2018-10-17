@@ -1,6 +1,16 @@
 *{
 	padding: 0px;
 	margin: 0px;
+	list-style: none;
+}
+html{
+	height: 100%;
+}
+body{
+	height: auto;
+}
+#page{
+	height: auto;
 }
 a{
 	text-decoration: none;
@@ -8,126 +18,125 @@ a{
 a:hover{
 	text-decoration: none;
 }
-
-.carousel-indicators{
-	bottom: 0 !important;
-	text-align: right !important; 
-	width: 73% !important;
+.top{
+	width:100%;
+	height:3.28rem;
+	background-image:url("../img/index/index_top.png");
+	background-repeat:no-repeat;
+	background-size:100%;
 }
-.carousel-indicators li{
-	width: 8px !important;
-	height: 8px !important;
-	background-color: #797777 !important;
-	border: 1px #797777 solid  !important;
-	border-radius: 8px !important;
-	margin-left: 9px !important;
+#banner{
+	width: 100%;
+	height: 3.12rem;
+	border-top: 1px solid #741418;
+	border-bottom: 1px solid #741418;
 }
-.carousel-indicators .active{
-	width: 10px !important;
-	height: 10px !important;
-	background-color: #4E292A !important;
-	border: 1px #4E292A solid  !important;
-	border: 0 !important;
-	border-radius: 10px !important;
+.ban-item{
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
-.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+.ban-pic{
+	display: block;
 	width: 100%;
 }
-.dynamics{
-	width: 100%;
-	max-width: 90%;
+.list{
+	width: 90%;
 	margin: 0 auto;
-	overflow: hidden;
-	/*line-height: 46px;*/
-	margin-top: 8px;
-	margin-bottom: 15px;
+	height: auto;
+	padding-bottom: 1.55rem;
+	padding-top: 0.34rem;
 }
-.root_dynamics{
+.list>div{
+	width: 100%;
+	height: auto;
+}
+.list-item{
+	width: calc(48% - 2px);
+	height: 4.8rem;
+	background-color: #ffffff;
 	float: left;
-	font-size: 14px;
-	letter-spacing: 5px;
-}
-.all_dynamics{
-	float: right;
-	font-size: 12px;
-	color: #65282A;
-}
-.biography_info{
-	width: 100%;
-	max-width:90%;
-	margin: 0 auto;
+	margin: 0 1%;
+	margin-bottom: 0.16rem;
+	border: 1px solid #c3c3c3;
+	border-radius: 9px;
 	overflow: hidden;
 }
-.info_section{
+.item-info{
+	display: block;
 	width: 100%;
-	height: 118px;
-	margin-bottom: 15px;
-	z-index:999; 
-}
-.info_cover{
-	width: 100%;
-	height: 100%;
-	max-width: 42%;
-	float: left;
-}
-
-.info_cover img {
-	width: 100%;
-	height: 100%;
-	border-radius: 3px;
-}
-
-.info_words {
-	width: 100%;
-	max-width: 53%;
-	height: 100%;
-	float: right;
-}
-
-.info_words h4 {
-	color: #B4B4B4;
+	height: 4rem;
 	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	position: relative;
 }
-
-.info_words p {
-	font-size: 12px;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
-	overflow: hidden;
-	text-align: left;
-	margin-top: 10px;
+.new-life{
+	width: 3rem;
+	height: 3rem;
+	display: block;
+	margin: 0.4rem auto;
+	background-image:url("../img/index/add_life.png");
+	background-repeat:no-repeat;
+	background-size:50%;
+	background-position: center;
 }
-
-.author_info img{
-	width: 22px;
-	height: 22px;
-	border-radius: 22px;
+.item-pic{
+	display: block;
+	width: 100%;
+	min-height: 4rem;
+	background-color:white;
 }
-
-.author_info span{
-	color: #B4B4B4;
-	font-size: 12px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-.new_send{
+.item-title{
+	display: block;
+	width: 100%;
+	height: 0.8rem;
 	text-align: center;
-	background: url(../img/new_bg.png) no-repeat white;
-	background-size: 84px 30px;
-	background-position: center center;
-	font-size: 15px;
-	color: #65282A;
-	cursor: pointer;
-	/*bottom: 50px !important;
-	border: none !important;*/
-	min-height: 39px !important;
-	line-height: 35px;
-	margin-top: 10px;
+	line-height: 0.8rem;
+	background-color: rgba(200,200,200,0.3);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-size: 0.38rem;
 }
+.icon-list{
+	width: 100%;
+	height: 0.8rem;
+	background-color: white;
+	padding: 0.1rem 0.8rem;
+	display: flex;
+	list-style: none;
+	margin-bottom: 0;
+}
+.icon-item{
+	height: 0.6rem;
+	width: 100%;
+}
+.icon-item>a{
+	display: block;
+	width: 0.4rem;
+	height: 0.6rem;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position: center;
+}
+#switch{
+	display: block;
+	position: fixed;
+	top: 6.8rem;
+	right: 0;
+	height: 0.65rem;
+	width: 2.75rem;
+	z-index: 999;
+	background-position: right;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: rgba(0,0,0,0);
+}
+.pub{
+	background-image: url("../img/index/icon/life.png");
+}
+.pri{
+	background-image: url("../img/index/icon/stele.png");
+}
+

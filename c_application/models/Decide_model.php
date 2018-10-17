@@ -53,4 +53,17 @@ class Decide_model extends CI_Model {
         $query = $this->db->get();
         return $query->row_array();
     }
+
+    //查询用户是否有VIP传记，如果有，返回VIP等级和名称
+    public function db_decide_user_is_vip($user_id)
+    {
+        $this->db->select('id,vip');
+        $this->db->from('cc_stele');
+        $this->db->where('user_id',$user_id);
+        $this->db->where('vip !=','0');
+        $this->db->order_by('vip', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
 }

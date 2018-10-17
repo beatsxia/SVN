@@ -1,14 +1,7 @@
-<!doctype html>
-<html lang="zh">
-
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
+<?php $this -> load -> view('header'); ?>
+		<title>传承碑</title>
+		<link rel="stylesheet" href="<?php echo $inc_url; ?>css/cloud.css" />
 	</head>
-
-	<link rel="stylesheet" href="<?php echo $inc_url; ?>css/cloud.css" />
-
 	<body>
 		<div class="sky">
 			<div class="msg_board">

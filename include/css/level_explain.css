@@ -1,0 +1,95 @@
+section{
+	width: 9.2rem;
+	margin: 0 auto;
+	height: auto;
+}
+p{
+	font-size: 0.35rem;
+	color: #010101;
+	margin:0.4rem 0;
+	line-height: 0.6rem;
+}
+.explain-title{
+	font-size: 0.46rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	margin: 0.3rem 0;
+}
+.table-top{
+	background-color: #700000;
+	display: flex;
+	height: 1.2rem;
+	border: 2px solid #000000;
+}
+.table-top>li{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 1.2rem;
+	font-size: 0.35rem;
+	color: #fffeff;
+	position: relative;
+	font-weight: bold;
+}
+.table-top>.short-line::after{
+	display: block;
+	height: 0.3rem;
+	width: 2px;
+	background-color:#fefffb;
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -1px;
+	margin:auto 0;
+}
+.table-top>.long-line{
+	border-left:1px solid #fefffb;
+}
+.table-body{
+	background-color: #ffffff;
+	width: calc(100% - 4px);
+	height: auto;
+	margin-bottom: 0.1rem;
+	border: 2px solid #000000;
+	border-top: none;
+}
+.table-body>li{
+	width: 100%;
+	height: 1rem;
+	display: flex;
+}
+.table-body>li>span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 1rem;
+	font-size: 0.3rem;
+	color: #020202;
+	font-weight: bold;
+}
+.table-body>li>span:not(:first-child){
+	border-left: 2px solid #000000;
+}
+.t3>li:not(:first-child){
+	border-top: 1px solid #989491;
+}
+.t3>li>span:not(:first-child){
+	border-left: 1px solid #989491;
+}
+.t3>.cell-two{
+	height: 2rem;
+}
+.t3>.cell-two>span{
+	line-height: 2rem;
+}
+.t3>.cell-two>span>span{
+	display: block;
+	height: 50%;
+	line-height: 1rem;
+	text-align: center;
+}
+.t3>.cell-two>span>span:first-child{
+	border-bottom: 1px solid #989491;
+}

@@ -25,6 +25,7 @@ class New_heritage extends CI_Controller {
 
     public function new_heritage()
     {   
+        echo $_POST['userhead'];exit;
         $this->form_validation->set_rules('nickname', '昵称', 'required|trim');
         $this->form_validation->set_rules('intro_yourself', '个人介绍', 'required|trim');
         //$this->form_validation->set_rules('mychoice', '礼物类型', 'required|numeric|trim');
@@ -144,6 +145,103 @@ class New_heritage extends CI_Controller {
             }
             if($stele_id){
                 redirect('cloud?s='.$stele_id);exit();
+            }
+
+        }
+    }
+
+    //新建传承碑并且同步生成传记和相关的权限
+    public function add_heritage()
+    {
+        //echo $_FILES['userhead']['tmp_name'];exit();
+        $this->form_validation->set_rules('nickname', '昵称', 'required|trim');
+        $this->form_validation->set_rules('sex', '性别', 'required|trim|in_list[0,1,2]');
+        $this->form_validation->set_rules('birthday', '出生时间', 'trim');
+        $this->form_validation->set_rules('day_of_death', '死亡时间', 'trim');
+        if($this->form_validation->run() === FALSE)
+        {   
+            $this->form_validation->set_message('nickname', '{field} 不能为空');
+            //如果数据有错则报错
+            echo "填写信息错误";exit();
+        }
+        else
+        {   
+            $uid = $_SESSION['uid'];
+            //接收提交的信息
+            //$fileintro = $_POST['fileintro'];  
+            $title = $this->input->post('nickname',true);
+            $birthday_time = $this->input->post('birthday',true);
+            $death_time = $this->input->post('day_of_death',true);
+            $sex = $this->input->post('sex',true);
+            $time = time();
+
+            //上传图片到图片空间
+            $this->load->library('CI_User');
+            $uploaded_file = $_FILES['userhead']['tmp_name'];
+            $file_size = $_FILES['userhead']['size'];
+            $file_type = $_FILES['userhead']['type'];
+            $user_path = 'img/stele/picture/'.$uid.'/';
+            $file_true_name = $_FILES['userhead']['name'];
+            $result = $this->ci_user->uploading_file($uploaded_file,$file_size,$file_type,$user_path,$file_true_name,$time);
+            //上传图片到图片空间结束
+
+            //将图片存入数据库
+            $stele_data = array('user_id' => $uid, 'title' => $this->db->escape_str($title) ,'sex' => $this->db->escape_str($sex), 'birthday_time' => $this->db->escape_str($birthday_time), 'death_time' => $this->db->escape_str($death_time), 'picture' => $result['content']['picture'], 'gift_type' =>'1', 'add_time' => $time, 'welcome' => '', 'is_hot' => '0', 'is_del' => '0');
+            if(!empty($inh_id)){
+                $stele_data['inh_id'] = $this->db->escape_str($inh_id); 
+            }
+            $stele_id = $this->user_model->insert_cc_stele($stele_data);
+            //插入传承碑权限表
+            $note = '创建人';
+            $cc_stele_connect_data = array('user_id' => $uid, 'stele_id' => $stele_id, 'time' => $time, 'free_gift_time' => $time-3600*8, 'note' => $note);
+            $cc_stele_connect_id = $this->user_model->insert_stele_connect($cc_stele_connect_data);//插入免费礼物时间结束
+
+            //开始创建与传承碑对应的传记
+            if( $stele_id )
+            {
+                $data = array();
+                $data["user_id"]  = $uid;
+                $data["title"]    = $title;
+                $data["picture"]  = $result['content']['picture'];
+                $data["stele_id"] = $stele_id;
+                $data["add_time"] = time();
+                $data["last_time"]= time();
+                
+                $this->db->insert('cc_inherit', $data);
+                $inhId = $this->db->insert_id();
+                //print_r($this->db->insert_id());exit;
+                if($inhId > 0)
+                {
+                    $this->db->insert('cc_inherit_power', array("inh_id" => $inhId, "user_id" => $uid, "power_form" => "创建人","add_time" => time()));
+                    
+                    $conData = array();
+                    $conData["con_title"]        = $title;
+                    $conData["content"]          = '[{"type":"text","con":"写下您的个人传记...."}]';
+                    $conData["content_time"]     = time();
+                    $conData["creation_address"] = '';
+                    $conData["creation_time"]    = time();
+                    $conData["last_time"]        = time();
+                    $conData["inh_id"]           = $inhId;
+                    $conData["inh_user_id"]      = $uid;
+                    $conData["user_id"]          = $uid;
+                    $conData["sort"]             = 1;
+                    $conData["is_show"]          = (intval($this->input->post('lock_open')) == 0) ? 1 : 0;
+                    
+                    $this->db->insert('cc_inherit_content', $conData);
+                    $conId = $this->db->insert_id();
+                    //关联传承碑
+                    $this->user_model->update_info('cc_stele', array('inh_id' => $inhId), array('id' => $stele_id));
+                    //redirect('show_content?cid='.$conId);
+                }
+                else
+                {
+                    $this->load->view('error_view',array("msg" => "系统繁忙"));
+                }
+                exit;
+            }
+            //结束创建对应传记
+            if($stele_id){
+                redirect('stele_detail?s='.$stele_id);exit();
             }
 
         }

@@ -1,0 +1,152 @@
+body{
+	background-image: none;
+	background-color: white;
+	height: auto;
+}
+#content{
+	width:100%;
+	height:100%;
+}
+img {
+    max-width: 100%;
+}
+#edui5_body{
+	width: auto;
+	height: auto;
+}
+#edui3_iframe{
+	height: auto !important;
+}
+#edui4_body{
+	height: auto !important;
+}
+#edui10_body,#edui15_body{
+	width: 300px !important;
+	height: auto !important;
+}
+#edui15_body{
+	bottom: 70px;
+}
+
+.title{
+	border: none;
+}
+#title{
+	text-align: center;
+}
+
+#conList{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.inh-item{
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+	overflow: hidden;
+	margin: 6px 0;
+	border: 1px solid #bfbfbf;
+	background-color: white;
+}
+.inh-con{
+	width: calc(100% - 0.6rem);
+	height: 4rem;
+	margin: 0.3rem auto;
+	overflow: hidden;
+	position: relative;
+}
+.item-remove{
+	display: block;
+	position: absolute;
+	right: 0rem;
+	top: 0rem;
+	width: 0.8rem;
+	height: 0.8rem;
+	z-index: 2;
+	text-align: center;
+	line-height: 0.7rem;
+	font-size: 0.9rem;
+	color: #cdcdcd;
+}
+.op-list{
+	width: 100%;
+	height: 0.55rem;
+	display: flex;
+	padding: 0.2rem 0;
+	/*background: -webkit-linear-gradient(#fff, #eee); 
+    background: -o-linear-gradient(#fff, #eee); 
+    background: -moz-linear-gradient(#fff, #eee);
+	background-color: linear-gradient(#fff, #eee);*/
+	background-color: #ededed;
+	box-shadow: 0px 0px 5px #fff inset;
+	border-top: 1px solid #bfbfbf;
+}
+.op-list>li{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.op-list>li + li{
+	border-left: 1px solid #acacac;
+}
+.op-list>li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #888;
+	font-size: 0.4rem;text-align: center;
+	line-height: 0.55rem;
+}
+.inh-content{
+	display: block;
+	width: 100%;
+	border: none;
+	font-size: 0.45rem;
+}
+.inh-text{
+	height: 100%;
+	resize: none;
+}
+.inh-pic{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.footer{
+	position:static;
+	width: 100%;
+	margin: 0.8rem auto;
+}
+.lock_input{
+	width: 50%;
+	height: 0.9rem;
+	float: left !important;
+}
+.lock{
+	display: block;
+	background-color: #700001;
+	color: #f5fdfe;
+	width: 2.5rem !important;
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	border-radius: 6px;
+	font-size: 0.42rem;
+	margin: 0 auto;
+}
+.sub{
+	position: static;
+	float: left;
+	display: block;
+	width: 2.5rem;
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.42rem;
+	background-color: #700001;
+	color: #f5fdfe;
+	border-radius: 6px;
+	margin: 0 calc((50% - 2.5rem) / 2);
+}

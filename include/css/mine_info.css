@@ -1,385 +1,146 @@
-* {
-	padding: 0;
-	margin: 0;
+body{
+	height: auto;
+	background: none;
+	background-color: #ededed;
 }
-
-.mine_bg {
-	width: 100%;
+section{
+	width: 90%;
+	padding: 0 5%;
 }
-
-.bg {
-	width: 100%;
-}
-
-.user_head {
-	position: absolute;
-	width: 100%;
-	top: 14.5%;
-	text-align: center;
-}
-
-.user_head img {
-	width: 83px;
-	height: 83px;
-	border-radius: 83px;
-}
-
-.user_name {
-	text-align: center;
-	font-size: 14px;
-	position: absolute;
-	top: 33%;
-	/*left: 42%;*/
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.user_name img {
-	width: 22px;
-	/*width: 28px;*/
-}
-
-.mine_sign {
-	/*margin-top: 10px;*/
-	color: #838383;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.mine_sign img {
-	width: 15px;
-}
-
-.mine_sign span {
-	font-size: 12px;
-	text-align: center;
-	margin-left: 2px;
-}
-
-.nums {
-	width: 100%;
-	max-width: 89%;
-	margin: 20px auto;
-	font-size: 12px;
-	color: #838383;
-	text-align: center;
-}
-
-.num {
-	text-align: center;
-}
-
-.col-xs-3 .sam_sty {
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	margin-bottom: 8px;
-	background: #EEEEEE;
-	border-radius: 40px;
-}
-
-.col-xs-3 .sam_sty span {
-	display: inline-block;
-	margin-top: 10px;
-}
-
-.col-xs-3 .sam_sty span a {
-	bottom: 4px;
-	color: #838383;
+.user-info{
+	height: 3.9rem;
+	background-color: #fffc00;
 	position: relative;
 }
-
-.col-xs-3 .sam_sty span a:hover {
-	color: #838383;
-}
-
-.my_balance div {
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	margin-bottom: 8px;
-	background: #652B2D;
-	border-radius: 40px;
-}
-
-.my_balance div span {
-	display: inline-block;
-	margin-top: 10px;
-	color: #E2DADA;
-}
-
-.my_balance div span a {
-	bottom: 4px;
-	color: #E2DADA;
-	position: relative;
-}
-
-.my_balance div span a:hover {
-	color: #E2DADA;
-}
-
-.deff_col {
-	color: #652B2D !important;
-}
-
-.deff_col:hover {
-	color: #652B2D !important;
-}
-
-.my_biography {
-	width: 100%;
-	max-width: 92%;
-	margin: 0 auto;
-	font-size: 16px;
-	overflow: hidden;
-	padding: 12px 0;
-	border-bottom: 1px #E1E1E1 solid;
-}
-
-.my_biography span {
-	width: 6px;
-	height: 6px;
-	border-radius: 6px;
-	background: #65292B;
-	float: left;
-	margin-top: 7px;
-	margin-right: 7px;
-}
-.my_biography div{
-	float: right;
-}
-.my_biography div img{
-	width: 20px;
-}
-
-.biography_info {
-	width: 100%;
-	max-width: 88%;
-	margin: 0 auto;
-	margin-top: 12px;
-	overflow: hidden;
-}
-
-.info_section {
-	overflow: hidden;
-	width: 100%;
-	height: 120px;
-	margin-bottom: 15px;
-	position: relative;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-}
-
-.info_cover {
-	width: 100%;
-	max-width: 43%;
-	height: 100%;
-	float: left;
-}
-
-.info_cover img {
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
-}
-
-.info_words {
-	width: 100%;
-	max-width: 54%;
-	height: 88%;
-	float: right;
-	overflow: hidden;
-}
-
-.btns {
+.user-avatar{
+	display: block;
+	width: 2.8rem;
+	height: 2.8rem;
 	position: absolute;
 	top: 0;
-	width: 50%;
-	right: -50%;
-	font-size: 20px;
-	text-align: center;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-	pointer-events: none;
-	/*display: inline-flex;*/
-	overflow: hidden;
-}
-
-.delete {
-	width: 50%;
-	background: #EB4D3D;
-	float: right;
-	pointer-events:auto;
-}
-
-.edit {
-	width: 50%;
-	background: #C7C7CC;
+	bottom: 0;
+	margin: auto 0;
 	float: left;
-	pointer-events:auto;
+	overflow: hidden;
+	border-radius: 50%;
+	box-shadow: 0 0 5px #000;
 }
-
-.delete,
-.edit {
-	border: 0;
-	height: 120px;
-	color: #FFFFFF;
-	letter-spacing: 0.8px;
-	outline: none;
-	
-}
-
-.swipeleft {
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-}
-
-.swiperight {
-	transform: translateX(0%);
-	-webkit-transform: translateX(0%);
-}
-
-.swipeleft,
-.swiperight {
+.user-avatar>img{
+	display: block;
 	width: 100%;
-	height: 120px;
-	margin-bottom: 15px;
-	position: relative;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-	/*overflow: hidden;*/
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
 }
-
-.mywords {
+.user-right{
+	width: calc(100% - 3.1rem);
 	height: 100%;
+	float: right;
 }
-
-.info_words h4 {
-	color: #838383;
+.user-name{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.56rem;
 	overflow: hidden;
 	white-space: nowrap;
-	text-overflow: ellipsis;
-	margin-top: 16px;
 }
-
-.mywords p {
-	font-size: 12px;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
-	overflow: hidden;
-	text-align: left;
-	word-wrap: break-word;
+.user-name>span{
+	font-size: 0.38rem;
+	font-weight: 100;
 }
-
-.setting {
-	position: absolute;
-	top: 15px;
-	right: 4%;
-	width: 30px;
-	cursor: pointer;
-}
-
-.setting img {
+.user-property{
 	width: 100%;
+	height: auto;
 }
-
-.setting_info {
-	width: 180px;
-	display: none;
-	position: absolute;
-	top: 50px;
-	right: 0;
-	background: #FFFFFF;
-	box-shadow: -1px 1px 8px #DDDDDD;
-	-moz-box-shadow: -1px 1px 8px #DDDDDD;
-	/* 老的 Firefox */
+.user-property>span{
+	display: block;
+	width: 100%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	color: #ff0000;
+	font-size: 0.38rem;
+	padding-left: 0.8rem;
+	background-size: 0.6rem;
+	background-repeat: no-repeat;
+	background-position: center left;
 }
-
-.setting_info:before {
-	content: ' ';
-	border: 10px solid transparent;
-	border-bottom-color: #FFFFFF;
-	position: absolute;
-	right: 11%;
-	top: -13%;
+.user-stone{
+	background-image: url("../img/index/stone_s.png");
 }
-
-.link_to {
-	line-height: 50px;
-	overflow: hidden;
+.user-money{
+	background-image: url("../img/index/money.png");
 }
-
-.link_to img {
-	width: 11%;
-	margin-left: 7%;
-}
-
-.link_to div {
-	font-size: 16px;
-	float: right;
-	width: 74%;
-	padding-left: 3%;
-	border-bottom: 1px solid #E5E5E5;
-}
-
-#last_child {
-	border-bottom: none;
-}
-
-.link_to div span {
-	text-align: left;
-}
-
-.check_more {
-	text-align: center;
-}
-
-.more {
-	font-size: 12px;
-	line-height: 55px;
-	color: #888;
-}
-
-.dropload-load,
-.dropload-refresh {
-	line-height: 40px;
-	text-align: center;
-	font-size: 12px;
-	color: #979595;
-}
-
-
-
-
-.stone_and_recharge{
+.add-property{
+	height: 0.65rem;
+	padding: 0.6rem 5%;
+	background-color: white;
+	margin: 0.25rem 0;
 	display: flex;
-	align-items:center;
-	justify-content: center;
-	width: 92%;
-	margin: 10px auto;
-	font-size: 20px;
-	/*margin-top: 12px;
-	margin-bottom: 10px;*/
 }
-.common_first{
-	padding: 12px 0 4px 0;
-}
-.common_second{
-	padding: 4px 0 12px 0;
-}
-.stone_and_recharge div{
+.add-property>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #000000;
+	font-size: 0.6rem;
+	line-height: 0.65rem;
 	text-align: center;
 }
-.spirit_stone{
-	width: 50%;
+.add-property>a>span{
+	display: inline-block;
+	height: 100%;
+	width: 0.6rem;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	vertical-align: top;
 }
-.recharge{
-	width: 49%;
-	border-left: 1px #E1E1E1 solid;
+.add-property>a:first-child{
+	border-right: 1px solid #959595;
+}
+.add-money{
+	background-image: url("../img/index/add_money.png");
+}
+.add-stone{
+	background-image: url("../img/index/add_stone.png");
+}
+.menu{
+	height: auto;
+	background-color: white;
+}
+.menu>ul{
+	height: auto;
+}
+.menu>ul>li{
+	width: 100%;
+	height: 1.18rem;
+	position: relative;
+}
+.menu>ul>li:not(:first-child){
+	border-top: 1px solid #ededed;
+}
+.menu>ul>li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 1.18rem;
+	color: #000;
+	font-size: 0.43rem;
+}
+.menu>ul>li>a:after{
+	display: block;
+	content: "";
+	height: 0.22rem;
+	width: 0.22rem;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.2rem;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	transform: rotate(45deg);
+}
+.menu>ul>li>a>span{
+	font-size: 0.1rem;
+	color: #000;
 }

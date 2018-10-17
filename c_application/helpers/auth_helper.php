@@ -57,6 +57,7 @@ class wxauth {
 							'province'=>$userinfo['province'],
 							'city'=>$userinfo['city'],
 							'country'=>$userinfo['country'],
+							'unionid'=>$userinfo['unionid'],
 							'avatar'=>$userinfo['headimgurl']
 					);
 				} elseif (strstr($json['scope'],'snsapi_userinfo')!==false) {
@@ -70,6 +71,7 @@ class wxauth {
 								'province'=>$userinfo['province'],
 								'city'=>$userinfo['city'],
 								'country'=>$userinfo['country'],
+								'unionid'=>$userinfo['unionid'],
 								'avatar'=>$userinfo['headimgurl']
 						);
 					} else {

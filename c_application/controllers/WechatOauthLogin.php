@@ -15,7 +15,6 @@ class WechatOauthLogin extends CI_Controller {
 
 	public function user_info($str_value)
 	{	
-		
 		$this->load->helper('auth');
 		$this->load->helper('password');
 		$auth = new wxauth();
@@ -32,6 +31,27 @@ class WechatOauthLogin extends CI_Controller {
 				$data['token_time'] = $_SESSION['token_time'];
 				$where = array('uniacid' => $uniacid,'uid' => $uid);
 				$this->db->update("wechat_token_time",$data,$where);//返回结果boolean;
+				$m_data = array(
+					'nickname' => $wxuser_data['nickname'],
+					'gender' => $wxuser_data['sex'],
+					'province' => $wxuser_data['province'],
+					'city' => $wxuser_data['city'],
+					'country' => $wxuser_data['country'],
+					'avatar' => $wxuser_data['avatar'],
+				);
+				$m_where = array('open_id' => $open_id);
+				$this->db->update("wechat_member",$m_data,$m_where);//更新用户头像，性别等
+				$u_data = array(
+					'nickname' => $wxuser_data['nickname'],
+					'gender' => $wxuser_data['sex'],
+					'location' => $wxuser_data['location'],
+					'province' => $wxuser_data['province'],
+					'city' => $wxuser_data['city'],
+					'country' => $wxuser_data['country'],
+					'avatar' => $wxuser_data['avatar'],
+				);
+				$u_where = array('open_id' => $open_id);
+				$this->db->update("cc_user",$u_data,$u_where);//更新用户头像，性别等
 			}elseif (empty($result)) {//如果没有该用户
 				$data = array(
 					'uniacid' => $uniacid,
@@ -42,6 +62,7 @@ class WechatOauthLogin extends CI_Controller {
 				    'province' => $wxuser_data['province'],
 				    'city' => $wxuser_data['city'],
 				    'country' => $wxuser_data['country'],
+				    'unionid' => isset($wxuser_data['unionid'])?$wxuser_data['unionid']:'',
 				    'avatar' => $wxuser_data['avatar']
 				);
 				$this->db->insert('wechat_member', $data);//新建用户数据wechat_member表
@@ -57,6 +78,7 @@ class WechatOauthLogin extends CI_Controller {
 				    'province' => $wxuser_data['province'],
 				    'city' => $wxuser_data['city'],
 				    'country' => $wxuser_data['country'],
+				    'unionid' => isset($wxuser_data['unionid'])?$wxuser_data['unionid']:'',
 				    'avatar' => $wxuser_data['avatar']
 				);
 				$this->db->insert('cc_user', $data);//新建用户数据cc_user表

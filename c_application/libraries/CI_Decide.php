@@ -91,5 +91,27 @@ class CI_Decide{
 			return 0;
 		}
 	}
+
+
+	/**
+	 * 返回用户签到所属于的签到类型是：VIP签到，还是普通签到
+	 * @param $user_id 用户id 
+	 * @param $stele_id 传承碑id
+	 * @return array(签到级别,签到得到的积分,签到获得的灵石) 
+	 */
+	public function decide_getstone($user_id,$stele_id)
+	{
+		$db_decide_user_is_vip = $this->_CI->decide_model->db_decide_user_is_vip($user_id);
+		if(!empty($db_decide_user_is_vip)){
+			if ($db_decide_user_is_vip['vip'] == '1') {//用户激活的传承碑VIP等级为1
+				 $result = array('vip' => '1', 'point' => '0', 'stone' => '5');
+			}elseif($db_decide_user_is_vip['vip'] == '2'){//用户激活的传承碑VIP等级为2
+				$result = array('vip' => '1', 'point' => '0', 'stone' => '10');
+			}
+		}else{
+			$result = array();
+		}
+		return $result;
+	}
     
 }

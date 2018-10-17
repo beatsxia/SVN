@@ -1,0 +1,400 @@
+body{
+	background: none;
+	background-color: #f5f5f5;
+}
+nav.page-nav{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 0.15rem 0;
+	background: -webkit-linear-gradient(#ad0908, #7a0000);
+    background: -o-linear-gradient(#ad0908, #7a0000);
+    background: -moz-linear-gradient(#ad0908, #7a0000);
+	background: linear-gradient(#ad0908, #7a0000);
+	height: 1.3rem;
+	display: flex;
+}
+nav.page-nav>a{
+	display: block;
+	width: 1rem;
+	height: 100%;
+	margin:0 auto;
+	background-position: top center;
+	text-align: center;
+	line-height: 2.2rem;
+	color: #fbffff;
+	font-size: 0.37rem;
+	background-size:80%;
+}
+nav.page-nav>a.nav-edit{
+	background-image: url("../img/stele/edit.png");
+}
+nav.page-nav>a.nav-share{
+	background-image: url("../img/stele/share.png");
+}
+nav.page-nav>a.nav-add{
+	background-image: url("../img/stele/add.png");
+	background-size:100%;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-top: -0.65rem;
+	position: relative;
+}
+nav.page-nav>a.nav-add>span{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	transition: 0.2s;
+	display: none;
+}
+nav.page-nav>.nav-add>.photo-btn{
+	background-color: #f58902;
+	background-image: url('../img/stele/add_photo.png');
+}
+nav.page-nav>.nav-add>.inh-btn{
+	background-color: #007df3;
+	background-image: url('../img/stele/add_inh.png');
+}
+nav.page-nav>.nav-add>.video-btn{
+	background-color: #fd5852;
+	background-image: url('../img/stele/add_video.png');
+}
+section{
+	height: auto;
+	background-color:white;
+	margin-bottom: 0.25rem
+}
+.info{
+	padding-bottom: 0.5rem;
+	background-image: url('../img/stele/bg.png');
+	background-position: center bottom;
+}
+.stele-item{
+	width: calc(9rem - 1.4rem);
+	height: 4.1rem;
+	background-image: url('../img/heritage/bg.png');
+	padding: 0.7rem;
+	margin: 0 auto;
+	position: relative;
+}
+.stele-title{
+	width: 100%;
+	font-size: 0.44rem;
+	font-weight: 300;
+	padding-bottom:0.1rem;
+}
+.text-info{
+	width: 60%;
+}
+.text-info>p{
+	width: 100%;
+	margin-top: 0.38rem;
+	font-size: 0.38rem;
+}
+.img-info{
+	width: 40%;
+}
+.img-info>a{
+	width: 2.95rem;
+	height: 2.95rem;
+	display: block;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+	background-color: white;
+	position: relative;
+}
+.img-info>a>img{
+	display: block;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.toMountain{
+	width: 100%;
+	height: 1rem;
+	margin: 0.5rem 0;
+	background-image: url('../img/stele/btn_line.png');
+}
+.toMountain>.btn{
+	height: 100%;
+	width: 3.21rem;
+	background-image: url("../img/stele/btn_m.png");
+	display: block;
+	line-height: 1rem;
+	text-align: center;
+	margin: 0 auto;
+	color: #fdf705;
+	font-size: 0.56rem;
+}
+.num-info{
+	width: 9rem;
+	margin: 0 auto;
+	height: 2.32rem;
+	display: flex;
+}
+.num-text{
+	height: 100%;
+	width: 1.65rem;
+	background-image: url("../img/stele/LevelEnergy.png");
+	margin-right: 0.2rem;
+}
+.num-text>a{
+	display: block;
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	line-height: 1.16rem;
+	color: #f5ffff;
+	font-size: 0.4rem;
+}
+.num-right{
+	height: 100%;
+	width: 100%;
+}
+.num-right>div{
+	width: 100%;
+	height: 50%;
+}
+.level{
+	font-size: 0;
+}
+.level>span{
+	font-size:0.32rem;
+	display: inline-block;
+	height: 100%;
+	width: 0.78rem;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 1.16rem;
+	color: #4c2721;
+}
+.level>span.ex{
+	width: 3.2rem;
+	height: 0.28rem;
+	border: 1px solid #a4aaa8;
+	border-radius: 5px;
+	background-color: white;
+	background-image: url("../img/stele/ex.png");
+	background-size:20% 100%;
+	background-position: left;
+}
+.level>span.btn{
+	background-image: url("../img/stele/btn_energy.png");
+	width: 1.78rem;
+	float: right;
+	font-size: 0.46rem;
+}
+.energy{
+	font-size: 0;
+	line-height: 1.16rem;
+}
+.energy>a{
+	display: inline-block;
+	height: 1rem;
+	width: 1rem;
+	background-color: #f1f1f1;
+	border: 1px solid #510e17;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 0.18rem;
+}
+.inh{
+	border-top: 1px solid #dadada;
+	border-bottom: 1px solid #dadada;
+	padding:0.5rem;
+}
+.inh-left{
+	width: 3.18rem;
+	height: 4rem;
+}
+.inh-left>img{
+	display: block;
+	width: 3.18rem;
+	height: 3.18rem;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px #666666;
+}
+.inh-left>time{
+	display: block;
+	width: 100%;
+	height: 0.8rem;
+	text-align: center;
+	font-size: 0.35rem;
+	line-height: 0.8rem;
+}
+.inh-right{
+	width: 5.62rem;
+	height: 4rem;
+}
+.inh-right>.title{
+	height: 1rem;
+	font-size: 0.46rem;
+	font-weight: 100;
+	padding-left: 0.2rem;
+	line-height: 0.6rem;
+}
+.inh-right>.title>a{
+	font-size: 0.32rem;
+	float: right;
+}
+.inh-text{
+	border: 2px dashed #8c8c8c;
+	padding:0.25rem;
+	font-size: 0.35rem;
+}
+.file{
+	border-top:1px solid #cdcdcd;
+	border-bottom:1px solid #cdcdcd;
+}
+.file>.title{
+	height: 1rem;
+	line-height: 1rem;
+	padding:0 0.5rem;
+	font-size: 0.44rem;
+	border-bottom:1px solid #cdcdcd;
+	font-weight: 300;
+}
+.file>.title>a{
+	float: right;
+	font-size: 0.32rem;
+}
+.file-list{
+	width: 9rem;
+	height: auto;
+	margin:0 auto;
+	padding:0.3rem 0;
+}
+.file-list>li{
+	width: calc(2rem - 2px);
+	height: calc(2rem - 2px);
+	background: #ededed;
+	float: left;
+	margin:0.122rem;
+	border:1px solid #cdcdcd;
+}
+.energy-list{
+	position: fixed;
+	left: 0;
+	bottom: -11.8rem;
+	width: 100%;
+	height: 11.8rem;
+	z-index: 1000;
+	background-color: #16130e;
+	border-top-left-radius: 24px;
+	border-top-right-radius: 24px;
+	transition:0.3s;
+}
+.energy-list>.close{
+	display: block;
+	width: 0.6rem;
+	height: 0.6rem;
+	position: absolute;
+	top: 0.3rem;
+	right: 0.3rem;
+	border-radius: 50%;
+	background-image: url('../img/stele/closeEnergy.png');
+}
+.energy-list>.title{
+	height: 1.6rem;
+	text-align: center;
+	line-height: 1.6rem;
+	color: #feed09;
+	font-size: 0.5rem;
+	background-image: url('../img/stele/energy_line.png');
+}
+.energy-head{
+	height: 0.5rem;
+	background-color: #fff001;
+	padding:0.3rem 0;
+}
+.energy-head>li{
+	height: 100%;
+	display: flex;
+}
+.energy-head>li>span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 0.5rem;
+	font-size: 0.42rem;
+	text-align: center;
+	color: #333333;
+}
+.energy-head>li>span:not(:first-child){
+	border-left: 1px solid #333333;
+}
+.energy-body{
+	width: 94%;
+	margin: 0 auto;
+	height: 8.4rem;
+	overflow: auto;
+}
+.energy-body>li{
+	height: 1rem;
+	margin:0.1rem 0;
+	display: flex;
+}
+.energy-body>li.me{
+	border:2px solid #feef00;
+	border-radius: 18px;
+	box-shadow: 0px 0px 10px #feef00;
+	position: relative;
+}
+.energy-body>li.me::after{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: "";
+	border-radius: 16px;
+	left: 0;
+	top: 0;
+	box-shadow: 0px 0px 10px #feef00 inset;
+}
+.energy-body>li>*{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 1rem;
+	font-size: 0.42rem;
+	color: #fdfdfd;
+	position: relative;
+}
+.energy-body>li>span:first-child::after{
+	display: block;
+	height: 1rem;
+	width: 0.65rem;
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.ranking1::after{
+	background-image: url('../img/stele/list1.png');
+}
+.ranking2::after{
+	background-image: url('../img/stele/list2.png');
+}
+.ranking3::after{
+	background-image: url('../img/stele/list3.png');
+}
